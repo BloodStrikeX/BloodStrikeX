@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>آموزش خرید گلد بلاد استرایک</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- SEO -->
+  <meta name="description" content="آموزش خرید گلد برای بازی بلاد استرایک.">
+  <meta name="keywords" content="خرید گلد, بلاد استرایک, آموزش, گیم">
+  <meta name="author" content="BloodStrikeFarsi">
+
+  <style>
+    #fireCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Fire Effect -->
+  <canvas id="fireCanvas"></canvas>
+
+  <!-- آموزش خرید گلد -->
+  <section class="py-16 px-6 text-center">
+    <h1 class="text-4xl font-bold mb-8">آموزش خرید گلد بازی بلاد استرایک</h1>
+    
+    <!-- گام 1 -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <img src="images/step1.jpg" alt="مرحله 1" class="w-full h-auto rounded-lg mb-4">
+      <h3 class="text-xl font-bold mb-2">گام اول: وارد سایت شوید</h3>
+      <p class="text-gray-400">ابتدا روی دکمه زیر کلیک کنید تا وارد سایت خرید بشید.</p>
+    </div>
+
+    <!-- گام 2 -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <img src="images/step2.jpg" alt="مرحله 2" class="w-full h-auto rounded-lg mb-4">
+      <h3 class="text-xl font-bold mb-2">گام دوم: انتخاب بازی بلاد استرایک</h3>
+      <p class="text-gray-400">پس از ورود به سایت، روی گلد بازی بلاد استرایک کلیک کنید یا از منوی سرچ بنویسید بلاد استرایک.</p>
+    </div>
+
+    <!-- گام 3 -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <img src="images/step3.jpg" alt="مرحله 3" class="w-full h-auto rounded-lg mb-4">
+      <h3 class="text-xl font-bold mb-2">گام سوم: انتخاب بازی</h3>
+      <p class="text-gray-400">توی منوی سرچ بنویسید بلاد استرایک و روش کلیک کنید تا وارد صفحه‌اش بشید.</p>
+    </div>
+
+    <!-- گام 4 -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <img src="images/step4.jpg" alt="مرحله 4" class="w-full h-auto rounded-lg mb-4">
+      <h3 class="text-xl font-bold mb-2">گام چهارم: تکمیل خرید</h3>
+      <p class="text-gray-400">سپس جزئیات مانند نام، نام خانوادگی و شماره تلفن خود را وارد کنید. پس از اعمال کد تخفیف، اقدام به پرداخت کنید.</p>
+      <p class="text-gray-400 font-bold">کد تخفیف: <span class="text-red-500">BloodStrikeFarsi</span></p>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-600 bg-black">
+    &copy; 2025 BloodStrikeFarsi. تمامی حقوق محفوظ است.
+  </footer>
+
+  <!-- Particle Script -->
+  <script>
+    const canvas = document.getElementById("fireCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const maxParticles = window.innerWidth < 768 ? 100 : 250;
+
+    class Particle {
+      constructor(fire = false) {
+        this.fire = fire;
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 2;
+        this.speedY = this.fire ? Math.random() * 2 + 1 : Math.random() * 1 + 0.5;
+        this.speedX = this.fire ? (Math.random() - 0.5) * 1 : (Math.random() - 0.5) * 0.3;
+        this.alpha = Math.random() * 0.5 + 0.5;
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.x > canvas.width || this.x < 0) this.x = Math.random() * canvas.width;
+      }
+      draw() {
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+        if (this.fire) {
+          gradient.addColorStop(0, `rgba(255, ${Math.floor(Math.random() * 100 + 50)}, 0, ${this.alpha})`);
+          gradient.addColorStop(1, `rgba(255, 0, 0, 0)`);
+        } else {
+          gradient.addColorStop(0, `rgba(255, 255, 255, ${this.alpha})`);
+          gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+        }
+
+        ctx.beginPath();
+        ctx.fillStyle = gradient;
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      while (particles.length < maxParticles) {
+        particles.push(new Particle(false)); // Snow
+        particles.push(new Particle(true));  // Firey flake
+      }
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
