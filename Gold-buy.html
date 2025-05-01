@@ -21,6 +21,55 @@
       z-index: -1;
       pointer-events: none;
     }
+
+    .rgb-border-button {
+      position: relative;
+      display: inline-block;
+      padding: 1rem 2rem;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      background-color: #1f2937;
+      z-index: 0;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .rgb-border-button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, red, green, red);
+      background-size: 400%;
+      animation: rgbRotate 6s linear infinite;
+      z-index: -1;
+      filter: blur(10px);
+    }
+
+    .rgb-border-button::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: #1f2937;
+      border-radius: 0.5rem;
+      z-index: -1;
+    }
+
+    .rgb-border-button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes rgbRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -35,10 +84,10 @@
     <!-- گام 1 -->
     <div class="max-w-4xl mx-auto mb-12">
       <img src="images/step1.jpg" alt="مرحله 1" class="w-full h-auto rounded-lg mb-4">
-      <h3 class="text-xl font-bold mb-2">گام اول: وارد سایت شوید</h3>
-      <a href="https://g4a4.com/" class="text-gray-400 block hover:text-blue-300" target="_blank">
-  ابتدا روی این متن کلیک کنید تا وارد سایت خرید بشید.
-</a>
+      <h3 class="text-xl font-bold mb-4">گام اول: وارد سایت شوید</h3>
+      <a href="https://g4a4.com/" target="_blank" class="rgb-border-button">
+        ابتدا روی این متن کلیک کنید تا وارد سایت خرید بشید.
+      </a>
     </div>
 
     <!-- گام 2 -->
