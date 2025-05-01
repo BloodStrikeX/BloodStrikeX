@@ -46,52 +46,297 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6">درباره کامیونیتی ما</h2>
-    <p class="text-gray-400 max-w-3xl mx-auto">
+<style>
+  .lava-glow-wrapper {
+    position: relative;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #111827;
+    color: white;
+    overflow: hidden;
+    z-index: 0;
+    text-align: center;
+  }
+
+  .lava-glow-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+      #ff9900, #ff3300, #cc0000, #660000);
+    background-size: 400% 400%;
+    animation: lavaFlow 6s linear infinite;
+    z-index: -2;
+    filter: blur(20px);
+    opacity: 0.4;
+  }
+
+  .lava-glow-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background-color: #111827;
+    border-radius: 1rem;
+    z-index: -1;
+  }
+
+  @keyframes lavaFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .lava-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: orange;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: moveIn 3s ease-in-out infinite;
+  }
+
+  @keyframes moveIn {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--x), var(--y)) scale(0.5);
+      opacity: 0;
+    }
+  }
+</style>
+
+<section class="py-16 px-4 bg-black">
+  <div class="lava-glow-wrapper max-w-2xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">درباره کامیونیتی ما</h2>
+    <p class="text-gray-300 leading-relaxed">
       بلاد استرایک فارسی اولین و بزرگ‌ترین کامیونیتی بلاد استرایک در ایران است که فعالیت خودش رو از ۲ تیر ۱۴۰۲ آغاز کرده و تا کنون در شبکه‌های اجتماعی زیادی فعالیت داشته. همین حالا به ما بپیوندید تا از آخرین اخبار و جزئیات گیم، کاستوم روم‌ها و بیشتر باخبر بشید.
     </p>
-  </section>
+    <div id="lava-particles"></div>
+  </div>
+</section>
 
-  <!-- Tutorials Section -->
-<section class="py-16 px-6 bg-gray-900 text-center">
+<script>
+  const container = document.getElementById("lava-particles");
+
+  for (let i = 0; i < 40; i++) {
+    const particle = document.createElement("div");
+    particle.classList.add("lava-particle");
+
+    // مکان شروع تصادفی در اطراف کارت (بالا، پایین، چپ، راست)
+    const side = Math.floor(Math.random() * 4);
+    let top, left;
+
+    switch (side) {
+      case 0: // top
+        top = "-10px";
+        left = Math.random() * 100 + "%";
+        break;
+      case 1: // bottom
+        top = "100%";
+        left = Math.random() * 100 + "%";
+        break;
+      case 2: // left
+        top = Math.random() * 100 + "%";
+        left = "-10px";
+        break;
+      case 3: // right
+        top = Math.random() * 100 + "%";
+        left = "100%";
+        break;
+    }
+
+    particle.style.top = top;
+    particle.style.left = left;
+
+    // حرکت به سمت داخل کارت
+    const deltaX = (Math.random() * 100 - 50) + "px";
+    const deltaY = (Math.random() * 100 - 50) + "px";
+    particle.style.setProperty("--x", deltaX);
+    particle.style.setProperty("--y", deltaY);
+
+    particle.style.animationDelay = Math.random() * 2 + "s";
+    particle.style.backgroundColor = ['#ff4500', '#ffaa33', '#ff6600'][Math.floor(Math.random() * 3)];
+
+    container.appendChild(particle);
+  }
+</script>
+
+<!-- CSS برای RGB Border و Hover Effect -->
+<style>
+  .card-rgb-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-rgb-border:hover {
+    transform: scale(1.03);
+  }
+
+  .card-rgb-border::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-size: 400%;
+    animation: rgbBorder 8s linear infinite;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  .card-rgb-border::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-rgb-border:hover::after {
+    background-color: #374151; /* Tailwind's bg-gray-700 */
+  }
+
+  @keyframes rgbBorder {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<!-- HTML بخش آموزش‌ها با کارت‌های RGB -->
+<section class="py-16 px-6 bg-black text-center">
   <h2 class="text-3xl font-bold mb-8">آموزش‌ها</h2>
   <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <!-- بخش آموزش خرید گلد -->
-    <a href="Gold-buy.html" class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700">
-      <h3 class="text-xl font-bold mb-2">خرید گلد بازی</h3>
-      <p class="text-gray-400">آموزش خرید گلد داخل بازی به صورت کاملا معتبر</p>
+
+    <a href="Gold-buy.html" class="card-rgb-border">
+      <div class="relative z-10 p-6 text-white">
+        <h3 class="text-xl font-bold mb-2">خرید گلد بازی</h3>
+        <p class="text-gray-400">آموزش خرید گلد داخل بازی به صورت کاملا معتبر</p>
+      </div>
     </a>
-    <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700">
-      <h3 class="text-xl font-bold mb-2">تاکتیک‌های پیشرفته</h3>
-      <p class="text-gray-400">ترفندهایی برای شکست دشمن‌ها به‌صورت حرفه‌ای.</p>
+
+    <div class="card-rgb-border">
+      <div class="relative z-10 p-6 text-white">
+        <h3 class="text-xl font-bold mb-2">تاکتیک‌های پیشرفته</h3>
+        <p class="text-gray-400">ترفندهایی برای شکست دشمن‌ها به‌صورت حرفه‌ای.</p>
+      </div>
     </div>
-    <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700">
-      <h3 class="text-xl font-bold mb-2">مهارت در اسلحه‌ها</h3>
-      <p class="text-gray-400">مزایا و معایب هر اسلحه را یاد بگیرید.</p>
+
+    <div class="card-rgb-border">
+      <div class="relative z-10 p-6 text-white">
+        <h3 class="text-xl font-bold mb-2">مهارت در اسلحه‌ها</h3>
+        <p class="text-gray-400">مزایا و معایب هر اسلحه را یاد بگیرید.</p>
+      </div>
     </div>
+
   </div>
 </section>
   
-  <!-- Community Status -->
-  <section class="py-16 px-6 bg-gray-900 text-center">
-    <h2 class="text-3xl font-bold mb-8">وضعیت کامیونیتی</h2>
-    <div class="flex flex-col md:flex-row justify-center gap-10 text-gray-400">
-      <div class="bg-gray-800 p-8 rounded-lg">
+ <!-- CSS برای کارت با RGB سبز و آکوا -->
+<style>
+  .card-green-rgb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-green-rgb:hover {
+    transform: scale(1.03);
+  }
+
+  .card-green-rgb::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #00ffcc, #00ff66, #00cc99, #00ffcc);
+    background-size: 400%;
+    animation: greenGlow 6s linear infinite;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  .card-green-rgb::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-green-rgb:hover::after {
+    background-color: #374151; /* Tailwind's bg-gray-700 */
+  }
+
+  @keyframes greenGlow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<!-- HTML بخش وضعیت کامیونیتی -->
+<section class="py-16 px-6 bg-black text-center">
+  <h2 class="text-3xl font-bold mb-8">وضعیت کامیونیتی</h2>
+  <div class="flex flex-col md:flex-row justify-center gap-10 text-white">
+
+    <div class="card-green-rgb">
+      <div class="relative z-10 p-8">
         <h3 class="text-2xl font-bold mb-2">اعضای تلگرام</h3>
-        <p>3544 نفر</p>
-      </div>
-      <div class="bg-gray-800 p-8 rounded-lg">
-        <h3 class="text-2xl font-bold mb-2">اعضای روبیکا</h3>
-        <p>711 نفر</p>
-      </div>
-      <div class="bg-gray-800 p-8 rounded-lg">
-        <h3 class="text-2xl font-bold mb-2">دنبال‌کنندگان اینستاگرام</h3>
-        <p>2853 نفر</p>
+        <p class="text-gray-400">3544 نفر</p>
       </div>
     </div>
-  </section>
+
+    <div class="card-green-rgb">
+      <div class="relative z-10 p-8">
+        <h3 class="text-2xl font-bold mb-2">اعضای روبیکا</h3>
+        <p class="text-gray-400">711 نفر</p>
+      </div>
+    </div>
+
+    <div class="card-green-rgb">
+      <div class="relative z-10 p-8">
+        <h3 class="text-2xl font-bold mb-2">دنبال‌کنندگان اینستاگرام</h3>
+        <p class="text-gray-400">2853 نفر</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="py-6 text-center text-gray-600 bg-black">
