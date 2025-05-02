@@ -1,43 +1,15 @@
-<!-- menu.html -->
-<div class="relative z-50">
-  <!-- دکمه منو -->
-  <button id="menu-toggle" class="fixed top-4 left-4 z-50 flex items-center space-x-2 p-3 bg-black/60 text-white rounded-xl backdrop-blur hover:bg-black/80 transition">
-    <span>منو</span>
-    <div class="space-y-1">
-      <span class="block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
-      <span class="block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
-      <span class="block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
-    </div>
-  </button>
-
-  <!-- منوی بازشونده -->
-  <div id="menu" class="hidden fixed top-16 left-4 bg-black/80 text-white rounded-xl p-4 shadow-xl space-y-2 backdrop-blur transition-all duration-500 transform scale-95 opacity-0">
-    <a href="index.html" class="block hover:text-yellow-400 transition py-2">خانه</a>
-    <a href="Gold-buy.html" class="block hover:text-yellow-400 transition py-2">آموزش خرید گلد</a>
-    <a href="#" class="block hover:text-yellow-400 transition py-2">اتچمنت ها</a>
-    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
-    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
-    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
-    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
+<header class="menu-container">
+  <div class="logo">BloodStrikeFarsi</div>
+  <div id="menuToggle" class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-</div>
-
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('scale-100');
-    menu.classList.toggle('opacity-100');
-  });
-</script>
-
-<style>
-  @keyframes slide-down {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  #menu {
-    animation: slide-down 0.5s ease-out forwards;
-  }
-</style>
+  <nav id="navLinks" class="nav-links">
+    <ul>
+      <li><a href="https://t.me/BloodStrikeFarsi" target="_blank" rel="noopener">تلگرام</a></li>
+      <li><a href="https://rubika.ir/bloodstrikefarsi" target="_blank" rel="noopener">روبیکا</a></li>
+      <li><a href="https://instagram.com/bloodstrikefarsi" target="_blank" rel="noopener">اینستاگرام</a></li>
+    </ul>
+  </nav>
+</header>
