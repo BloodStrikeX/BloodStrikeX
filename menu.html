@@ -1,117 +1,43 @@
 <!-- menu.html -->
-<div class="menu-container">
-  <!-- Hamburger Button -->
-  <button id="menu-toggle" class="menu-toggle">
-    <span class="menu-icon"></span>
+<div class="relative z-50">
+  <!-- دکمه منو -->
+  <button id="menu-toggle" class="fixed top-4 left-4 z-50 flex items-center space-x-2 p-3 bg-black/60 text-white rounded-xl backdrop-blur hover:bg-black/80 transition">
+    <span>منو</span>
+    <div class="space-y-1">
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+    </div>
   </button>
 
-  <!-- Menu List -->
-  <nav id="menu" class="menu hidden">
-    <ul class="menu-list">
-      <li><a href="index.html" class="menu-item">خانه</a></li>
-      <li><a href="Gold-buy.html" class="menu-item">آموزش خرید گلد</a></li>
-      <li><a href="#" class="menu-item">اتچمنت ها</a></li>
-      <li><a href="#" class="menu-item">Soon</a></li>
-      <li><a href="#" class="menu-item">Soon</a></li>
-      <li><a href="#" class="menu-item">Soon</a></li>
-      <li><a href="#" class="menu-item">Soon</a></li>
-    </ul>
-  </nav>
+  <!-- منوی بازشونده -->
+  <div id="menu" class="hidden fixed top-16 left-4 bg-black/80 text-white rounded-xl p-4 shadow-xl space-y-2 backdrop-blur transition-all duration-500 transform scale-95 opacity-0">
+    <a href="index.html" class="block hover:text-yellow-400 transition py-2">خانه</a>
+    <a href="Gold-buy.html" class="block hover:text-yellow-400 transition py-2">آموزش خرید گلد</a>
+    <a href="#" class="block hover:text-yellow-400 transition py-2">اتچمنت ها</a>
+    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
+    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
+    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
+    <a href="#" class="block hover:text-yellow-400 transition py-2">Soon</a>
+  </div>
 </div>
 
-<style>
-  /* Menu Container */
-  .menu-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-  }
-
-  /* Hamburger Menu */
-  .menu-toggle {
-    background: none;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-  }
-
-  .menu-toggle .menu-icon {
-    background-color: white;
-    height: 4px;
-    width: 30px;
-    border-radius: 4px;
-    transition: 0.3s ease;
-  }
-
-  /* Menu (Hidden by default) */
-  .menu {
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu.hidden {
-    display: none;
-  }
-
-  /* Menu Items */
-  .menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .menu-item {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 18px;
-    transition: 0.3s ease;
-  }
-
-  .menu-item:hover {
-    background-color: #ff6600;
-    border-radius: 5px;
-  }
-
-  /* Menu Animation */
-  .menu.open {
-    display: flex;
-    animation: slideIn 0.3s ease-out;
-  }
-
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-</style>
-
 <script>
-  // Toggle the menu when clicking on the hamburger button
-  const menuToggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
-
-  menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
-    document.querySelector(".menu-toggle .menu-icon").classList.toggle("open");
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('scale-100');
+    menu.classList.toggle('opacity-100');
   });
 </script>
+
+<style>
+  @keyframes slide-down {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  #menu {
+    animation: slide-down 0.5s ease-out forwards;
+  }
+</style>
