@@ -35,7 +35,31 @@
   <!-- Fire Effect -->
   <canvas id="fireCanvas"></canvas>
 
+  <!-- 1. منو -->
+  <div id="menu-placeholder"></div>
 
+  <!-- 2. محتوای صفحه -->
+  <main>
+    <h1>به BloodStrikeFarsi خوش آمدید!</h1>
+    <p>اینجا محتوای اصلی صفحه‌ت میاد.</p>
+  </main>
+
+  <!-- 3. اسکریپت لود منو -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('menu-placeholder').innerHTML = html;
+
+        const toggleBtn = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        toggleBtn.addEventListener('click', () => {
+          toggleBtn.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+      });
+  </script>
   
   <!-- Hero Section -->
 <section class="min-h-screen flex flex-col justify-center items-center">
