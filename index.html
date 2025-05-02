@@ -34,6 +34,83 @@
 
   <!-- Fire Effect -->
   <canvas id="fireCanvas"></canvas>
+
+<div class="navbar">
+  <span class="menu-toggle" onclick="toggleMenu()">☰ منو</span>
+  <div class="menu" id="menu">
+    <a href="index.html">خانه</a>
+    <a href="Gold-buy.html">آموزش خرید گلد</a>
+    <a href="Attachments.html">اتچمنت‌ها</a>
+    <a class="disabled">به‌زودی...</a>
+  </div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    direction: rtl;
+    background: #f5f5f5;
+  }
+
+  .navbar {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .menu {
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+
+  .menu a {
+    padding: 12px 16px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: background 0.3s;
+  }
+
+  .menu a:hover {
+    background-color: #555;
+  }
+
+  .menu .disabled {
+    color: #888;
+    cursor: default;
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('menu');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
   
   <!-- Hero Section -->
 <section class="min-h-screen flex flex-col justify-center items-center">
