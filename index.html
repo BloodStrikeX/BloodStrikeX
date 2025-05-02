@@ -77,12 +77,6 @@
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     z-index: 100;
-    transform: translateX(100%);  /* شروع از سمت راست */
-    transition: transform 0.5s ease; /* انیمیشن برای حرکت */
-  }
-
-  .menu.open {
-    transform: translateX(0); /* منو به حالت نمایش */
   }
 
   .menu a {
@@ -106,14 +100,14 @@
 <script>
   function toggleMenu() {
     const menu = document.getElementById('menu');
-    menu.classList.toggle('open'); // اضافه کردن/حذف کردن کلاس open
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
   }
 
   document.addEventListener('click', function(e) {
     const menu = document.getElementById('menu');
     const toggle = document.querySelector('.menu-toggle');
     if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-      menu.classList.remove('open'); // بستن منو زمانی که کلیک خارج از آن باشد
+      menu.style.display = 'none';
     }
   });
 </script>
