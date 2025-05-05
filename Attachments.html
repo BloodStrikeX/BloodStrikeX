@@ -1,99 +1,91 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>اتچمنت‌ها</title>
+  <meta charset="UTF-8" />
+  <title>Attachments | BloodStrikeFarsi</title>
   <style>
     body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: sans-serif;
-      direction: rtl;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 0;
     }
-
-    .navbar {
-      background-color: #222;
-      color: #fff;
-      padding: 10px 20px;
-      position: relative;
-    }
-
-    .menu-toggle {
-      font-size: 24px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .menu {
-      background-color: #333;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      width: 200px;
-      display: none;
-      flex-direction: column;
-      border-radius: 0 0 10px 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      z-index: 100;
-    }
-
-    .menu a {
-      padding: 12px 16px;
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid #444;
-      transition: background 0.3s;
-    }
-
-    .menu a:hover {
-      background-color: #555;
-    }
-
-    .menu .disabled {
-      color: #888;
-      cursor: default;
-    }
-
-    .content {
+    h1 {
       text-align: center;
-      padding: 100px 20px;
-      font-size: 24px;
-      color: #555;
+      padding: 20px;
+      font-size: 2em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.2s ease;
+      border: 1px solid #333;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+    .card:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    .card img {
+      width: 100%;
+      max-height: 100px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .card div {
+      font-size: 1em;
     }
   </style>
 </head>
 <body>
+  <!-- منوی اصلی سایت -->
+  <nav>
+    <!-- کد منو از فایل اصلی شما -->
+  </nav>
 
-  <div class="navbar">
-    <span class="menu-toggle" onclick="toggleMenu()">☰ منو</span>
-    <div class="menu" id="menu">
-      <a href="index.html">خانه</a>
-      <a href="Gold-buy.html">آموزش خرید گلد</a>
-      <a href="Attachments.html">اتچمنت‌ها</a>
-      <a class="disabled">به‌زودی...</a>
-    </div>
+  <h1>Gun Attachments</h1>
+  <div class="grid">
+    <a class="card" href="GunsHtml/M4A1.html"><img src="Guns/M4A1.jpg" alt="M4A1"><div>M4A1</div></a>
+    <a class="card" href="GunsHtml/Ak47.html"><img src="Guns/Ak47.jpg" alt="Ak47"><div>Ak47</div></a>
+    <a class="card" href="GunsHtml/Kag-6.html"><img src="Guns/Kag-6.jpg" alt="Kag-6"><div>Kag-6</div></a>
+    <a class="card" href="GunsHtml/Scar.html"><img src="Guns/Scar.jpg" alt="Scar"><div>Scar</div></a>
+    <a class="card" href="GunsHtml/Ar97.html"><img src="Guns/Ar97.jpg" alt="Ar97"><div>Ar97</div></a>
+    <a class="card" href="GunsHtml/Aug.html"><img src="Guns/Aug.jpg" alt="Aug"><div>Aug</div></a>
+    <a class="card" href="GunsHtml/Fal.html"><img src="Guns/Fal.jpg" alt="Fal"><div>Fal</div></a>
+    <a class="card" href="GunsHtml/Qbz95.html"><img src="Guns/Qbz95.jpg" alt="Qbz95"><div>Qbz95</div></a>
+    <a class="card" href="GunsHtml/Fn2000.html"><img src="Guns/Fn2000.jpg" alt="Fn2000"><div>Fn2000</div></a>
+    <a class="card" href="GunsHtml/Vss.html"><img src="Guns/Vss.jpg" alt="Vss"><div>Vss</div></a>
+    <a class="card" href="GunsHtml/Mcx.html"><img src="Guns/Mcx.jpg" alt="Mcx"><div>Mcx</div></a>
+    <a class="card" href="GunsHtml/Galil.html"><img src="Guns/Galil.jpg" alt="Galil"><div>Galil</div></a>
+    <a class="card" href="GunsHtml/Mp5.html"><img src="Guns/Mp5.jpg" alt="Mp5"><div>Mp5</div></a>
+    <a class="card" href="GunsHtml/Vector.html"><img src="Guns/Vector.jpg" alt="Vector"><div>Vector</div></a>
+    <a class="card" href="GunsHtml/Urb.html"><img src="Guns/Urb.jpg" alt="Urb"><div>Urb</div></a>
+    <a class="card" href="GunsHtml/Inp9.html"><img src="Guns/Inp9.jpg" alt="Inp9"><div>Inp9</div></a>
+    <a class="card" href="GunsHtml/P90.html"><img src="Guns/P90.jpg" alt="P90"><div>P90</div></a>
+    <a class="card" href="GunsHtml/Uzi.html"><img src="Guns/Uzi.jpg" alt="Uzi"><div>Uzi</div></a>
+    <a class="card" href="GunsHtml/Origin-12.html"><img src="Guns/Origin-12.jpg" alt="Origin-12"><div>Origin-12</div></a>
+    <a class="card" href="GunsHtml/Mp155.html"><img src="Guns/Mp155.jpg" alt="Mp155"><div>Mp155</div></a>
+    <a class="card" href="GunsHtml/Pkm.html"><img src="Guns/Pkm.jpg" alt="Pkm"><div>Pkm</div></a>
+    <a class="card" href="GunsHtml/Minigun.html"><img src="Guns/Minigun.jpg" alt="Minigun"><div>Minigun</div></a>
+    <a class="card" href="GunsHtml/Kala.html"><img src="Guns/Kala.jpg" alt="Kala"><div>Kala</div></a>
+    <a class="card" href="GunsHtml/M700.html"><img src="Guns/M700.jpg" alt="M700"><div>M700</div></a>
+    <a class="card" href="GunsHtml/Kar98k.html"><img src="Guns/Kar98k.jpg" alt="Kar98k"><div>Kar98k</div></a>
+    <a class="card" href="GunsHtml/Svd.html"><img src="Guns/Svd.jpg" alt="Svd"><div>Svd</div></a>
+    <a class="card" href="GunsHtml/Bow.html"><img src="Guns/Bow.jpg" alt="Bow"><div>Bow</div></a>
+    <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.jpg" alt="Glock"><div>Glock</div></a>
+    <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.jpg" alt="Deagle"><div>Deagle</div></a>
+    <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.jpg" alt="Magnum"><div>Magnum</div></a>
   </div>
-
-  <div class="content">
-    <p>به‌زودی...</p>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
-
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('menu');
-      const toggle = document.querySelector('.menu-toggle');
-      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.style.display = 'none';
-      }
-    });
-  </script>
-
 </body>
 </html>
