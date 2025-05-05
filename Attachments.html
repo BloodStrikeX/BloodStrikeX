@@ -20,39 +20,19 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 20px;
       padding: 20px;
     }
 
     .card {
-      background: #1a1a1a;
-      border-radius: 12px;
+      position: relative;
+      border-radius: 15px;
+      background: #111;
+      overflow: hidden;
       padding: 10px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      z-index: -1;
-      background: linear-gradient(45deg, yellow, #39ff14, yellow, #39ff14);
-      background-size: 400% 400%;
-      animation: borderAnimation 6s linear infinite;
-      border-radius: 14px;
-    }
-
-    @keyframes borderAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
@@ -60,26 +40,45 @@
       cursor: pointer;
     }
 
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(60deg, yellow, #39ff14, yellow, #39ff14);
+      background-size: 300% 300%;
+      animation: rotateBorder 4s linear infinite;
+      z-index: -1;
+      border-radius: 18px;
+    }
+
+    @keyframes rotateBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .card img {
       width: 100%;
-      max-height: 100px;
+      max-height: 120px;
       object-fit: contain;
-      display: block;
-      margin: 0 auto 10px;
+      margin-bottom: 10px;
     }
 
     .card div {
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-weight: bold;
-      background: linear-gradient(45deg, yellow, #39ff14, yellow);
+      background: linear-gradient(90deg, yellow, #39ff14, yellow);
       background-size: 200% auto;
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
-      animation: textGradient 4s linear infinite;
+      animation: shine 3s linear infinite;
     }
 
-    @keyframes textGradient {
+    @keyframes shine {
       to {
         background-position: 200% center;
       }
@@ -87,14 +86,14 @@
   </style>
 </head>
 <body>
-  <!-- منوی اصلی سایت -->
+  <!-- منو اصلی سایت -->
   <nav>
-    <!-- کد منو از index.html شما حفظ شده -->
+    <!-- منوی فعلی سایت حفظ میشه -->
   </nav>
 
   <h1>Gun Attachments</h1>
   <div class="grid">
-    <!-- کارت‌ها شروع -->
+    <!-- کارت‌ها -->
     <a class="card" href="GunsHtml/M4A1.html"><img src="Guns/M4A1.jpg" alt="M4A1"><div>M4A1</div></a>
     <a class="card" href="GunsHtml/Ak47.html"><img src="Guns/Ak47.jpg" alt="Ak47"><div>Ak47</div></a>
     <a class="card" href="GunsHtml/Kag-6.html"><img src="Guns/Kag-6.jpg" alt="Kag-6"><div>Kag-6</div></a>
@@ -125,7 +124,6 @@
     <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.jpg" alt="Glock"><div>Glock</div></a>
     <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.jpg" alt="Deagle"><div>Deagle</div></a>
     <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.jpg" alt="Magnum"><div>Magnum</div></a>
-    <!-- کارت‌ها پایان -->
   </div>
 </body>
 </html>
