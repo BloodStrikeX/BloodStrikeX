@@ -2,25 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Attachments | BloodStrikeFarsi</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #0d0d0d;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1 {
-      text-align: center;
-      padding: 20px;
-      font-size: 2em;
+      color: white;
+      font-family: 'Vazirmatn', sans-serif;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 20px;
     }
@@ -30,14 +24,10 @@
       border-radius: 15px;
       background: #111;
       overflow: hidden;
-      padding: 10px;
       text-align: center;
+      padding: 10px;
       transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      cursor: pointer;
+      z-index: 0;
     }
 
     .card::before {
@@ -47,14 +37,14 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(60deg, yellow, #39ff14, yellow, #39ff14);
-      background-size: 300% 300%;
-      animation: rotateBorder 4s linear infinite;
+      background: linear-gradient(45deg, yellow, #39ff14, yellow, #39ff14);
+      background-size: 400% 400%;
+      animation: rgbborder 4s linear infinite;
       z-index: -1;
-      border-radius: 18px;
+      border-radius: 17px;
     }
 
-    @keyframes rotateBorder {
+    @keyframes rgbborder {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -62,7 +52,7 @@
 
     .card img {
       width: 100%;
-      max-height: 120px;
+      max-height: 130px;
       object-fit: contain;
       margin-bottom: 10px;
     }
@@ -79,51 +69,63 @@
     }
 
     @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
+      to { background-position: 200% center; }
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- منو اصلی سایت -->
-  <nav>
-    <!-- منوی فعلی سایت حفظ میشه -->
-  </nav>
 
-  <h1>Gun Attachments</h1>
-  <div class="grid">
-    <!-- کارت‌ها -->
-    <a class="card" href="GunsHtml/M4A1.html"><img src="Guns/M4A1.jpg" alt="M4A1"><div>M4A1</div></a>
-    <a class="card" href="GunsHtml/Ak47.html"><img src="Guns/Ak47.jpg" alt="Ak47"><div>Ak47</div></a>
-    <a class="card" href="GunsHtml/Kag-6.html"><img src="Guns/Kag-6.jpg" alt="Kag-6"><div>Kag-6</div></a>
-    <a class="card" href="GunsHtml/Scar.html"><img src="Guns/Scar.jpg" alt="Scar"><div>Scar</div></a>
-    <a class="card" href="GunsHtml/Ar97.html"><img src="Guns/Ar97.jpg" alt="Ar97"><div>Ar97</div></a>
-    <a class="card" href="GunsHtml/Aug.html"><img src="Guns/Aug.jpg" alt="Aug"><div>Aug</div></a>
-    <a class="card" href="GunsHtml/Fal.html"><img src="Guns/Fal.jpg" alt="Fal"><div>Fal</div></a>
-    <a class="card" href="GunsHtml/Qbz95.html"><img src="Guns/Qbz95.jpg" alt="Qbz95"><div>Qbz95</div></a>
-    <a class="card" href="GunsHtml/Fn2000.html"><img src="Guns/Fn2000.jpg" alt="Fn2000"><div>Fn2000</div></a>
-    <a class="card" href="GunsHtml/Vss.html"><img src="Guns/Vss.jpg" alt="Vss"><div>Vss</div></a>
-    <a class="card" href="GunsHtml/Mcx.html"><img src="Guns/Mcx.jpg" alt="Mcx"><div>Mcx</div></a>
-    <a class="card" href="GunsHtml/Galil.html"><img src="Guns/Galil.jpg" alt="Galil"><div>Galil</div></a>
-    <a class="card" href="GunsHtml/Mp5.html"><img src="Guns/Mp5.jpg" alt="Mp5"><div>Mp5</div></a>
-    <a class="card" href="GunsHtml/Vector.html"><img src="Guns/Vector.jpg" alt="Vector"><div>Vector</div></a>
-    <a class="card" href="GunsHtml/Urb.html"><img src="Guns/Urb.jpg" alt="Urb"><div>Urb</div></a>
-    <a class="card" href="GunsHtml/Inp9.html"><img src="Guns/Inp9.jpg" alt="Inp9"><div>Inp9</div></a>
-    <a class="card" href="GunsHtml/P90.html"><img src="Guns/P90.jpg" alt="P90"><div>P90</div></a>
-    <a class="card" href="GunsHtml/Uzi.html"><img src="Guns/Uzi.jpg" alt="Uzi"><div>Uzi</div></a>
-    <a class="card" href="GunsHtml/Origin-12.html"><img src="Guns/Origin-12.jpg" alt="Origin-12"><div>Origin-12</div></a>
-    <a class="card" href="GunsHtml/Mp155.html"><img src="Guns/Mp155.jpg" alt="Mp155"><div>Mp155</div></a>
-    <a class="card" href="GunsHtml/Pkm.html"><img src="Guns/Pkm.jpg" alt="Pkm"><div>Pkm</div></a>
-    <a class="card" href="GunsHtml/Minigun.html"><img src="Guns/Minigun.jpg" alt="Minigun"><div>Minigun</div></a>
-    <a class="card" href="GunsHtml/Kala.html"><img src="Guns/Kala.jpg" alt="Kala"><div>Kala</div></a>
-    <a class="card" href="GunsHtml/M700.html"><img src="Guns/M700.jpg" alt="M700"><div>M700</div></a>
-    <a class="card" href="GunsHtml/Kar98k.html"><img src="Guns/Kar98k.jpg" alt="Kar98k"><div>Kar98k</div></a>
-    <a class="card" href="GunsHtml/Svd.html"><img src="Guns/Svd.jpg" alt="Svd"><div>Svd</div></a>
-    <a class="card" href="GunsHtml/Bow.html"><img src="Guns/Bow.jpg" alt="Bow"><div>Bow</div></a>
-    <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.jpg" alt="Glock"><div>Glock</div></a>
-    <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.jpg" alt="Deagle"><div>Deagle</div></a>
-    <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.jpg" alt="Magnum"><div>Magnum</div></a>
-  </div>
+  <!-- منو اصلی سایت -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">BloodStrikeFarsi</a>
+      <button class="menu-btn">منو</button>
+    </div>
+  </header>
+
+  <!-- بخش اتچمنت‌ها -->
+  <main>
+    <h2>Gun Attachments</h2>
+    <div class="grid">
+      <!-- گان‌ها -->
+      <a class="card" href="GunsHtml/M4A1.html"><img src="Guns/M4A1.jpg" alt="M4A1"><div>M4A1</div></a>
+      <a class="card" href="GunsHtml/Ak47.html"><img src="Guns/Ak47.jpg" alt="Ak47"><div>Ak47</div></a>
+      <a class="card" href="GunsHtml/Kag-6.html"><img src="Guns/Kag-6.jpg" alt="Kag-6"><div>Kag-6</div></a>
+      <a class="card" href="GunsHtml/Scar.html"><img src="Guns/Scar.jpg" alt="Scar"><div>Scar</div></a>
+      <a class="card" href="GunsHtml/Ar97.html"><img src="Guns/Ar97.jpg" alt="Ar97"><div>Ar97</div></a>
+      <a class="card" href="GunsHtml/Aug.html"><img src="Guns/Aug.jpg" alt="Aug"><div>Aug</div></a>
+      <a class="card" href="GunsHtml/Fal.html"><img src="Guns/Fal.jpg" alt="Fal"><div>Fal</div></a>
+      <a class="card" href="GunsHtml/Qbz95.html"><img src="Guns/Qbz95.jpg" alt="Qbz95"><div>Qbz95</div></a>
+      <a class="card" href="GunsHtml/Fn2000.html"><img src="Guns/Fn2000.jpg" alt="Fn2000"><div>Fn2000</div></a>
+      <a class="card" href="GunsHtml/Vss.html"><img src="Guns/Vss.jpg" alt="Vss"><div>Vss</div></a>
+      <a class="card" href="GunsHtml/Mcx.html"><img src="Guns/Mcx.jpg" alt="Mcx"><div>Mcx</div></a>
+      <a class="card" href="GunsHtml/Galil.html"><img src="Guns/Galil.jpg" alt="Galil"><div>Galil</div></a>
+      <a class="card" href="GunsHtml/Mp5.html"><img src="Guns/Mp5.jpg" alt="Mp5"><div>Mp5</div></a>
+      <a class="card" href="GunsHtml/Vector.html"><img src="Guns/Vector.jpg" alt="Vector"><div>Vector</div></a>
+      <a class="card" href="GunsHtml/Urb.html"><img src="Guns/Urb.jpg" alt="Urb"><div>Urb</div></a>
+      <a class="card" href="GunsHtml/Inp9.html"><img src="Guns/Inp9.jpg" alt="Inp9"><div>Inp9</div></a>
+      <a class="card" href="GunsHtml/P90.html"><img src="Guns/P90.jpg" alt="P90"><div>P90</div></a>
+      <a class="card" href="GunsHtml/Uzi.html"><img src="Guns/Uzi.jpg" alt="Uzi"><div>Uzi</div></a>
+      <a class="card" href="GunsHtml/Origin-12.html"><img src="Guns/Origin-12.jpg" alt="Origin-12"><div>Origin-12</div></a>
+      <a class="card" href="GunsHtml/Mp155.html"><img src="Guns/Mp155.jpg" alt="Mp155"><div>Mp155</div></a>
+      <a class="card" href="GunsHtml/Pkm.html"><img src="Guns/Pkm.jpg" alt="Pkm"><div>Pkm</div></a>
+      <a class="card" href="GunsHtml/Minigun.html"><img src="Guns/Minigun.jpg" alt="Minigun"><div>Minigun</div></a>
+      <a class="card" href="GunsHtml/Kala.html"><img src="Guns/Kala.jpg" alt="Kala"><div>Kala</div></a>
+      <a class="card" href="GunsHtml/M700.html"><img src="Guns/M700.jpg" alt="M700"><div>M700</div></a>
+      <a class="card" href="GunsHtml/Kar98k.html"><img src="Guns/Kar98k.jpg" alt="Kar98k"><div>Kar98k</div></a>
+      <a class="card" href="GunsHtml/Svd.html"><img src="Guns/Svd.jpg" alt="Svd"><div>Svd</div></a>
+      <a class="card" href="GunsHtml/Bow.html"><img src="Guns/Bow.jpg" alt="Bow"><div>Bow</div></a>
+      <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.jpg" alt="Glock"><div>Glock</div></a>
+      <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.jpg" alt="Deagle"><div>Deagle</div></a>
+      <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.jpg" alt="Magnum"><div>Magnum</div></a>
+    </div>
+  </main>
+
 </body>
 </html>
