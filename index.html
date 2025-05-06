@@ -23,13 +23,13 @@
 
     .wrapper {
       position: relative;
-      background: #111;
+      background: rgba(0, 0, 0, 0.6); /* پس‌زمینه نیمه شفاف */
       padding: 30px 20px;
       border-radius: 20px;
       text-align: center;
       color: #fff;
       z-index: 1;
-      border: 3px solid transparent;
+      overflow: hidden;
     }
 
     .wrapper::before {
@@ -39,10 +39,19 @@
       left: -3px;
       right: -3px;
       bottom: -3px;
-      border-radius: 23px;
       background: linear-gradient(270deg, red, blue, lime, purple);
+      border-radius: 23px;
       z-index: -1;
       animation: rgb 6s linear infinite;
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+      padding: 3px;
     }
 
     @keyframes rgb {
