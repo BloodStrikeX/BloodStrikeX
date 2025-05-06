@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Language Selection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #111;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      position: relative;
+      padding: 30px;
+      border-radius: 20px;
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      z-index: 10;
+      max-width: 90%;
+      width: 350px;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: linear-gradient(270deg, red, blue, lime, purple);
+      border-radius: 23px;
+      z-index: -1;
+      animation: rgbBorder 5s linear infinite;
+    }
+
+    @keyframes rgbBorder {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    /* Particle styles */
+    .particle {
+      position: absolute;
+      font-size: 20px;
+      color: rgba(255,255,255,0.3);
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles -->
+  <script>
+    const icons = ['fa-star', 'fa-circle', 'fa-heart', 'fa-bolt', 'fa-snowflake'];
+    for (let i = 0; i < 40; i++) {
+      const particle = document.createElement('i');
+      const icon = icons[Math.floor(Math.random() * icons.length)];
+      particle.className = `fas ${icon} particle`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDuration = `${2 + Math.random() * 5}s`;
+      particle.style.fontSize = `${12 + Math.random() * 20}px`;
+      document.body.appendChild(particle);
+    }
+  </script>
+
+  <!-- Main Language Box -->
+  <div class="container">
+    <h1>زبان خود را انتخاب کنید<br>Choose your language</h1>
+    <button onclick="window.location.href='mainpageFA.html'">فارسی</button>
+    <button onclick="window.location.href='mainpageEN.html'">English</button>
+  </div>
+
+</body>
+</html>
