@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
   <meta charset="UTF-8">
   <title>Language Selection</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
   <style>
     * {
       margin: 0;
@@ -16,117 +12,110 @@
     }
 
     body {
+      background: url('images/LanguagePageBG.png') no-repeat center center fixed;
+      background-size: cover;
       height: 100vh;
-      background: #111;
-      overflow: hidden;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-family: 'Segoe UI', sans-serif;
+      align-items: center;
+      font-family: sans-serif;
     }
 
-    .container {
+    .wrapper {
       position: relative;
-      padding: 30px;
+      background: #111;
+      padding: 30px 20px;
       border-radius: 20px;
-      background: #1e1e1e;
-      color: white;
       text-align: center;
-      z-index: 10;
-      max-width: 90%;
-      width: 350px;
+      color: #fff;
+      z-index: 1;
       border: 3px solid transparent;
-      background-clip: padding-box;
     }
 
-    .container::before {
-      content: "";
+    .wrapper::before {
+      content: '';
       position: absolute;
       top: -3px;
       left: -3px;
       right: -3px;
       bottom: -3px;
-      background: linear-gradient(270deg, red, blue, lime, purple);
       border-radius: 23px;
+      background: linear-gradient(270deg, red, blue, lime, purple);
       z-index: -1;
-      animation: rgbBorder 5s linear infinite;
+      animation: rgb 6s linear infinite;
     }
 
-    @keyframes rgbBorder {
+    @keyframes rgb {
       0% { filter: hue-rotate(0deg); }
       100% { filter: hue-rotate(360deg); }
     }
 
     h1 {
       font-size: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      line-height: 1.6;
     }
 
-    button {
-      margin: 10px;
-      padding: 12px 25px;
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .lang-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px 20px;
       font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background: #333;
-      color: white;
+      color: #fff;
+      background: #222;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      position: relative;
       cursor: pointer;
+      z-index: 1;
       transition: 0.3s;
     }
 
-    button:hover {
-      background: #555;
-    }
-
-    /* Particle styles */
-    .particle {
+    .lang-btn::before {
+      content: '';
       position: absolute;
-      font-size: 20px;
-      color: rgba(255,255,255,0.3);
-      animation: fall linear infinite;
-      z-index: 1;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 14px;
+      z-index: -1;
+      animation: rgb 4s linear infinite;
     }
 
-    @keyframes fall {
-      0% {
-        transform: translateY(-50px);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh);
-        opacity: 0;
-      }
+    .btn-fa::before {
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
     }
 
-    @media (max-width: 600px) {
-      .container {
-        width: 90%;
+    .btn-en::before {
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+    }
+
+    .lang-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 500px) {
+      .buttons {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Particles -->
-  <script>
-    const icons = ['fa-star', 'fa-circle', 'fa-heart', 'fa-bolt', 'fa-snowflake'];
-    for (let i = 0; i < 40; i++) {
-      const particle = document.createElement('i');
-      const icon = icons[Math.floor(Math.random() * icons.length)];
-      particle.className = `fas ${icon} particle`;
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.animationDuration = `${2 + Math.random() * 5}s`;
-      particle.style.fontSize = `${12 + Math.random() * 20}px`;
-      document.body.appendChild(particle);
-    }
-  </script>
-
-  <!-- Main Language Box -->
-  <div class="container">
+  <div class="wrapper">
     <h1>زبان خود را انتخاب کنید<br>Choose your language</h1>
-    <button onclick="window.location.href='mainpageFA.html'">فارسی</button>
-    <button onclick="window.location.href='mainpageEN.html'">English</button>
+    <div class="buttons">
+      <button class="lang-btn btn-fa" onclick="window.location.href='mainpageFA.html'">فارسی</button>
+      <button class="lang-btn btn-en" onclick="window.location.href='mainpageEN.html'">English</button>
+    </div>
   </div>
-
 </body>
 </html>
