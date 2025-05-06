@@ -14,7 +14,7 @@
     body {
       background: url('images/LanguagePageBG.png') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      min-height: 100dvh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,12 +23,13 @@
 
     .wrapper {
       position: relative;
-      background: rgba(0, 0, 0, 0.6);
+      background: #111;
       padding: 30px 20px;
       border-radius: 20px;
       text-align: center;
       color: #fff;
       z-index: 1;
+      border: 3px solid transparent;
     }
 
     .wrapper::before {
@@ -39,22 +40,14 @@
       right: -3px;
       bottom: -3px;
       border-radius: 23px;
-      background: conic-gradient(
-        from 0deg,
-        #ff0000,
-        #ff9900,
-        #33cc33,
-        #0066ff,
-        #cc00cc,
-        #ff0000
-      );
+      background: linear-gradient(270deg, red, blue, lime, purple);
       z-index: -1;
-      animation: rotate 4s linear infinite;
+      animation: rgb 6s linear infinite;
     }
 
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes rgb {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
     }
 
     h1 {
@@ -77,7 +70,7 @@
       font-size: 16px;
       color: #fff;
       background: #222;
-      border: none;
+      border: 2px solid transparent;
       border-radius: 12px;
       position: relative;
       cursor: pointer;
@@ -85,12 +78,24 @@
       transition: 0.3s;
     }
 
-    .btn-fa {
-      background: linear-gradient(45deg, #ff4e50, #f9d423);
+    .lang-btn::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 14px;
+      z-index: -1;
+      animation: rgb 4s linear infinite;
     }
 
-    .btn-en {
-      background: linear-gradient(45deg, #24c6dc, #514a9d);
+    .btn-fa::before {
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+    }
+
+    .btn-en::before {
+      background: linear-gradient(45deg, #ff512f, #dd2476);
     }
 
     .lang-btn:hover {
