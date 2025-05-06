@@ -23,13 +23,12 @@
 
     .wrapper {
       position: relative;
-      background: rgba(0, 0, 0, 0.6); /* پس‌زمینه نیمه شفاف */
+      background: rgba(0, 0, 0, 0.6);
       padding: 30px 20px;
       border-radius: 20px;
       text-align: center;
       color: #fff;
       z-index: 1;
-      overflow: hidden;
     }
 
     .wrapper::before {
@@ -39,24 +38,23 @@
       left: -3px;
       right: -3px;
       bottom: -3px;
-      background: linear-gradient(270deg, red, blue, lime, purple);
       border-radius: 23px;
+      background: conic-gradient(
+        from 0deg,
+        #ff0000,
+        #ff9900,
+        #33cc33,
+        #0066ff,
+        #cc00cc,
+        #ff0000
+      );
       z-index: -1;
-      animation: rgb 6s linear infinite;
-      mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0); 
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask-composite: destination-out;
-      padding: 3px;
+      animation: rotate 4s linear infinite;
     }
 
-    @keyframes rgb {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     h1 {
@@ -79,7 +77,7 @@
       font-size: 16px;
       color: #fff;
       background: #222;
-      border: 2px solid transparent;
+      border: none;
       border-radius: 12px;
       position: relative;
       cursor: pointer;
@@ -87,24 +85,12 @@
       transition: 0.3s;
     }
 
-    .lang-btn::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 14px;
-      z-index: -1;
-      animation: rgb 4s linear infinite;
+    .btn-fa {
+      background: linear-gradient(45deg, #ff4e50, #f9d423);
     }
 
-    .btn-fa::before {
-      background: linear-gradient(45deg, #00c6ff, #0072ff);
-    }
-
-    .btn-en::before {
-      background: linear-gradient(45deg, #ff512f, #dd2476);
+    .btn-en {
+      background: linear-gradient(45deg, #24c6dc, #514a9d);
     }
 
     .lang-btn:hover {
