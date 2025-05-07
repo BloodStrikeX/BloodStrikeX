@@ -43,11 +43,18 @@
 
     .attachment-info h2 {
       margin-top: 0;
-      color: #ff9900;
+    }
+
+    .attachment-info h2 strong {
+      color: #ff9900; /* Orange for 'Attachment:' */
+    }
+
+    .attachment-info h2 span {
+      color: #00ffcc; /* Greenish-teal for build name */
     }
 
     .attachment-info p {
-      color: #00ffff;
+      color: #00ffff; /* Cyan/blue for description */
     }
 
     .attachment-info h3 {
@@ -61,11 +68,15 @@
 
     .attachment-info li {
       margin-bottom: 8px;
-      color: #ff0000;
+      font-size: 15px;
     }
 
     .attachment-info li strong {
       color: #ffffff;
+    }
+
+    .attachment-info li span {
+      color: #ff0000;
     }
 
     .note {
@@ -81,19 +92,19 @@
     <img class="attachment-image" src="../Guns/svd-attachment.jpg" alt="SVD Attachment" />
     
     <div class="attachment-info">
-      <h2>Attachment: Middle Range Build</h2>
-      <p>Optimized for medium-range combat, providing good control and accuracy.</p>
+      <h2><strong>Attachment:</strong> <span>Middle Range Build</span></h2>
+      <p>Optimized for versatility and accuracy in medium-range encounters.</p>
       <h3>Gun: SVD</h3>
       <ul>
-        <li><strong>Muzzle:</strong> Precision Suppressor</li>
-        <li><strong>Barrel:</strong> Extended Barrel</li>
-        <li><strong>Underbarrel:</strong> Lengthened Vertical Grip</li>
-        <li><strong>Optic:</strong> 4x Combat Sight</li>
-        <li><strong>Stock:</strong> Sniper Rifle Stock</li>
-        <li><strong>Magazine:</strong> 20-Round Mag</li>
-        <li><strong>Action:</strong> High-pressure Action</li>
+        <li><strong>Muzzle:</strong> <span>Precision Suppressor</span></li>
+        <li><strong>Barrel:</strong> <span>Extended Barrel</span></li>
+        <li><strong>Underbarrel:</strong> <span>Lengthened Vertical Grip</span></li>
+        <li><strong>Optic:</strong> <span>4x Combat Sight</span></li>
+        <li><strong>Stock:</strong> <span>Sniper Rifle Stock</span></li>
+        <li><strong>Magazine:</strong> <span>20-Round Mag</span></li>
+        <li><strong>Action:</strong> <span>High-pressure Action</span></li>
       </ul>
-      <p class="note">⚠️ This build is not suitable for long-range sniping. It performs best in mid-range combat scenarios.</p>
+      <p class="note">🪛 This build is great for mid-range but not suitable for long-range sniping engagements.</p>
     </div>
   </div>
 </body>
