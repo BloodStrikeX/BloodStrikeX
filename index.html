@@ -23,13 +23,12 @@
 
     .wrapper {
       position: relative;
-      background: rgba(0, 0, 0, 0.6); /* پس‌زمینه نیمه شفاف */
       padding: 30px 20px;
       border-radius: 20px;
       text-align: center;
       color: #fff;
+      background: rgba(0, 0, 0, 0.6); /* نیمه‌شفاف */
       z-index: 1;
-      overflow: hidden;
     }
 
     .wrapper::before {
@@ -39,24 +38,31 @@
       left: -3px;
       right: -3px;
       bottom: -3px;
-      background: linear-gradient(270deg, red, blue, lime, purple);
       border-radius: 23px;
+      background: conic-gradient(
+        from 0deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        magenta,
+        red
+      );
       z-index: -1;
-      animation: rgb 6s linear infinite;
-      mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0); 
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask-composite: destination-out;
+      animation: rotateBorder 4s linear infinite;
       padding: 3px;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
     }
 
-    @keyframes rgb {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
+    @keyframes rotateBorder {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     h1 {
@@ -79,32 +85,10 @@
       font-size: 16px;
       color: #fff;
       background: #222;
-      border: 2px solid transparent;
+      border: none;
       border-radius: 12px;
-      position: relative;
       cursor: pointer;
-      z-index: 1;
       transition: 0.3s;
-    }
-
-    .lang-btn::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 14px;
-      z-index: -1;
-      animation: rgb 4s linear infinite;
-    }
-
-    .btn-fa::before {
-      background: linear-gradient(45deg, #00c6ff, #0072ff);
-    }
-
-    .btn-en::before {
-      background: linear-gradient(45deg, #ff512f, #dd2476);
     }
 
     .lang-btn:hover {
@@ -122,8 +106,8 @@
   <div class="wrapper">
     <h1>زبان خود را انتخاب کنید<br>Choose your language</h1>
     <div class="buttons">
-      <button class="lang-btn btn-fa" onclick="window.location.href='mainpageFA.html'">فارسی</button>
-      <button class="lang-btn btn-en" onclick="window.location.href='mainpageEN.html'">English</button>
+      <button class="lang-btn" onclick="window.location.href='mainpageFA.html'">فارسی</button>
+      <button class="lang-btn" onclick="window.location.href='mainpageEN.html'">English</button>
     </div>
   </div>
 </body>
