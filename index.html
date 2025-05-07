@@ -1,114 +1,134 @@
 <!DOCTYPE html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>Language Selection</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: url('images/LanguagePageBG.png') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: sans-serif;
-    }
-
-    .wrapper {
-      position: relative;
-      padding: 30px 20px;
-      border-radius: 20px;
-      text-align: center;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.6); /* نیمه‌شفاف */
-      z-index: 1;
-    }
-
-    .wrapper::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      border-radius: 23px;
-      background: conic-gradient(
-        from 0deg,
-        red,
-        orange,
-        yellow,
-        lime,
-        cyan,
-        blue,
-        magenta,
-        red
-      );
-      z-index: -1;
-      animation: rotateBorder 4s linear infinite;
-      padding: 3px;
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-    }
-
-    @keyframes rotateBorder {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    h1 {
-      font-size: 20px;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: space-around;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .lang-btn {
-      flex: 1;
-      min-width: 120px;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #fff;
-      background: #222;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .lang-btn:hover {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 500px) {
-      .buttons {
-        flex-direction: column;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <h1>زبان خود را انتخاب کنید<br>Choose your language</h1>
-    <div class="buttons">
-      <button class="lang-btn" onclick="window.location.href='mainpageFA.html'">فارسی</button>
-      <button class="lang-btn" onclick="window.location.href='mainpageEN.html'">English</button>
-    </div>
-  </div>
-</body>
-</html>
+ <html lang="fa">
+ <head>
+   <meta charset="UTF-8">
+   <title>Language Selection</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+ 
+     body {
+       background: url('images/LanguagePageBG.png') no-repeat center center fixed;
+       background-size: cover;
+       min-height: 100dvh;
+       height: 100vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       font-family: sans-serif;
+     }
+ 
+     .wrapper {
+       position: relative;
+       background: #111;
+       background: rgba(0, 0, 0, 0.6); /* پس‌زمینه نیمه شفاف */
+       padding: 30px 20px;
+       border-radius: 20px;
+       text-align: center;
+       color: #fff;
+       z-index: 1;
+       border: 3px solid transparent;
+       overflow: hidden;
+     }
+ 
+     .wrapper::before {
+       content: '';
+       position: absolute;
+       top: -3px;
+       left: -3px;
+       right: -3px;
+       bottom: -3px;
+       border-radius: 23px;
+       background: linear-gradient(270deg, red, blue, lime, purple);
+       border-radius: 23px;
+       z-index: -1;
+       animation: rgb 6s linear infinite;
+       mask: 
+         linear-gradient(#fff 0 0) content-box, 
+         linear-gradient(#fff 0 0); 
+       -webkit-mask: 
+         linear-gradient(#fff 0 0) content-box, 
+         linear-gradient(#fff 0 0);
+       mask-composite: exclude;
+       -webkit-mask-composite: destination-out;
+       padding: 3px;
+     }
+ 
+     @keyframes rgb {
+       0% { filter: hue-rotate(0deg); }
+       100% { filter: hue-rotate(360deg); }
+     }
+ 
+     h1 {
+       font-size: 20px;
+       margin-bottom: 25px;
+       line-height: 1.6;
+     }
+ 
+     .buttons {
+       display: flex;
+       justify-content: space-around;
+       gap: 15px;
+       flex-wrap: wrap;
+     }
+ 
+     .lang-btn {
+       flex: 1;
+       min-width: 120px;
+       padding: 10px 20px;
+       font-size: 16px;
+       color: #fff;
+       background: #222;
+       border: 2px solid transparent;
+       border-radius: 12px;
+       position: relative;
+       cursor: pointer;
+       z-index: 1;
+       transition: 0.3s;
+     }
+ 
+     .lang-btn::before {
+       content: '';
+       position: absolute;
+       top: -2px;
+       left: -2px;
+       right: -2px;
+       bottom: -2px;
+       border-radius: 14px;
+       z-index: -1;
+       animation: rgb 4s linear infinite;
+     }
+ 
+     .btn-fa::before {
+       background: linear-gradient(45deg, #00c6ff, #0072ff);
+     }
+ 
+     .btn-en::before {
+       background: linear-gradient(45deg, #ff512f, #dd2476);
+     }
+ 
+     .lang-btn:hover {
+       opacity: 0.9;
+     }
+ 
+     @media (max-width: 500px) {
+       .buttons {
+         flex-direction: column;
+       }
+     }
+   </style>
+ </head>
+ <body>
+   <div class="wrapper">
+     <h1>زبان خود را انتخاب کنید<br>Choose your language</h1>
+     <div class="buttons">
+       <button class="lang-btn btn-fa" onclick="window.location.href='mainpageFA.html'">فارسی</button>
+       <button class="lang-btn btn-en" onclick="window.location.href='mainpageEN.html'">English</button>
+     </div>
+   </div>
+ </body>
+ </html>
