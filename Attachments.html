@@ -17,6 +17,11 @@
       text-align: center;
       margin-bottom: 30px;
       color: #4CAF50;
+      background: linear-gradient(90deg, #ff0, #0f0, #ff0, #0f0);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 2s linear infinite;
     }
 
     .category {
@@ -27,6 +32,8 @@
       border: 2px solid #4CAF50; /* رنگ حاشیه */
       border-radius: 10px;
       background-color: #1a1a1a;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+      animation: glow 2s infinite alternate;
     }
 
     .guns {
@@ -45,7 +52,7 @@
       padding: 10px;
       transition: transform 0.3s ease;
       z-index: 0;
-      border: 2px solid #4CAF50;
+      border: 2px solid transparent;
     }
 
     .card img {
@@ -60,10 +67,30 @@
       font-weight: bold;
       font-size: 16px;
       color: #4CAF50;
+      background: linear-gradient(90deg, #ff0, #0f0, #ff0, #0f0);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 2s linear infinite;
     }
 
     .card:hover {
       transform: scale(1.05);
+      border-color: #4CAF50;
+    }
+
+    @keyframes rainbowText {
+      0% {background-position: 0%;}
+      100% {background-position: 200%;}
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+      }
+      to {
+        box-shadow: 0 0 25px rgba(76, 175, 80, 1);
+      }
     }
   </style>
 </head>
@@ -86,7 +113,6 @@
       <a class="card" href="GunsHtml/Vss.html"><img src="Guns/Vss.jpg"><span>Vss</span></a>
       <a class="card" href="GunsHtml/Mcx.html"><img src="Guns/Mcx.jpg"><span>Mcx</span></a>
       <a class="card" href="GunsHtml/Galil.html"><img src="Guns/Galil.jpg"><span>Galil</span></a>
-      <!-- بقیه گان‌های Rifle -->
     </div>
   </div>
 
@@ -100,7 +126,6 @@
       <a class="card" href="GunsHtml/Inp9.html"><img src="Guns/Inp9.jpg"><span>Inp9</span></a>
       <a class="card" href="GunsHtml/P90.html"><img src="Guns/P90.jpg"><span>P90</span></a>
       <a class="card" href="GunsHtml/Uzi.html"><img src="Guns/Uzi.jpg"><span>Uzi</span></a>
-      <!-- بقیه گان‌های SMG -->
     </div>
   </div>
 
@@ -110,7 +135,6 @@
     <div class="guns">
       <a class="card" href="GunsHtml/Origin-12.html"><img src="Guns/Origin-12.jpg"><span>Origin-12</span></a>
       <a class="card" href="GunsHtml/Mp155.html"><img src="Guns/Mp155.jpg"><span>Mp155</span></a>
-      <!-- بقیه گان‌های Shotgun -->
     </div>
   </div>
 
@@ -120,11 +144,10 @@
     <div class="guns">
       <a class="card" href="GunsHtml/Pkm.html"><img src="Guns/Pkm.jpg"><span>Pkm</span></a>
       <a class="card" href="GunsHtml/Minigun.html"><img src="Guns/Minigun.jpg"><span>Minigun</span></a>
-      <!-- بقیه گان‌های LMG -->
     </div>
   </div>
 
-      <!-- دسته Sniper -->
+  <!-- دسته Sniper -->
   <div class="category">
     <h2>Snipers</h2>
     <div class="guns">
@@ -133,18 +156,17 @@
       <a class="card" href="GunsHtml/Kar98k.html"><img src="Guns/Kar98k.jpg"><span>Kar98k</span></a>
       <a class="card" href="GunsHtml/Svd.html"><img src="Guns/Svd.jpg"><span>Svd</span></a>
       <a class="card" href="GunsHtml/Bow.html"><img src="Guns/Bow.jpg"><span>Bow</span></a>
-      <!-- بقیه گان‌های Sniper -->
     </div>
   </div>
 
-  <!-- دسته Secondary -->
+  <!-- دسته Sniper -->
   <div class="category">
     <h2>Snipers</h2>
     <div class="guns">
       <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.jpg"><span>Glock</span></a>
       <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.jpg"><span>Deagle</span></a>
       <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.jpg"><span>Magnum</span></a>
-      <!-- بقیه گان‌های Secondary -->
+      <!-- بقیه گان‌های Sniper -->
     </div>
   </div>
 </body>
