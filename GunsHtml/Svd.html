@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attachment Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-image: url('../images/AttachmentBG.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #00ffcc;
+    }
+
+    .attachment-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      backdrop-filter: brightness(0.4);
+      padding: 40px 20px;
+    }
+
+    .attachment-image {
+      width: 300px;
+      height: auto;
+      border: 4px solid #00ffcc;
+      box-shadow: 0 0 20px #00ffcc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .attachment-info {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      box-shadow: 0 0 15px #00ffcc;
+    }
+
+    .attachment-info h2 {
+      margin-top: 0;
+      color: #ff9900;
+    }
+
+    .attachment-info p {
+      color: #00ffff;
+    }
+
+    .attachment-info h3 {
+      color: #ff9900;
+    }
+
+    .attachment-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .attachment-info li {
+      margin-bottom: 8px;
+      color: #ff0000;
+    }
+
+    .attachment-info li strong {
+      color: #ffffff;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ffff00;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="attachment-container">
+    <img class="attachment-image" src="../Guns/svd-attachment.jpg" alt="SVD Attachment" />
+    
+    <div class="attachment-info">
+      <h2>Attachment: Middle Range Build</h2>
+      <p>Optimized for medium-range combat, providing good control and accuracy.</p>
+      <h3>Gun: SVD</h3>
+      <ul>
+        <li><strong>Muzzle:</strong> Precision Suppressor</li>
+        <li><strong>Barrel:</strong> Extended Barrel</li>
+        <li><strong>Underbarrel:</strong> Lengthened Vertical Grip</li>
+        <li><strong>Optic:</strong> 4x Combat Sight</li>
+        <li><strong>Stock:</strong> Sniper Rifle Stock</li>
+        <li><strong>Magazine:</strong> 20-Round Mag</li>
+        <li><strong>Action:</strong> High-pressure Action</li>
+      </ul>
+      <p class="note">⚠️ This build is not suitable for long-range sniping. It performs best in mid-range combat scenarios.</p>
+    </div>
+  </div>
+</body>
+</html>
