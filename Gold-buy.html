@@ -30,7 +30,7 @@
 
   <!-- Navbar -->
   <div class="navbar">
-    <span class="menu-toggle" onclick="toggleMenu()">☰ منو</span>
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
     <div class="menu" id="menu">
       <a href="index.html">خانه</a>
       <a href="Gold-buy.html">آموزش خرید گلد</a>
@@ -62,12 +62,13 @@
       font-size: 26px;
       cursor: pointer;
       user-select: none;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, color 0.3s ease;
       color: #f5ba1a;
     }
 
-    .menu-toggle:hover {
-      transform: rotate(90deg);
+    .menu-toggle.open {
+      color: #ff4d4d; /* تغییر رنگ به قرمز */
+      transform: rotate(90deg); /* چرخش */
     }
 
     .menu {
@@ -99,25 +100,6 @@
       background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
     }
 
-    .menu a::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      width: 10px;
-      height: 10px;
-      background-color: #f5ba1a;
-      border-radius: 50%;
-      opacity: 0;
-      transform: translateY(-50%);
-      transition: all 0.3s ease;
-    }
-
-    .menu a:hover::before {
-      opacity: 1;
-      transform: translateY(-50%) scale(1.5);
-    }
-
     .menu .disabled {
       color: #888;
       cursor: not-allowed;
@@ -138,14 +120,31 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+      const toggle = document.getElementById('menuToggle');
+      
+      // تغییر حالت نمایش منو
+      const isMenuOpen = menu.style.display === 'flex';
+      menu.style.display = isMenuOpen ? 'none' : 'flex';
+      
+      // تغییر آیکون ☰ به X
+      if (isMenuOpen) {
+        toggle.textContent = '☰'; // بازگشت به آیکون ☰
+        toggle.classList.remove('open'); // حذف کلاس برای استایل
+      } else {
+        toggle.textContent = '❌'; // تغییر به ایکس قرمز
+        toggle.classList.add('open'); // اضافه کردن کلاس برای استایل
+      }
     }
 
+    // بستن منو در کلیک بیرون از آن
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menu');
-      const toggle = document.querySelector('.menu-toggle');
+      const toggle = document.getElementById('menuToggle');
+      
       if (!menu.contains(e.target) && !toggle.contains(e.target)) {
         menu.style.display = 'none';
+        toggle.textContent = '☰'; // بازگشت به آیکون ☰
+        toggle.classList.remove('open'); // حذف کلاس
       }
     });
   </script>
@@ -156,11 +155,11 @@
     
     <!-- گام 1 -->
     <div class="max-w-4xl mx-auto mb-12">
-      <img src="images/step1.jpg" alt="مرحله 1" class="w-full h-auto rounded-lg mb-4">
-      <h3 class="text-xl font-bold mb-4">گام اول: وارد سایت شوید</h3>
       <a href="https://g4a4.com/" target="_blank" class="rgb-border-button">
         ابتدا روی این متن کلیک کنید تا وارد سایت خرید بشید.
       </a>
+      <img src="images/step1.jpg" alt="مرحله 1" class="w-full h-auto rounded-lg mb-4">
+      <h3 class="text-xl font-bold mb-4">گام اول: وارد سایت شوید</h3>
     </div>
 
     <!-- گام 2 -->
