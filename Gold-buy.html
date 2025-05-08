@@ -21,55 +21,6 @@
       z-index: -1;
       pointer-events: none;
     }
-
-    .rgb-border-button {
-      position: relative;
-      display: inline-block;
-      padding: 1rem 2rem;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      background-color: #1f2937;
-      z-index: 0;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .rgb-border-button::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, red, green, red);
-      background-size: 400%;
-      animation: rgbRotate 6s linear infinite;
-      z-index: -1;
-      filter: blur(10px);
-    }
-
-    .rgb-border-button::after {
-      content: "";
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
-      background-color: #1f2937;
-      border-radius: 0.5rem;
-      z-index: -1;
-    }
-
-    .rgb-border-button:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes rgbRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -77,83 +28,128 @@
   <!-- Fire Effect -->
   <canvas id="fireCanvas"></canvas>
 
-<div class="navbar">
-  <span class="menu-toggle" onclick="toggleMenu()">☰ منو</span>
-  <div class="menu" id="menu">
-    <a href="index.html">خانه</a>
-    <a href="Gold-buy.html">آموزش خرید گلد</a>
-    <a href="Attachments.html">اتچمنت‌ها</a>
-    <a class="disabled">به‌زودی...</a>
+  <!-- Navbar -->
+  <div class="navbar">
+    <span class="menu-toggle" onclick="toggleMenu()">☰ منو</span>
+    <div class="menu" id="menu">
+      <a href="index.html">خانه</a>
+      <a href="Gold-buy.html">آموزش خرید گلد</a>
+      <a href="Attachments.html">اتچمنت‌ها</a>
+      <a class="disabled">به‌زودی...</a>
+    </div>
   </div>
-</div>
 
-<style>
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    direction: rtl;
-    background: #f5f5f5;
-  }
-
-  .navbar {
-    background-color: #222;
-    color: #fff;
-    padding: 10px 20px;
-    position: relative;
-  }
-
-  .menu-toggle {
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .menu {
-    background-color: #333;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    width: 200px;
-    display: none;
-    flex-direction: column;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    z-index: 100;
-  }
-
-  .menu a {
-    padding: 12px 16px;
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px solid #444;
-    transition: background 0.3s;
-  }
-
-  .menu a:hover {
-    background-color: #555;
-  }
-
-  .menu .disabled {
-    color: #888;
-    cursor: default;
-  }
-</style>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-  }
-
-  document.addEventListener('click', function(e) {
-    const menu = document.getElementById('menu');
-    const toggle = document.querySelector('.menu-toggle');
-    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-      menu.style.display = 'none';
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      direction: rtl;
+      background: linear-gradient(135deg, #1e1e1e, #282828);
+      color: #fff;
     }
-  });
-</script>
-  
+
+    .navbar {
+      background: rgb(36,36,36);
+      background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(45,45,45,1) 50%, rgba(36,36,36,1) 100%);
+      color: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+      color: #f5ba1a;
+    }
+
+    .menu-toggle:hover {
+      transform: rotate(90deg);
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(50, 50, 50, 0.9);
+      backdrop-filter: blur(10px);
+      width: 230px;
+      display: none;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .menu a {
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .menu a:hover {
+      color: #f5ba1a;
+      background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
+    }
+
+    .menu a::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+      background-color: #f5ba1a;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+    }
+
+    .menu a:hover::before {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.5);
+    }
+
+    .menu .disabled {
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+
   <!-- آموزش خرید گلد -->
   <section class="py-16 px-6 text-center">
     <h1 class="text-4xl font-bold mb-8">آموزش خرید گلد بازی بلاد استرایک</h1>
@@ -171,29 +167,22 @@
     <div class="max-w-4xl mx-auto mb-12">
       <img src="images/step2.jpg" alt="مرحله 2" class="w-full h-auto rounded-lg mb-4">
       <h3 class="text-xl font-bold mb-2">گام دوم: انتخاب بازی بلاد استرایک</h3>
-      <p class="text-gray-400">پس از ورود به سایت، روی گلد بازی بلاد استرایک کلیک کنید یا از منوی سرچ بنویسید بلاد استرایک.</p>
+      <p class="text-gray-400">پس از ورود به سایت، روی گلد بازی بلاد استرایک کلیک کنید یا از منوی سرچ بنویسید بلاد استرایک[...]
     </div>
 
     <!-- گام 3 -->
     <div class="max-w-4xl mx-auto mb-12">
       <img src="images/step3.jpg" alt="مرحله 3" class="w-full h-auto rounded-lg mb-4">
       <h3 class="text-xl font-bold mb-2">گام سوم: انتخاب بازی</h3>
-      <p class="text-gray-400">توی منوی سرچ بنویسید بلاد استرایک و روش کلیک کنید تا وارد صفحه‌اش بشید.
-      سپس ریجن بازی رو انتخاب کنید توجه اگه نسخه اصلی بازی رو دارید و سرور اسیا , امریکا , اروپا هستید آزاد رو انتخاب کنید
-
-سپس روی مقدار گلد یا افری که میخواید بخرید کلیک کنید و پایین تر ایدی گیمتون رو وارد کنید و روی افزودن به سبد خرید کلیک کنید
-
-بعدش از صفحه اصلی روی سبد خرید کلیک کنید</p>
+      <p class="text-gray-400">توی منوی سرچ بنویسید بلاد استرایک و روش کلیک کنید تا وارد صفحه‌اش بشید و سپس ریجن بازی رو انتخاب کنید.</p>
     </div>
 
     <!-- گام 4 -->
     <div class="max-w-4xl mx-auto mb-12">
       <img src="images/step4.jpg" alt="مرحله 4" class="w-full h-auto rounded-lg mb-4">
       <h3 class="text-xl font-bold mb-2">گام چهارم: تکمیل خرید</h3>
-      <p class="text-gray-400">سپس جزئیات مانند نام، نام خانوادگی و شماره تلفن خود را وارد کنید. پس از اعمال کد تخفیف، اقدام به پرداخت کنید.</p>
-      <p class="text-gray-400 font-bold">کد تخفیف: <span class="text-red-500">BloodStrikeFarsi</span></p>
+      <p class="text-gray-400">سپس جزئیات مانند نام، نام خانوادگی و شماره تلفن خود را وارد کنید و خرید را نهایی کنید.</p>
     </div>
-
   </section>
 
   <!-- Footer -->
