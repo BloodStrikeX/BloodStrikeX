@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفع تحریم ها</title>
+    <style>
+        @keyframes borderAnimation {
+            0% {
+                border-color: rgb(255, 0, 0); /* قرمز */
+            }
+            20% {
+                border-color: rgb(3, 252, 232); /* آبی */
+            }
+            40% {
+                border-color: rgb(232, 88, 88); /* سبز */
+            }
+            60% {
+                border-color: rgb(153, 70, 148); /* بنفش */
+            }
+            80% {
+                border-color: rgb(232, 163, 88); /* نارنجی */
+            }
+            100% {
+                border-color: rgb(165, 252, 3); /* سبز روشن */
+            }
+        }
 
+        body {
+            font-family: 'Vazir', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1b2a; /* پس‌زمینه تیره */
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .booster-container {
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .booster-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1b263b; /* پس‌زمینه کادرها */
+            border: 3px solid; /* ضخامت خط دور مربع */
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            animation: borderAnimation 3s infinite; /* انیمیشن رنگ خط دور */
+        }
+
+        .booster-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 255, 128, 0.5);
+        }
+
+        .booster-item.disabled {
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        .booster-image {
+            width: 80px;
+            height: 80px;
+            background-color: #34a0a4; /* رنگ مربع */
+            border: 3px solid; /* ضخامت خط دور مربع */
+            border-radius: 5px;
+            flex-shrink: 0;
+            animation: borderAnimation 3s infinite; /* انیمیشن رنگ خط دور مربع */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* تصاویر برای هر مربع */
+        .booster-item:nth-child(1) .booster-image {
+            background-image: url('images/pingboosterImage1.jpg');
+        }
+
+        .booster-item:nth-child(2) .booster-image {
+            background-image: url('images/pingboosterImage2.jpg');
+        }
+
+        .booster-item:nth-child(3) .booster-image {
+            background-image: url('images/pingboosterImage3.jpg');
+        }
+
+        .booster-item:nth-child(4) .booster-image {
+            background-image: url('images/pingboosterImage4.jpg');
+        }
+
+        .booster-description {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .booster-description h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: #ff0000; /* متن قرمز */
+        }
+
+        .booster-description h4 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: #00ff7f; /* متن سبز روشن */
+        }
+
+        .booster-description p {
+            margin: 0;
+            font-size: 14px;
+            color: #ff0000; /* متن قرمز */
+        }
+    </style>
+</head>
+<body>
+    <div class="booster-container">
+        <a class="booster-item" href="filename1.html">
+            <div class="booster-image"></div>
+            <div class="booster-description">
+                <h4>QuickPing</h4>
+                <p>بهترین رفع تحریم برای بازی با پینگ ثابت و مناسب برای اینستا گردی</p>
+            </div>
+        </a>
+        <a class="booster-item disabled" href="#">
+            <div class="booster-image"></div>
+            <div class="booster-description">
+                <h4>LagSlayer</h4>
+                <p>برنامه رفع تحریم مناسب گیم با پینگ متوسط</p>
+            </div>
+        </a>
+        <a class="booster-item disabled" href="#">
+            <div class="booster-image"></div>
+            <div class="booster-description">
+                <h4>RadarGame</h4>
+                <p>نسخه جدید اپلیکیشن رفع تحریم رادار گیم</p>
+            </div>
+        </a>
+        <a class="booster-item disabled" href="#">
+            <div class="booster-image"></div>
+            <div class="booster-description">
+                <h4>به زودی</h4>
+                <p>جزئیات بیشتر به زودی</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
