@@ -58,3 +58,7 @@ button {
 button:hover {
     background-color: #218838;
 }
+
+#start-button {
+    margin-top: 20px;
+}
