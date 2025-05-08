@@ -1,6 +1,7 @@
 const cupsContainer = document.getElementById("cups-container");
 const startButton = document.getElementById("start-button");
 const scoreDisplay = document.getElementById("score");
+const message = document.getElementById("message");
 
 let score = 0;
 let numberOfCups = 3;
@@ -30,11 +31,13 @@ function handleCupClick(index) {
     if (index === correctCupIndex) {
         score++;
         numberOfCups++;
-        alert("آفرین! درست حدس زدی!");
+        message.textContent = "آفرین! درست حدس زدی!";
     } else {
-        alert("اشتباهه! بازی تمام شد.");
-        score = 0;
-        numberOfCups = 3;
+        message.textContent = "اشتباهه! بازی تمام شد. روی 'شروع مجدد' کلیک کنید.";
+        startButton.textContent = "شروع مجدد";
+        startButton.style.display = "block";
+        cupsContainer.style.display = "none";
+        return;
     }
     scoreDisplay.textContent = score;
     shuffleCups();
@@ -44,5 +47,8 @@ startButton.addEventListener("click", () => {
     score = 0;
     numberOfCups = 3;
     scoreDisplay.textContent = score;
+    message.textContent = "روی لیوانی که توپ داخل آن بود کلیک کنید!";
+    startButton.style.display = "none";
+    cupsContainer.style.display = "flex";
     shuffleCups();
 });
