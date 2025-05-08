@@ -35,14 +35,14 @@
   <!-- Fire Effect -->
   <canvas id="fireCanvas"></canvas>
 
-<!-- Navbar -->
+  <!-- Navbar -->
 <div class="navbar">
-  <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+  <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰ Menu</span>
   <div class="menu" id="menu">
-    <a href="index.html">خانه</a>
-    <a href="Gold-buy.html">آموزش خرید گلد</a>
-    <a href="Attachments.html">اتچمنت‌ها</a>
-    <a href="PingBoosters.html">رفع تحریم ها</a>
+    <a href="index.html">Home</a>
+    <a href="Gold-buy.html">Gold Purchase Guide</a>
+    <a href="Attachments.html">Attachments</a>
+    <a class="disabled">Coming Soon...</a>
   </div>
 </div>
 
@@ -66,14 +66,14 @@
   }
 
   .menu-toggle.open {
-    color: #ff4d4d; /* تغییر رنگ به قرمز */
-    transform: rotate(90deg); /* چرخش */
+    color: #ff4d4d; /* Red color when open */
+    transform: rotate(90deg); /* Rotation */
   }
 
   .menu {
     position: absolute;
     top: 60px;
-    right: 20px;
+    left: 20px;
     background: rgba(50, 50, 50, 0.9);
     backdrop-filter: blur(10px);
     width: 230px;
@@ -81,6 +81,7 @@
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s ease;
   }
 
   .menu a {
@@ -102,6 +103,17 @@
     color: #888;
     cursor: not-allowed;
   }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
 <script>
@@ -109,29 +121,29 @@
     const menu = document.getElementById('menu');
     const toggle = document.getElementById('menuToggle');
     
-    // تغییر حالت نمایش منو
+    // Toggle menu visibility
     const isMenuOpen = menu.style.display === 'flex';
     menu.style.display = isMenuOpen ? 'none' : 'flex';
     
-    // تغییر آیکون ☰ به X
+    // Change icon ☰ to X
     if (isMenuOpen) {
-      toggle.textContent = '☰ Menu'; // بازگشت به آیکون ☰
-      toggle.classList.remove('open'); // حذف کلاس برای استایل
+      toggle.textContent = '☰ Menu'; // Back to ☰
+      toggle.classList.remove('open'); // Remove "open" class
     } else {
-      toggle.textContent = '❌'; // تغییر به ایکس قرمز
-      toggle.classList.add('open'); // اضافه کردن کلاس برای استایل
+      toggle.textContent = '❌'; // Change to X
+      toggle.classList.add('open'); // Add "open" class
     }
   }
 
-  // بستن منو در کلیک بیرون از آن
+  // Close menu when clicking outside
   document.addEventListener('click', function(e) {
     const menu = document.getElementById('menu');
     const toggle = document.getElementById('menuToggle');
     
     if (!menu.contains(e.target) && !toggle.contains(e.target)) {
       menu.style.display = 'none';
-      toggle.textContent = '☰ Menu'; // بازگشت به آیکون ☰
-      toggle.classList.remove('open'); // حذف کلاس
+      toggle.textContent = '☰ Menu'; // Back to ☰
+      toggle.classList.remove('open'); // Remove "open" class
     }
   });
 </script>
