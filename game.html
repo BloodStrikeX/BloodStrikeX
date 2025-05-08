@@ -1,19 +1,158 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بازی پیدا کردن لیوان</title>
-    <link rel="stylesheet" href="game.css">
+  <meta charset="UTF-8">
+  <title>بازی لیوان و توپ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #eef;
+    }
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    #game {
+      margin-top: 50px;
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+
+    .cup {
+      background: radial-gradient(circle at top, #aaa, #333);
+      border-radius: 0 0 50% 50%;
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.8s ease, top 0.8s ease, left 0.8s ease;
+    }
+
+    .ball {
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      transition: opacity 0.5s;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-    <div id="game">
-        <h1>بازی پیدا کردن لیوان</h1>
-        <p id="message">روی دکمه "شروع بازی" کلیک کنید!</p>
-        <div id="cups-container" style="display: none;"></div>
-        <button id="start-button">شروع بازی</button>
-        <p>امتیاز: <span id="score">0</span></p>
-    </div>
-    <script src="game.js"></script>
+  <h1>بازی لیوان و توپ</h1>
+  <div id="game"></div>
+  <div id="message"></div>
+
+  <script>
+    let cupCount = 3;
+    let correctCup = 0;
+    const cupSizeBase = 80;
+    const maxPerRow = 6;
+
+    function createCups(count) {
+      const game = document.getElementById('game');
+      game.innerHTML = '';
+      correctCup = Math.floor(Math.random() * count);
+
+      const spacing = Math.min(window.innerWidth / Math.min(count, maxPerRow), 100);
+      const size = Math.max(cupSizeBase - count * 2, 40);
+
+      for (let i = 0; i < count; i++) {
+        const cup = document.createElement('div');
+        cup.className = 'cup';
+        cup.dataset.index = i;
+        const row = i < maxPerRow ? 0 : 1;
+        const col = i % maxPerRow;
+
+        cup.style.width = `${size}px`;
+        cup.style.height = `${size * 1.2}px`;
+        cup.style.left = `${col * spacing + 30}px`;
+        cup.style.top = `${row * 120}px`;
+
+        const ball = document.createElement('div');
+        ball.className = 'ball';
+        if (i === correctCup) ball.style.opacity = '1';
+        else ball.style.opacity = '0';
+        cup.appendChild(ball);
+
+        game.appendChild(cup);
+      }
+
+      setTimeout(() => {
+        // مخفی کردن توپ
+        document.querySelectorAll('.ball').forEach(b => b.style.opacity = '0');
+        shuffleCups();
+      }, 1500);
+    }
+
+    function shuffleCups() {
+      const cups = Array.from(document.querySelectorAll('.cup'));
+      const positions = cups.map(cup => ({
+        left: parseInt(cup.style.left),
+        top: parseInt(cup.style.top),
+        index: parseInt(cup.dataset.index),
+      }));
+
+      let swaps = 4 + cupCount;
+      let i = 0;
+
+      const interval = setInterval(() => {
+        const a = Math.floor(Math.random() * cups.length);
+        let b;
+        do {
+          b = Math.floor(Math.random() * cups.length);
+        } while (a === b);
+
+        const cupA = cups[a];
+        const cupB = cups[b];
+
+        const temp = {
+          left: cupA.style.left,
+          top: cupA.style.top
+        };
+
+        cupA.style.left = cupB.style.left;
+        cupA.style.top = cupB.style.top;
+        cupB.style.left = temp.left;
+        cupB.style.top = temp.top;
+
+        i++;
+        if (i >= swaps) {
+          clearInterval(interval);
+          setTimeout(() => {
+            cups.forEach(cup => {
+              cup.onclick = () => {
+                if (parseInt(cup.dataset.index) === correctCup) {
+                  document.getElementById('message').textContent = 'درست زدی! لیوان جدید اضافه شد.';
+                  cupCount++;
+                } else {
+                  document.getElementById('message').textContent = 'اشتباه بود! بازی از نو.';
+                  cupCount = 3;
+                }
+                setTimeout(startGame, 1500);
+              };
+            });
+          }, 1000);
+        }
+      }, 1000);
+    }
+
+    function startGame() {
+      document.getElementById('message').textContent = '';
+      createCups(cupCount);
+    }
+
+    startGame();
+  </script>
 </body>
 </html>
