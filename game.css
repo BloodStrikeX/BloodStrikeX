@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+#game {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cups-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.cup {
+    width: 60px;
+    height: 100px;
+    margin: 0 10px;
+    background-color: #007BFF;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cup-ball {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
