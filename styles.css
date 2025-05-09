@@ -1,0 +1,401 @@
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  line-height: 1.8;
+}
+
+.navbar {
+  background: linear-gradient(to right, #111, #222);
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.card-red-gold-border:hover,
+.card-rgb-border:hover,
+.card-green-rgb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #facc15; /* طلایی */
+}
+
+
+
+    #fireCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+  
+
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      direction: rtl;
+      background: linear-gradient(135deg, #1e1e1e, #282828);
+      color: #fff;
+    }
+
+    .navbar {
+      background: rgb(36,36,36);
+      background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(45,45,45,1) 50%, rgba(36,36,36,1) 100%);
+      color: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: #f5ba1a;
+    }
+
+    .menu-toggle.open {
+      color: #ff4d4d; /* تغییر رنگ به قرمز */
+      transform: rotate(90deg); /* چرخش */
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(50, 50, 50, 0.9);
+      backdrop-filter: blur(10px);
+      width: 230px;
+      display: none;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .menu a {
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .menu a:hover {
+      color: #f5ba1a;
+      background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
+    }
+
+    .menu .disabled {
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    direction: rtl;
+    background: #f5f5f5;
+  }
+
+  .navbar {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .menu {
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+
+  .menu a {
+    padding: 12px 16px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: background 0.3s;
+  }
+
+  .menu a:hover {
+    background-color: #555;
+  }
+
+  .menu .disabled {
+    color: #888;
+    cursor: default;
+  }
+
+
+
+  .lava-glow-wrapper {
+    position: relative;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #111827;
+    color: white;
+    overflow: hidden;
+    z-index: 0;
+    text-align: center;
+  }
+
+  .lava-glow-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+      #ff9900, #ff3300, #cc0000, #660000);
+    background-size: 400% 400%;
+    animation: lavaFlow 6s linear infinite;
+    z-index: -2;
+    filter: blur(20px);
+    opacity: 0.4;
+  }
+
+  .lava-glow-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background-color: #111827;
+    border-radius: 1rem;
+    z-index: -1;
+  }
+
+  @keyframes lavaFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .lava-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: orange;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: moveIn 3s ease-in-out infinite;
+  }
+
+  @keyframes moveIn {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--x), var(--y)) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+
+
+.card-red-gold-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-red-gold-border:hover {
+    transform: scale(1.03);
+  }
+
+  .card-red-gold-border::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #cc0000, #ffaa33, #ff6600, #cc0000);
+    background-size: 400%;
+    animation: redGoldBorder 8s linear infinite;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  .card-red-gold-border::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-red-gold-border:hover::after {
+    background-color: #374151; /* Tailwind's bg-gray-700 */
+  }
+
+  @keyframes redGoldBorder {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  .card-rgb-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-rgb-border:hover {
+    transform: scale(1.03);
+  }
+
+  .card-rgb-border::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-size: 400%;
+    animation: rgbBorder 8s linear infinite;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  .card-rgb-border::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-rgb-border:hover::after {
+    background-color: #374151; /* Tailwind's bg-gray-700 */
+  }
+
+  @keyframes rgbBorder {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  .card-green-rgb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-green-rgb:hover {
+    transform: scale(1.03);
+  }
+
+  .card-green-rgb::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #00ffcc, #00ff66, #00cc99, #00ffcc);
+    background-size: 400%;
+    animation: greenGlow 6s linear infinite;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  .card-green-rgb::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-green-rgb:hover::after {
+    background-color: #374151; /* Tailwind's bg-gray-700 */
+  }
+
+  @keyframes greenGlow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
