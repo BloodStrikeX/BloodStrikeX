@@ -7,7 +7,7 @@
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
-    /> <!-- اضافه کردن Font Awesome -->
+    />
     <style>
       * {
         margin: 0;
@@ -26,19 +26,18 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        animation: backgroundMove 10s linear infinite; /* حرکت پس‌زمینه */
+        animation: backgroundMove 10s linear infinite;
       }
 
-      /* انیمیشن برای حرکت پس‌زمینه */
       @keyframes backgroundMove {
         0% {
-          background-position: 0 0; /* شروع از گوشه چپ */
+          background-position: 0 0;
         }
         50% {
-          background-position: 100% 0; /* حرکت به سمت راست */
+          background-position: 100% 0;
         }
         100% {
-          background-position: 0 0; /* برگشت به موقعیت اولیه */
+          background-position: 0 0;
         }
       }
 
@@ -165,26 +164,6 @@
           background-position: 400%;
         }
       }
-
-      /* Falling icons styles */
-      .falling-icon {
-        position: absolute;
-        top: -10px;
-        font-size: 0.7em; /* سایز کوچک‌تر */
-        opacity: 0.8;
-        animation: fall linear infinite;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 1),
-          0 0 30px rgba(0, 255, 255, 1);
-      }
-
-      @keyframes fall {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(100vh); /* باعث می‌شود آیکون‌ها حتماً به پایین صفحه برسند */
-        }
-      }
     </style>
   </head>
   <body>
@@ -199,34 +178,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Falling Font Awesome icons -->
-    <script>
-      const icons = [
-        '<i class="fas fa-gamepad"></i>',  // گیم
-        '<i class="fas fa-sword"></i>',    // شمشیر
-        '<i class="fas fa-gun"></i>',     // تفنگ
-        '<i class="fas fa-laptop"></i>'   // لپتاپ
-      ];
-
-      function createFallingIcon() {
-        const icon = document.createElement('div');
-        icon.className = 'falling-icon';
-        icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
-
-        icon.style.left = Math.random() * 100 + 'vw'; // موقعیت افقی تصادفی
-        icon.style.animationDuration = Math.random() * 4 + 3 + 's'; // زمان سقوط کمی بیشتر برای جلوگیری از حذف زودهنگام
-        document.body.appendChild(icon);
-
-        // حذف آیکون بعد از مدتی
-        setTimeout(() => {
-          icon.remove();
-        }, 5000); // حذف بعد از 5 ثانیه
-      }
-
-      // ایجاد آیکون‌ها هر 300 میلی‌ثانیه
-      setInterval(createFallingIcon, 300);
-    </script>
 
     <!-- Visitor counter and text -->
     <div class="counter-container">
