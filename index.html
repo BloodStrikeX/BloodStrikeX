@@ -1,168 +1,244 @@
 <!DOCTYPE html>
 <html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>Language Selection</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-  background: url('images/LanguagePageBG.png') no-repeat center center fixed;
-  background-size: cover; /* یا می‌توانید مقدار cover را به contain تغییر دهید */
-  background-repeat: no-repeat; /* اگر نمی‌خواهید پس‌زمینه تکرار شود */
-  min-height: 100vh;
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-    }
-
-    .wrapper {
-      position: relative;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px 20px;
-      border-radius: 20px;
-      text-align: center;
-      color: #fff;
-      z-index: 1;
-      border: 3px solid transparent;
-      overflow: hidden;
-    }
-
-    .wrapper::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      border-radius: 23px;
-      background: linear-gradient(270deg, red, blue, lime, purple);
-      z-index: -1;
-      animation: rgb 6s linear infinite;
-      mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0); 
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask-composite: destination-out;
-      padding: 3px;
-    }
-
-    @keyframes rgb {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
-
-    h1 {
-      font-size: 20px;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: space-around;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .lang-btn {
-      flex: 1;
-      min-width: 120px;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #fff;
-      background: #222;
-      border: 2px solid transparent;
-      border-radius: 12px;
-      position: relative;
-      cursor: pointer;
-      z-index: 1;
-      transition: 0.3s;
-    }
-
-    .lang-btn::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 14px;
-      z-index: -1;
-      animation: rgb 4s linear infinite;
-    }
-
-    .btn-fa::before {
-      background: linear-gradient(45deg, #00c6ff, #0072ff);
-    }
-
-    .btn-en::before {
-      background: linear-gradient(45deg, #ff512f, #dd2476);
-    }
-
-    .lang-btn:hover {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 500px) {
-      .buttons {
-        flex-direction: column;
+  <head>
+    <meta charset="UTF-8" />
+    <title>Language Selection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    /> <!-- اضافه کردن Font Awesome -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
 
-    .counter-container {
-      margin-top: 20px;
-      text-align: center;
-    }
+      body {
+        background: url("images/LanguagePageBG.png") no-repeat center center fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: backgroundMove 10s linear infinite; /* حرکت پس‌زمینه */
+      }
 
-    .rgb-text {
-      margin-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: animateText 5s linear infinite;
-    }
+      /* انیمیشن برای حرکت پس‌زمینه */
+      @keyframes backgroundMove {
+        0% {
+          background-position: 0 0; /* شروع از گوشه چپ */
+        }
+        50% {
+          background-position: 100% 0; /* حرکت به سمت راست */
+        }
+        100% {
+          background-position: 0 0; /* برگشت به موقعیت اولیه */
+        }
+      }
 
-    @keyframes animateText {
-      0% { background-position: 0% }
-      100% { background-position: 400% }
-    }
-  </style>
-</head>
-<body>
+      .wrapper {
+        position: relative;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 30px 20px;
+        border-radius: 20px;
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+        border: 3px solid transparent;
+        overflow: hidden;
+      }
 
-  <div class="wrapper">
-    <h1>زبان خود را انتخاب کنید<br>Choose your language</h1>
-    <div class="buttons">
-      <button class="lang-btn btn-fa" onclick="window.location.href='mainpageFA.html'">فارسی</button>
-      <button class="lang-btn btn-en" onclick="window.location.href='mainpageEN.html'">English</button>
+      .wrapper::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border-radius: 23px;
+        background: linear-gradient(270deg, red, blue, lime, purple);
+        z-index: -1;
+        animation: rgb 6s linear infinite;
+        mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        -webkit-mask-composite: destination-out;
+        padding: 3px;
+      }
+
+      @keyframes rgb {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .lang-btn {
+        flex: 1;
+        min-width: 120px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background: #222;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        transition: 0.3s;
+      }
+
+      .lang-btn::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 14px;
+        z-index: -1;
+        animation: rgb 4s linear infinite;
+      }
+
+      .btn-fa::before {
+        background: linear-gradient(45deg, #00c6ff, #0072ff);
+      }
+
+      .btn-en::before {
+        background: linear-gradient(45deg, #ff512f, #dd2476);
+      }
+
+      .lang-btn:hover {
+        opacity: 0.9;
+      }
+
+      @media (max-width: 500px) {
+        .buttons {
+          flex-direction: column;
+        }
+      }
+
+      .counter-container {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .rgb-text {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+        background-size: 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animateText 5s linear infinite;
+      }
+
+      @keyframes animateText {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 400%;
+        }
+      }
+
+      /* Falling icons styles */
+      .falling-icon {
+        position: absolute;
+        top: -10px;
+        font-size: 0.7em; /* سایز کوچک‌تر */
+        opacity: 0.8;
+        animation: fall linear infinite;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 1),
+          0 0 30px rgba(0, 255, 255, 1);
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100vh); /* باعث می‌شود آیکون‌ها حتماً به پایین صفحه برسند */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>زبان خود را انتخاب کنید<br />Choose your language</h1>
+      <div class="buttons">
+        <button class="lang-btn btn-fa" onclick="window.location.href='mainpageFA.html'">
+          فارسی
+        </button>
+        <button class="lang-btn btn-en" onclick="window.location.href='mainpageEN.html'">
+          English
+        </button>
+      </div>
     </div>
-  </div>
 
-  <!-- شمارنده و متن زیر آن -->
-  <div class="counter-container">
-    <a href="https://www.hitwebcounter.com" target="_blank">
-      <img src="https://hitwebcounter.com/counter/counter.php?page=20600654&style=0010&nbdigits=5&type=ip&initCount=0"
-           title="Counter Widget"
-           alt="Visit counter For Websites"
-           border="0" />
-    </a>
-    <div class="rgb-text">Total Website Visitors</div>
-  </div>
+    <!-- Falling Font Awesome icons -->
+    <script>
+      const icons = [
+        '<i class="fas fa-gamepad"></i>',  // گیم
+        '<i class="fas fa-sword"></i>',    // شمشیر
+        '<i class="fas fa-gun"></i>',     // تفنگ
+        '<i class="fas fa-laptop"></i>'   // لپتاپ
+      ];
 
-</body>
+      function createFallingIcon() {
+        const icon = document.createElement('div');
+        icon.className = 'falling-icon';
+        icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+
+        icon.style.left = Math.random() * 100 + 'vw'; // موقعیت افقی تصادفی
+        icon.style.animationDuration = Math.random() * 4 + 3 + 's'; // زمان سقوط کمی بیشتر برای جلوگیری از حذف زودهنگام
+        document.body.appendChild(icon);
+
+        // حذف آیکون بعد از مدتی
+        setTimeout(() => {
+          icon.remove();
+        }, 5000); // حذف بعد از 5 ثانیه
+      }
+
+      // ایجاد آیکون‌ها هر 300 میلی‌ثانیه
+      setInterval(createFallingIcon, 300);
+    </script>
+
+    <!-- Visitor counter and text -->
+    <div class="counter-container">
+      <a href="https://www.hitwebcounter.com" target="_blank">
+        <img
+          src="https://hitwebcounter.com/counter/counter.php?page=20600654&style=0010&nbdigits=5&type=ip&initCount=0"
+          title="Counter Widget"
+          alt="Visit counter For Websites"
+          border="0"
+        />
+      </a>
+      <div class="rgb-text">Total Website Visitors</div>
+    </div>
+  </body>
 </html>
