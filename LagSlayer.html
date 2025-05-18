@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>آموزش رفع تحریم بلاد استرایک</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- SEO -->
+  <meta name="description" content="آموزش رفع تحریم برای بازی بلاد استرایک.">
+  <meta name="keywords" content="رفع تحریم, بلاد استرایک, آموزش, گیم">
+  <meta name="author" content="BloodStrikeFarsi">
+
+  <style>
+    #fireCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .gaming-card {
+      border: 2px solid #1afa73;
+      background: linear-gradient(135deg, #1e1e1e, #282828);
+      box-shadow: 0px 4px 15px rgba(26, 250, 115, 0.3);
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gaming-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 20px rgba(26, 250, 115, 0.5);
+    }
+
+    .rgb-border-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(90deg, rgba(26,250,115,1) 0%, rgba(0,255,255,1) 50%, rgba(26,250,115,1) 100%);
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0px 4px 15px rgba(26, 250, 115, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .rgb-border-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 20px rgba(26, 250, 115, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Fire Effect -->
+  <canvas id="fireCanvas"></canvas>
+
+<div class="navbar">
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <div class="menu" id="menu">
+      <a href="index.html">خانه</a>
+      <a href="Gold-buy.html">آموزش خرید گلد</a>
+      <a href="Attachments.html">اتچمنت‌ها</a>
+      <a href="PingBoosters.html">رفع تحریم ها</a>
+    </div>
+  </div>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      direction: rtl;
+      background: linear-gradient(135deg, #1e1e1e, #282828);
+      color: #fff;
+    }
+
+    .navbar {
+      background: rgb(36,36,36);
+      background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(45,45,45,1) 50%, rgba(36,36,36,1) 100%);
+      color: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: #f5ba1a;
+    }
+
+    .menu-toggle.open {
+      color: #ff4d4d; /* تغییر رنگ به قرمز */
+      transform: rotate(90deg); /* چرخش */
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(50, 50, 50, 0.9);
+      backdrop-filter: blur(10px);
+      width: 230px;
+      display: none;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .menu a {
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .menu a:hover {
+      color: #f5ba1a;
+      background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
+    }
+
+    .menu .disabled {
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const toggle = document.getElementById('menuToggle');
+      
+      // تغییر حالت نمایش منو
+      const isMenuOpen = menu.style.display === 'flex';
+      menu.style.display = isMenuOpen ? 'none' : 'flex';
+      
+      // تغییر آیکون ☰ به X
+      if (isMenuOpen) {
+        toggle.textContent = '☰'; // بازگشت به آیکون ☰
+        toggle.classList.remove('open'); // حذف کلاس برای استایل
+      } else {
+        toggle.textContent = '❌'; // تغییر به ایکس قرمز
+        toggle.classList.add('open'); // اضافه کردن کلاس برای استایل
+      }
+    }
+
+    // بستن منو در کلیک بیرون از آن
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menu');
+      const toggle = document.getElementById('menuToggle');
+      
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.style.display = 'none';
+        toggle.textContent = '☰'; // بازگشت به آیکون ☰
+        toggle.classList.remove('open'); // حذف کلاس
+      }
+    });
+  </script>
+</div>
+
+  <section class="py-16 px-6 text-center">
+    <h1 class="text-4xl font-bold mb-8 text-aqua">آموزش رفع تحریم بازی بلاد استرایک</h1>
+    
+    <!-- گام 1 -->
+    <div class="max-w-4xl mx-auto mb-12 p-6 gaming-card">
+      <a href="https://play.google.com/store/apps/details?id=org.quickping" target="_blank" class="rgb-border-button">
+         دانلود فیلتر شکن قوی کوییک پینگ
+      </a>
+      <img src="images/QuickStep1.jpg" alt="مرحله 1" class="w-full h-auto rounded-lg my-4">
+      <h3 class="text-xl font-bold mb-4">گام اول: دانلود و نصب فیلتر شکن کوییک پینگ</h3>
+      <p class="text-orange-400">ابتدا فیلترشکن رو از دکمه بالای تصویر نصب کنید و سپس وارد ربات تلگرامشون بشید برای دریافت اکانت رایگان</p>
+    </div>
+
+    <!-- گام 2 -->
+    <div class="max-w-4xl mx-auto mb-12 p-6 gaming-card">
+      <a href="https://play.google.com/store/apps/details?id=org.quickping" target="_blank" class="rgb-border-button">
+         دانلود فیلتر شکن قوی کوییک پینگ
+      </a>
+      <img src="images/QuickStep2.jpg" alt="مرحله 1" class="w-full h-auto rounded-lg my-4">
+      <h3 class="text-xl font-bold mb-4">گام دوم: دریافت لایسنس ورود از ربات تلگرام</h3>
+      <p class="text-red-400">بعد از نصب برنامه حالا باید با دکمه بالای تصویر وارد ربات تلگرام کوییک پینگ بشید و روی اکانت رایگان توی ربات بزنید و لایسنس اکانت رایگانتون رو دریافت و کپی کنید</p>
+    </div>
+
+    <!-- گام 3 -->
+    <div class="max-w-4xl mx-auto mb-12 p-6 gaming-card">
+      <img src="images/QuickStep3.jpg" alt="مرحله 3" class="w-full h-auto rounded-lg my-4">
+      <h3 class="text-xl font-bold mb-2">گام سوم: وارد شدن به برنامه با لایسنس</h3>
+      <p class="text-blue-400">بعد از کپی کردن کد لایسنس حالا توی برنامه کوییک پینگ واردش کنید و دکمه ورود را بزنید</p>
+    </div>
+    
+    
+    <div class="max-w-4xl mx-auto mb-12 p-6 gaming-card">
+      <img src="images/QuickStep4.jpg" alt="مرحله 3" class="w-full h-auto rounded-lg my-4">
+      <h3 class="text-xl font-bold mb-2">گام اخر: انتخاب سرور و وصل شدن</h3>
+      <p class="text-yellow-400">از اونجایی که فیلتر شکنی با سرعت بالا هست میتونید روی سرور خودکار بزارید ولی برای گیم زدن حتما روی سرور المان بزارید چون بهترین پینگ رو سرور المان میده بهتون</p>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-gray-600 bg-black">
+    &copy; 2023 BloodStrikeFarsi. All Rights Reserved
+  </footer>
+</body>
+</html>
