@@ -2,6 +2,19 @@
 body {
   font-family: 'Vazirmatn', sans-serif;
   line-height: 1.8;
+  
+  background: url("images/LanguagePageBG.png") no-repeat center center fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  animation: backgroundMove 10s linear infinite;
 }
 
 .navbar {
