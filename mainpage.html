@@ -861,24 +861,15 @@ a:hover {
   <canvas id="fireCanvas">
   </canvas>
   <div class="navbar">
-   <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-    ☰
-   </span>
-   <div class="menu" id="menu">
-    <a href="index.html">
-     خانه
-    </a>
-    <a href="Gold-buy.html">
-     آموزش خرید گلد
-    </a>
-    <a href="Attachments.html">
-     اتچمنت‌ها
-    </a>
-    <a href="PingBoosters.html">
-     رفع تحریم ها
-    </a>
-   </div>
-  </div>
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <div class="menu" id="menu">
+        <a href="index.html">خانه</a>
+        <a href="Gold-buy.html">آموزش خرید گلد</a>
+        <a href="Attachments.html">اتچمنت‌ها</a>
+        <a href="PingBoosters.html">رفع تحریم‌ها</a>
+    </div>
+</div>
+
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col justify-center items-center">
    <div class="bg-black bg-opacity-60 p-8 rounded-xl text-center">
@@ -1026,33 +1017,26 @@ a:hover {
   <script>
 
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      
-      // تغییر حالت نمایش منو
-      const isMenuOpen = menu.style.display === 'flex';
-      menu.style.display = isMenuOpen ? 'none' : 'flex';
-      
-      // تغییر آیکون ☰ به X
-      if (isMenuOpen) {
-        toggle.textContent = '☰'; // بازگشت به آیکون ☰
-        toggle.classList.remove('open'); // حذف کلاس برای استایل
-      } else {
-        toggle.textContent = '❌'; // تغییر به ایکس قرمز
-        toggle.classList.add('open'); // اضافه کردن کلاس برای استایل
-      }
+        const menu = document.getElementById('menu');
+        const toggle = document.getElementById('menuToggle');
+        const isMenuOpen = menu.classList.contains('open');
+
+        if (isMenuOpen) {
+            menu.classList.remove('open');
+            toggle.textContent = '☰';
+        } else {
+            menu.classList.add('open');
+            toggle.textContent = '❌';
+        }
     }
 
-    // بستن منو در کلیک بیرون از آن
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      
-      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.style.display = 'none';
-        toggle.textContent = '☰'; // بازگشت به آیکون ☰
-        toggle.classList.remove('open'); // حذف کلاس
-      }
+    document.addEventListener('click', function (e) {
+        const menu = document.getElementById('menu');
+        const toggle = document.getElementById('menuToggle');
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove('open');
+            toggle.textContent = '☰';
+        }
     });
   
 
