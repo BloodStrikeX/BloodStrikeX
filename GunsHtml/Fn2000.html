@@ -4,97 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Attachment Viewer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-image: url('../images/AttachmentBG.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #00ffcc;
-    }
-
-    .attachment-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      gap: 30px;
-      backdrop-filter: brightness(0.4);
-    }
-
-    .attachment-image {
-      width: 300px;
-      height: auto;
-      border: 4px solid #00ffcc;
-      box-shadow: 0 0 20px #00ffcc;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .attachment-info {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
-      box-shadow: 0 0 15px #00ffcc;
-    }
-
-    .attachment-info h2 {
-      margin-top: 0;
-    }
-
-    .attachment-info h2 strong {
-      color: #ff9900;
-    }
-
-    .attachment-info h2 span {
-      color: #00ffcc;
-    }
-
-    .attachment-info p {
-      color: #00ffff;
-    }
-
-    .attachment-info h3 {
-      color: #ff9900;
-    }
-
-    .attachment-info ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .attachment-info li {
-      margin-bottom: 8px;
-      font-size: 15px;
-    }
-
-    .attachment-info li strong {
-      color: #ffffff;
-    }
-
-    .attachment-info li span {
-      color: #ff0000;
-    }
-
-    .note {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #ffff00;
-    }
-  </style>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="attachment-container">
-    <img class="attachment-image" src="../Guns/fn2000-attachment.jpg" alt="Fn2000 Attachment" />
+    <img class="attachment-image" src="../Guns/fn2000-attachment.webp" alt="Fn2000 Attachment" />
 
     <!-- First Attachment Info -->
     <div class="attachment-info">
-      <h2><strong>Attachment:</strong> <span>Close Fight and High Recoil Build</span></h2>
-      <p>Optimized for close-range combat and controlling high recoil.</p>
+      <h2>
+        <strong>Attachment:</strong> 
+        <span>ساخت برای فایت نزدیک و ریکویل بالا</span>
+      </h2>
+      <p>
+        بهینه شده برای فایت های نزدیک و کنترل ریکویل بالا
+      </p>
       <h3>Gun: Fn2000</h3>
       <ul>
         <li><strong>Muzzle:</strong> <span>Heavy Suppressor</span></li>
@@ -104,13 +29,13 @@
         <li><strong>Stock:</strong> <span>Sniper Stock</span></li>
         <li><strong>Magazine:</strong> <span>50-round Mag</span></li>
       </ul>
-      <p class="note">🪛 If you want to increase range, equip a 3x scope.</p>
+      <p class="note" style="direction: rtl;">🪛 اگر می‌خواهید رنج را افزایش دهید، یک 3x scope مجهز کنید.</p>
     </div>
 
     <!-- Second Attachment Info -->
     <div class="attachment-info">
-      <h2><strong>Attachment:</strong> <span>Medium Range Balanced Build</span></h2>
-      <p>Designed to keep decent control while extending effectiveness in mid-range combat.</p>
+      <h2><strong>Attachment:</strong> <span>ساخت متعادل برای رنج متوسط</span></h2>
+      <p>طراحی شده برای حفظ کنترل مناسب و افزایش کارایی در مبارزات برد متوسط.</p>
       <h3>Gun: Fn2000</h3>
       <ul>
         <li><strong>Muzzle:</strong> <span>Flash Hider</span></li>

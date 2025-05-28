@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="navbar.css">
   <style>
     body {
-      background-color: #0d0d0d;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-image: url('./images/AttachmentBG.webp');
+      background-size: cover;
+      background-position: center;
+      color: #00ffcc;
     }
 
     h2 {
@@ -21,6 +23,7 @@
       color: #4CAF50;
       background: linear-gradient(90deg, #ff0, #0f0, #ff0, #0f0);
       background-size: 200% auto;
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: rainbowText 2s linear infinite;
@@ -33,7 +36,7 @@
       max-width: 800px;
       border: 2px solid #4CAF50;
       border-radius: 10px;
-      background-color: #1a1a1a;
+      background-color: rgba(95, 102, 95, 0.3);
       box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
       animation: glow 2s infinite alternate;
     }
@@ -48,7 +51,7 @@
     .card {
       position: relative;
       border-radius: 15px;
-      background: #111;
+      background: linear-gradient(135deg, rgba(0, 238, 255, 0.4), rgba(255, 255, 255, 0.4));
       overflow: hidden;
       text-align: center;
       padding: 10px;
