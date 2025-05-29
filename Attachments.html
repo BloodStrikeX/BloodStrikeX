@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,16 +7,25 @@
   <link rel="icon" type="image/x-icon" href="images/BSicon.ico">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="navbar.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-image: url('./images/AttachmentBG.webp');
-      background-size: cover;
-      background-position: center;
-      color: #00ffcc;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-image: url('./images/AttachmentBG.webp');
+    background-size: cover;
+    background-position: center;
+    color: #00ffcc;
+    animation: moveBackground 10s linear infinite;
+  }
 
+  @keyframes moveBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
     h2 {
       text-align: center;
       margin-bottom: 30px;
@@ -36,7 +45,7 @@
       max-width: 800px;
       border: 2px solid #4CAF50;
       border-radius: 10px;
-      background-color: rgba(95, 102, 95, 0.3);
+      background-color: rgba(95, 102, 95, 0.2);
       box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
       animation: glow 2s infinite alternate;
     }
@@ -116,72 +125,74 @@
   <div class="category">
     <h2>Rifles</h2>
     <div class="guns">
-      <a class="card" href="GunsHtml/M4A1.html"><img src="Guns/M4A1.webp" loading="lazy"><span>M4A1</span></a>
-      <a class="card" href="GunsHtml/Ak47.html"><img src="Guns/Ak47.webp" loading="lazy"><span>Ak47</span></a>
-      <a class="card" href="GunsHtml/Kag-6.html"><img src="Guns/Kag-6.webp" loading="lazy"><span>Kag-6</span></a>
-      <a class="card" href="GunsHtml/Scar.html"><img src="Guns/Scar.webp" loading="lazy"><span>Scar</span></a>
-      <a class="card" href="GunsHtml/Ar97.html"><img src="Guns/Ar97.webp" loading="lazy"><span>Ar97</span></a>
-      <a class="card" href="GunsHtml/Aug.html"><img src="Guns/Aug.webp" loading="lazy"><span>Aug</span></a>
-      <a class="card" href="GunsHtml/Fal.html"><img src="Guns/Fal.webp" loading="lazy"><span>Fal</span></a>
-      <a class="card" href="GunsHtml/Qbz95.html"><img src="Guns/Qbz95.webp" loading="lazy"><span>Qbz95</span></a>
-      <a class="card" href="GunsHtml/Fn2000.html"><img src="Guns/Fn2000.webp" loading="lazy"><span>Fn2000</span></a>
-      <a class="card" href="GunsHtml/Vss.html"><img src="Guns/Vss.webp" loading="lazy"><span>Vss</span></a>
-      <a class="card" href="GunsHtml/Mcx.html"><img src="Guns/Mcx.webp" loading="lazy"><span>Mcx</span></a>
-      <a class="card" href="GunsHtml/Galil.html"><img src="Guns/Galil.webp" loading="lazy"><span>Galil</span></a>
+      <a class="card" href="GunsHtml/M4A1.html"><img src="Guns/M4A1.webp" loading="lazy"><span style="font-size: 22.5px;"><b>M4A1</b></span></a>
+      <a class="card" href="GunsHtml/Ak47.html"><img src="Guns/Ak47.webp" loading="lazy"><span style="font-size: 22.5px;">Ak47</span></a>
+      <a class="card" href="GunsHtml/Kag-6.html"><img src="Guns/Kag-6.webp" loading="lazy"><span style="font-size: 22.5px;">Kag-6</span></a>
+      <a class="card" href="GunsHtml/Scar.html"><img src="Guns/Scar.webp" loading="lazy"><span style="font-size: 22.5px;">Scar</span></a>
+      <a class="card" href="GunsHtml/Ar97.html"><img src="Guns/Ar97.webp" loading="lazy"><span style="font-size: 22.5px;">Ar97</span></a>
+      <a class="card" href="GunsHtml/Aug.html"><img src="Guns/Aug.webp" loading="lazy"><span style="font-size: 22.5px;">Aug</span></a>
+      <a class="card" href="GunsHtml/Fal.html"><img src="Guns/Fal.webp" loading="lazy"><span style="font-size: 22.5px;">Fal</span></a>
+      <a class="card" href="GunsHtml/Qbz95.html"><img src="Guns/Qbz95.webp" loading="lazy"><span style="font-size: 22.5px;">Qbz95</span></a>
+      <a class="card" href="GunsHtml/Fn2000.html"><img src="Guns/Fn2000.webp" loading="lazy"><span style="font-size: 22.5px;">Fn2000</span></a>
+      <a class="card" href="GunsHtml/Vss.html"><img src="Guns/Vss.webp" loading="lazy"><span style="font-size: 22.5px;">Vss</span></a>
+      <a class="card" href="GunsHtml/Mcx.html"><img src="Guns/Mcx.webp" loading="lazy"><span style="font-size: 22.5px;">Mcx</span></a>
+      <a class="card" href="GunsHtml/Galil.html"><img src="Guns/Galil.webp" loading="lazy"><span style="font-size: 22.5px;">Galil</span></a>
     </div>
-  </div>
+    </div>
 
-  <!-- دسته SMG -->
-  <div class="category">
+    <!-- دسته SMG -->
+    <div class="category">
     <h2>Submachine Guns (SMG)</h2>
     <div class="guns">
-      <a class="card" href="GunsHtml/Mp5.html"><img src="Guns/Mp5.webp" loading="lazy"><span>Mp5</span></a>
-      <a class="card" href="GunsHtml/Vector.html"><img src="Guns/Vector.webp" loading="lazy"><span>Vector</span></a>
-      <a class="card" href="GunsHtml/Urb.html"><img src="Guns/Urb.webp" loading="lazy"><span>Urb</span></a>
-      <a class="card" href="GunsHtml/Inp9.html"><img src="Guns/Inp9.webp" loading="lazy"><span>Inp9</span></a>
-      <a class="card" href="GunsHtml/P90.html"><img src="Guns/P90.webp" loading="lazy"><span>P90</span></a>
-      <a class="card" href="GunsHtml/Uzi.html"><img src="Guns/Uzi.webp" loading="lazy"><span>Uzi</span></a>
+      <a class="card" href="GunsHtml/Mp5.html"><img src="Guns/Mp5.webp" loading="lazy"><span style="font-size: 22.5px;">Mp5</span></a>
+      <a class="card" href="GunsHtml/Vector.html"><img src="Guns/Vector.webp" loading="lazy"><span style="font-size: 22.5px;">Vector</span></a>
+      <a class="card" href="GunsHtml/Urb.html"><img src="Guns/Urb.webp" loading="lazy"><span style="font-size: 22.5px;">Urb</span></a>
+      <a class="card" href="GunsHtml/Inp9.html"><img src="Guns/Inp9.webp" loading="lazy"><span style="font-size: 22.5px;">Inp9</span></a>
+      <a class="card" href="GunsHtml/P90.html"><img src="Guns/P90.webp" loading="lazy"><span style="font-size: 22.5px;">P90</span></a>
+      <a class="card" href="GunsHtml/Uzi.html"><img src="Guns/Uzi.webp" loading="lazy"><span style="font-size: 22.5px;">Uzi</span></a>
     </div>
-  </div>
+    </div>
 
-  <!-- دسته Shotgun -->
-  <div class="category">
+    <!-- دسته Shotgun -->
+    <div class="category">
     <h2>Shotguns</h2>
     <div class="guns">
-      <a class="card" href="GunsHtml/Origin-12.html"><img src="Guns/Origin-12.webp" loading="lazy"><span>Origin-12</span></a>
-      <a class="card" href="GunsHtml/Mp155.html"><img src="Guns/Mp155.webp" loading="lazy"><span>Mp155</span></a>
+      <a class="card" href="GunsHtml/Origin-12.html"><img src="Guns/Origin-12.webp" loading="lazy"><span style="font-size: 22.5px;">Origin-12</span></a>
+      <a class="card" href="GunsHtml/Mp155.html"><img src="Guns/Mp155.webp" loading="lazy"><span style="font-size: 22.5px;">Mp155</span></a>
     </div>
-  </div>
+    </div>
 
-  <!-- دسته LMG -->
-  <div class="category">
+    <!-- دسته LMG -->
+    <div class="category">
     <h2>Light Machine Guns (LMG)</h2>
     <div class="guns">
-      <a class="card" href="GunsHtml/Pkm.html"><img src="Guns/Pkm.webp" loading="lazy"><span>Pkm</span></a>
-      <a class="card" href="GunsHtml/Minigun.html"><img src="Guns/Minigun.webp" loading="lazy"><span>Minigun</span></a>
-      <a class="card" href="GunsHtml/Rpk.html"><img src="Guns/Rpk.webp" loading="lazy"><span>Rpk</span></a>
+      <a class="card" href="GunsHtml/Pkm.html"><img src="Guns/Pkm.webp" loading="lazy"><span style="font-size: 22.5px;">Pkm</span></a>
+      <a class="card" href="GunsHtml/Minigun.html"><img src="Guns/Minigun.webp" loading="lazy"><span style="font-size: 22.5px;">Minigun</span></a>
+      <a class="card" href="GunsHtml/Rpk.html"><img src="Guns/Rpk.webp" loading="lazy"><span style="font-size: 22.5px;">Rpk</span></a>
     </div>
-  </div>
+    </div>
 
-  <!-- دسته Sniper -->
-  <div class="category">
+    <!-- دسته Sniper -->
+    <div class="category">
     <h2>Snipers</h2>
     <div class="guns">
-      <a class="card" href="GunsHtml/Kala.html"><img src="Guns/Kala.webp" loading="lazy"><span>Kala</span></a>
-      <a class="card" href="GunsHtml/M700.html"><img src="Guns/M700.webp" loading="lazy"><span>M700</span></a>
-      <a class="card" href="GunsHtml/Kar98k.html"><img src="Guns/Kar98k.webp" loading="lazy"><span>Kar98k</span></a>
-      <a class="card" href="GunsHtml/Svd.html"><img src="Guns/Svd.webp" loading="lazy"><span>Svd</span></a>
-      <a class="card" href="GunsHtml/Bow.html"><img src="Guns/Bow.webp" loading="lazy"><span>Bow</span></a>
+      <a class="card" href="GunsHtml/Kala.html"><img src="Guns/Kala.webp" loading="lazy"><span style="font-size: 22.5px;">Kala</span></a>
+      <a class="card" href="GunsHtml/M700.html"><img src="Guns/M700.webp" loading="lazy"><span style="font-size: 22.5px;">M700</span></a>
+      <a class="card" href="GunsHtml/Kar98k.html"><img src="Guns/Kar98k.webp" loading="lazy"><span style="font-size: 22.5px;">Kar98k</span></a>
+      <a class="card" href="GunsHtml/Svd.html"><img src="Guns/Svd.webp" loading="lazy"><span style="font-size: 22.5px;">Svd</span></a>
+      <a class="card" href="GunsHtml/Bow.html"><img src="Guns/Bow.webp" loading="lazy"><span style="font-size: 22.5px;">Bow</span></a>
     </div>
-  </div>
+    </div>
 
-  <!-- دسته Secondary -->
-  <div class="category">
+    <!-- دسته Secondary -->
+    <div class="category">
     <h2>Secondary</h2>
     <div class="guns">
-      <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.webp" loading="lazy"><span>Glock</span></a>
-      <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.webp" loading="lazy"><span>Deagle</span></a>
-      <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.webp" loading="lazy"><span>Magnum</span></a>
+      <a class="card" href="GunsHtml/Glock.html"><img src="Guns/Glock.webp" loading="lazy"><span style="font-size: 22.5px;">Glock</span></a>
+      <a class="card" href="GunsHtml/Deagle.html"><img src="Guns/Deagle.webp" loading="lazy"><span style="font-size: 22.5px;">Deagle</span></a>
+      <a class="card" href="GunsHtml/Magnum.html"><img src="Guns/Magnum.webp" loading="lazy"><span style="font-size: 22.5px;">Magnum</span></a>
+    </div>
+    </div>
     </div>
   </div>
       <!-- بقیه گان‌های Sniper -->

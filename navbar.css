@@ -1,24 +1,58 @@
-/* استایل نوار ناوبری */
+/* Navbar Styles */
 .navbar {
   background: rgb(36, 36, 36);
   background: linear-gradient(90deg, rgba(36, 36, 36, 1) 0%, rgba(45, 45, 45, 1) 50%, rgba(36, 36, 36, 1) 100%);
   color: #fff;
   padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 
-/* آیکون منو */
+/* Logo */
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f5ba1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+  color: #ff4d4d;
+}
+
+/* Menu */
+.navbar .menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+  background: rgba(255, 186, 26, 0.2);
+  color: #f5ba1a;
+}
+
+/* Mobile Menu Toggle */
 .menu-toggle {
+  display: none;
   font-size: 26px;
   cursor: pointer;
-  user-select: none;
-  transition: transform 0.3s ease, color 0.3s ease;
   color: #f5ba1a;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .menu-toggle.open {
@@ -26,40 +60,31 @@
   transform: rotate(90deg);
 }
 
-/* استایل منو */
-.menu {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: rgba(50, 50, 50, 0.9);
-  backdrop-filter: blur(10px);
-  width: 230px;
-  display: none;
-  flex-direction: column;
-  border-radius: 10px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(50, 50, 50, 0.9);
+    backdrop-filter: blur(10px);
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 
-.menu.open {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
+  .navbar .menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-/* لینک‌های منو */
-.menu a {
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.menu a:hover {
-  color: #f5ba1a;
-  background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
+  .menu-toggle {
+    display: block;
+  }
 }
