@@ -46,7 +46,7 @@ BloodStrikeWeb/
 
 ---
 
-## ✨ دموی سریع
+## ✨ کاملا مجزا بدون نیاز به بک اند
 
 <div align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzd6cjhubWtpdXg5dGI0anJsMmZ5Z2ltczJucWdzODlrZzQ5NXVlOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KGhpQ5NMoWKQurlHwI/giphy.gif" width="400" alt="Demo" />
