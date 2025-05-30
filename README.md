@@ -58,7 +58,7 @@ BloodStrikeWeb/
 
 1. پروژه را کلون کنید:
    ```bash
-   git clone https://github.com/your-username/BloodStrikeWeb.git
+   git clone https://github.com/iAliDev/BloodStrikeWeb
    ```
 2. فایل `index.html` را باز کنید و لذت ببرید!
 
@@ -66,7 +66,7 @@ BloodStrikeWeb/
 
 ## 🛠 توسعه‌دهنده
 
-- **ساخته شده توسط:** [YourNameHere](https://github.com/your-username)
+- **ساخته شده توسط:** [iAliDev](https://github.com/iAliDev)
 - **ایده و محتوا:** گیمرهای حرفه‌ای Blood Strike
 
 ---
