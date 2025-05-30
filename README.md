@@ -56,9 +56,9 @@ BloodStrikeWeb/
 
 ## ⚡ شروع سریع
 
-1. پروژه را کلون کنید:
+1. وارد لینک زیر شوید
    ```bash
-   git clone https://github.com/iAliDev/BloodStrikeWeb
+   https://ialidev.github.io/BloodStrikeWeb/mainpage.html
    ```
 2. فایل `index.html` را باز کنید و لذت ببرید!
 
