@@ -67,7 +67,7 @@ BloodStrikeWeb/
 ## 🛠 توسعه‌دهنده
 
 - **ساخته شده توسط:** [iAliDev](https://github.com/iAliDev)
-- **ایده و محتوا:** گیمرهای حرفه‌ای Blood Strike
+- **ایده و محتوا:** توسط چنل @BloodStrikeFarsi در تلگرام
 
 ---
 
