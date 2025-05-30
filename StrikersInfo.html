@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>استرایکر ها</title>
+  <link rel="icon" type="image/x-icon" href="images/BSicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="navbar.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-image: url('./images/StrikersBG.webp');
+    background-size: cover;
+    background-position: center;
+    color: #00ffcc;
+    animation: moveBackground 10s linear infinite;
+  }
+
+  @keyframes moveBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #e21866;
+      background: linear-gradient(90deg, rgb(255, 0, 221), #0f0, rgb(255, 0, 221), #0f0);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 2s linear infinite;
+    }
+
+    .category {
+      margin: 20px auto;
+      padding: 15px;
+      width: 90%;
+      max-width: 800px;
+      border: 2px solid #d5ff3b;
+      border-radius: 10px;
+      background-color: rgba(95, 102, 95, 0.1);
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+      animation: glow 2s infinite alternate;
+    }
+
+    .guns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(165, 173, 46, 0.8), rgba(201, 74, 74, 0.8));
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+      transition: transform 0.3s ease;
+      z-index: 0;
+      border: 2px solid transparent;
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .card span {
+      display: block;
+      margin-top: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #4CAF50;
+      background: linear-gradient(90deg, rgb(0, 183, 255), rgb(0, 255, 170), rgb(0, 183, 255), rgb(0, 255, 170));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 2s linear infinite;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #4ca8af;
+    }
+
+    @keyframes rainbowText {
+      0% {background-position: 0%;}
+      100% {background-position: 200%;}
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 15px rgba(175, 76, 76, 0.5);
+      }
+      to {
+        box-shadow: 0 0 25px rgb(255, 0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <div class="menu" id="menu">
+      <a href="index.html">خانه</a>
+      <a href="Gold-buy.html">آموزش خرید گلد</a>
+      <a href="Attachments.html">اتچمنت‌ها</a>
+      <a href="PingBoosters.html">رفع تحریم‌ها</a>
+      <a href="StrikersInfo.html">استرایکر ها</a>
+    </div>
+  </div>
+
+  <h2>توضیحات استرایکر های بازی</h2>
+
+  <!-- دسته Rifle -->
+  <div class="category">
+    <h2>روی هرکدام کلیک کنید</h2>
+    <div class="guns">
+    <a class="card" href="Strikers/Jack.html"><img src="Strikers/Jack.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Jack</b></span></a>
+    <a class="card" href="Strikers/Kainda.html"><img src="Strikers/Kainda.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Kainda</b></span></a>
+    <a class="card" href="Strikers/Emma.html"><img src="Strikers/Emma.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Emma</b></span></a>
+    <a class="card" href="Strikers/Volt.html"><img src="Strikers/Volt.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Volt</b></span></a>
+    <a class="card" href="Strikers/Zero.html"><img src="Strikers/Zero.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Zero</b></span></a>
+    <a class="card" href="Strikers/Blast.html"><img src="Strikers/Blast.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Blast</b></span></a>
+    <a class="card" href="Strikers/Nacho.html"><img src="Strikers/Nacho.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Nacho</b></span></a>
+    <a class="card" href="Strikers/Ran.html"><img src="Strikers/Ran.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Ran</b></span></a>
+    <a class="card" href="Strikers/EMT.html"><img src="Strikers/EMT.webp" loading="lazy"><span style="font-size: 22.5px;"><b>EMT</b></span></a>
+    <a class="card" href="Strikers/Spike.html"><img src="Strikers/Spike.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Spike</b></span></a>
+    <a class="card" href="Strikers/Hank.html"><img src="Strikers/Hank.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Hank</b></span></a>
+    <a class="card" href="Strikers/Val.html"><img src="Strikers/Val.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Val</b></span></a>
+    <a class="card" href="Strikers/Nova.html"><img src="Strikers/Nova.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Nova</b></span></a>
+    <a class="card" href="Strikers/Jet.html"><img src="Strikers/Jet.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Jet</b></span></a>
+    <a class="card" href="Strikers/Ethan.html"><img src="Strikers/Ethan.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Ethan</b></span></a>
+    <a class="card" href="Strikers/Kraken.html"><img src="Strikers/Kraken.webp" loading="lazy"><span style="font-size: 22.5px;"><b>Kraken</b></span></a>
+    </div>
+  </div>
+
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const toggle = document.getElementById('menuToggle');
+    const isMenuOpen = menu.classList.contains('open');
+
+    if (isMenuOpen) {
+      menu.classList.remove('open');
+      toggle.textContent = '☰';
+      toggle.classList.remove('open');
+    } else {
+      menu.classList.add('open');
+      toggle.textContent = '❌';
+      toggle.classList.add('open');
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('menu');
+    const toggle = document.getElementById('menuToggle');
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('open');
+      toggle.textContent = '☰';
+      toggle.classList.remove('open');
+    }
+  });
+  </script>
+</body>
+</html>
