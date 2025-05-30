@@ -27,10 +27,20 @@ BloodStrikeWeb یک وب‌اپلیکیشن برای نمایش و بررسی ا
 ```
 BloodStrikeWeb/
 │
-├── Strikers/         # اطلاعات و توضیحات هر استرایکر (HTML)
-├── styles.css        # استایل کلی سایت
-├── index.html        # صفحه اصلی
-└── README.md         # همین فایل!
+├── Guns/
+├── GunsAttachment/
+├── images/
+└── Strikers/
+├── Attachments.html
+├── Gold-buy.html
+├── index.html
+└── LagSlayer.html
+├── mainpage.html
+├── navbar.css
+├── PingBoosters.html
+└── QuickPing.html
+├── README.md
+├── StrikersInfo.html
 ```
 
 ---
@@ -60,7 +70,7 @@ BloodStrikeWeb/
    ```bash
    https://ialidev.github.io/BloodStrikeWeb/mainpage.html
    ```
-2. فایل `index.html` را باز کنید و لذت ببرید!
+2. از امکانات سایت و آموزش ها لذت ببرید
 
 ---
 
@@ -81,7 +91,7 @@ BloodStrikeWeb/
 
 ## 📢 مشارکت
 
-ایده، باگ یا مطالب جدیدی داری؟ به من توی تلگرام پیام بده ! AliSlayer@
+ایده، باگ یا مطالب جدیدی داری؟ به من توی تلگرام پیام بده! AliSlayer@
 
 ---
 
