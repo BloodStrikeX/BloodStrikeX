@@ -49,7 +49,7 @@ BloodStrikeWeb/
 ## ✨ دموی سریع
 
 <div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Z6d2J6d3Z2b2J0b2Z6d2J6d3Z2b2J0b2Z6d2J6d3Z2b2J0/giphy.gif" width="400" alt="Demo" />
+  <img src="https://media.giphy.com/media/YYW0hHizzIOrlhimPG/giphy.gif?cid=ecf05e47vwwf6vo4j0o5kgveji1nwjkfgewrv9d0zymfd7oa&ep=v1_gifs_related&rid=giphy.gif&ct=g" width="400" alt="Demo" />
 </div>
 
 ---
