@@ -1,182 +1,683 @@
 <!DOCTYPE html>
 <html lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <title>صفحه ورود - خوش آمدید</title>
-    <link rel="icon" type="image/x-icon" href="images/BSicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>صفحه اصلی</title>
+  <link rel="icon" type="image/x-icon" href="images/BSicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <meta content="بزرگ‌ترین کامیونیتی Blood Strike در ایران با آموزش، اخبار و اطلاعات به‌روز." name="description"/>
+  <meta content="Blood Strike, بلاد استرایک, آموزش, گیم, کامیونیتی, ایران" name="keywords"/>
+  <meta content="BloodStrikeFarsi" name="author"/>
+  <meta content="BloodStrikeFarsi - کامیونیتی بلاد استرایک ایران" property="og:title"/>
+  <meta content="به ما بپیوندید و به‌روزترین اطلاعات، آموزش‌ها و اخبار بازی Blood Strike را دنبال کنید." property="og:description"/>
+  <meta content="https://wallpapercave.com/wp/wp12461531.jpg" property="og:image"/>
+  <meta content="website" property="og:type"/>
+  <meta content="fa_IR" property="og:locale"/>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+  <link href="https://wallpapercave.com/wp/wp12461531.jpg" rel="icon" type="image/jpeg"/>
 
-      body {
-        background: url("images/WelcomePage.webp") no-repeat center center fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        font-family: sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        animation: backgroundMove 10s linear infinite;
-      }
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      line-height: 1.8;
+      background: url("images/MainPage.webp") no-repeat center center fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      /* animation: backgroundMove 10s linear infinite; - Uncomment if you have this keyframe defined */
+      margin: 0;
+      direction: rtl;
+      color: #fff;
+    }
 
-      @keyframes backgroundMove {
-        0% {
-          background-position: 0 0;
-        }
-        50% {
-          background-position: 100% 0;
-        }
-        100% {
-          background-position: 0 0;
-        }
-      }
+    h1, h2, h3 {
+      letter-spacing: -0.5px;
+    }
 
-      .wrapper {
-        position: relative;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 30px 20px;
-        border-radius: 20px;
-        text-align: center;
-        color: #fff;
-        z-index: 1;
-        border: 3px solid transparent;
-        overflow: hidden;
-      }
+    a {
+      transition: color 0.3s ease;
+    }
 
-      .wrapper::before {
-        content: "";
-        position: absolute;
-        top: -3px;
-        left: -3px;
-        right: -3px;
-        bottom: -3px;
-        border-radius: 23px;
-        background: linear-gradient(270deg, red, blue, lime, purple);
-        z-index: -1;
-        animation: rgb 6s linear infinite;
-        mask: linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
-        mask-composite: exclude;
-        -webkit-mask-composite: destination-out;
-        padding: 3px;
-      }
+    a:hover {
+      color: #facc15; /* طلایی */
+    }
 
-      @keyframes rgb {
-        0% {
-          filter: hue-rotate(0deg);
-        }
-        100% {
-          filter: hue-rotate(360deg);
-        }
-      }
+    /* Navbar Styles */
+    .navbar {
+      background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(45,45,45,1) 50%, rgba(36,36,36,1) 100%);
+      color: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end; /* Align toggle to the right on mobile */
+      align-items: center;
+    }
 
-      h1 {
-        font-size: 20px;
-        margin-bottom: 25px;
-        line-height: 1.6;
-      }
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: #f5ba1a;
+      padding-left: 10px;
+    }
 
-      .buttons {
-        display: flex;
-        justify-content: space-around;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
+    .menu-toggle.open {
+      color: #ff4d4d;
+      transform: rotate(90deg);
+    }
 
-      .lang-btn {
-        flex: 1;
-        min-width: 120px;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: #fff;
-        background: #222;
-        border: 2px solid transparent;
-        border-radius: 12px;
-        position: relative;
-        cursor: pointer;
-        z-index: 1;
-        transition: 0.3s;
-      }
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(50, 50, 50, 0.9);
+      backdrop-filter: blur(10px);
+      width: 230px;
+      display: none; /* Hidden by default for mobile */
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.3s ease forwards; /* Use forwards to keep the final state */
+    }
 
-      .lang-btn::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border-radius: 14px;
-        z-index: -1;
-        animation: rgb 4s linear infinite;
-      }
+    .menu.open {
+        display: flex; /* Shown when open on mobile */
+    }
 
-      .btn-fa::before {
-        background: linear-gradient(45deg, #00c6ff, #0072ff);
-      }
+    .menu a {
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+    }
 
-      .btn-en::before {
-        background: linear-gradient(45deg, #ff512f, #dd2476);
-      }
+    .menu a:last-child {
+      border-bottom: none;
+    }
 
-      .lang-btn:hover {
-        opacity: 0.9;
-      }
+    .menu a:hover {
+      color: #f5ba1a;
+      background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
+    }
 
-      @media (max-width: 500px) {
-        .buttons {
-          flex-direction: column;
-        }
-      }
+    .menu .disabled {
+      color: #888;
+      cursor: not-allowed;
+    }
 
-      .counter-container {
-        margin-top: 20px;
-        text-align: center;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
       }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      .rgb-text {
-        margin-top: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
-        background-size: 400%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: animateText 5s linear infinite;
+    /* Desktop/Larger Screens (md breakpoint and up) */
+    @media (min-width: 768px) {
+      .navbar {
+        justify-content: center; /* Center items on desktop */
       }
+      .menu-toggle {
+        display: none; /* Hide menu toggle on desktop */
+      }
+      .menu {
+        position: static; /* Remove absolute positioning */
+        display: flex !important; /* Always show menu on desktop */
+        flex-direction: row; /* Display horizontally */
+        background: transparent; /* No background */
+        backdrop-filter: none; /* No blur */
+        width: auto; /* Auto width */
+        box-shadow: none; /* No shadow */
+        animation: none; /* No animation */
+      }
+      .menu a {
+        padding: 0 15px; /* Adjust padding for horizontal links */
+        border-bottom: none; /* No border for horizontal links */
+        border-left: 1px solid rgba(255, 255, 255, 0.1); /* Add a subtle separator */
+      }
+      .menu a:first-child {
+        border-left: none; /* No border on the first item */
+      }
+      .menu a:hover {
+        background: none; /* No background on hover */
+      }
+    }
 
-      @keyframes animateText {
-        0% {
-          background-position: 0%;
-        }
-        100% {
-          background-position: 400%;
-        }
+    /* Card Hover Effects (for all cards) */
+    .card-red-gold-border:hover,
+    .card-rgb-border:hover,
+    .card-green-rgb:hover {
+      transform: scale(1.03); /* Slightly less aggressive scale */
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2); /* Slightly more prominent shadow */
+    }
+
+    /* Fire Canvas */
+    #fireCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Lava Glow Wrapper */
+    .lava-glow-wrapper {
+      position: relative;
+      padding: 2.5rem; /* Increased padding */
+      border-radius: 1rem;
+      background-color: #111827;
+      color: white;
+      overflow: hidden;
+      z-index: 0;
+      text-align: center;
+    }
+
+    .lava-glow-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center,
+        #ff9900, #ff3300, #cc0000, #660000);
+      background-size: 400% 400%;
+      animation: lavaFlow 6s linear infinite;
+      z-index: -2;
+      filter: blur(20px);
+      opacity: 0.4;
+    }
+
+    .lava-glow-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      background-color: #111827;
+      border-radius: 1rem;
+      z-index: -1;
+    }
+
+    @keyframes lavaFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .lava-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: orange;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: moveIn 3s ease-in-out infinite;
+    }
+
+    @keyframes moveIn {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
       }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <h1>به وبسایت بلاد استرایک فارسی خوش آمدید</h1>
-      <div class="buttons">
-        <button class="lang-btn btn-fa" onclick="window.location.href='mainpage.html'">
-          ورود به سایت
-        </button>
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Card Red Gold Border (Social Media Buttons) */
+    .card-red-gold-border {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem; /* Slightly more rounded */
+      z-index: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-red-gold-border::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #cc0000, #ffaa33, #ff6600, #cc0000);
+      background-size: 400%;
+      animation: redGoldBorder 8s linear infinite;
+      z-index: -1;
+      filter: blur(10px);
+    }
+
+    .card-red-gold-border::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: #1f2937;
+      border-radius: 0.75rem;
+      z-index: -1;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-red-gold-border:hover::after {
+      background-color: #374151;
+    }
+
+    @keyframes redGoldBorder {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Card RGB Border (آموزش‌ها) */
+    .card-rgb-border {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      z-index: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-rgb-border::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+      background-size: 400%;
+      animation: rgbBorder 8s linear infinite;
+      z-index: -1;
+      filter: blur(10px);
+    }
+
+    .card-rgb-border::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: #1f2937;
+      border-radius: 0.75rem;
+      z-index: -1;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-rgb-border:hover::after {
+      background-color: #374151;
+    }
+
+    @keyframes rgbBorder {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Card Green RGB (وضعیت کامیونیتی) */
+    .card-green-rgb {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      z-index: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-green-rgb::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #00ffcc, #00ff66, #00cc99, #00ffcc);
+      background-size: 400%;
+      animation: greenGlow 6s linear infinite;
+      z-index: -1;
+      filter: blur(10px);
+    }
+
+    .card-green-rgb::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: #1f2937;
+      border-radius: 0.75rem;
+      z-index: -1;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-green-rgb:hover::after {
+      background-color: #374151;
+    }
+
+    @keyframes greenGlow {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+ </head>
+ <body class="bg-black text-white font-sans">
+  <canvas id="fireCanvas">
+  </canvas>
+  <div class="navbar">
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <div class="menu" id="menu">
+        <a href="index.html">خانه</a>
+        <a href="Gold-buy.html">آموزش خرید گلد</a>
+        <a href="Attachments.html">اتچمنت‌ها</a>
+        <a href="PingBoosters.html">رفع تحریم‌ها</a>
+        <a href="StrikersInfo.html">استرایکر ها</a>
+    </div>
+</div>
+
+  <section class="min-h-screen flex flex-col justify-center items-center px-4 py-8">
+   <div class="bg-black bg-opacity-40 p-8 rounded-xl text-center max-w-lg w-full" style="color: #f5ba1a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+     BloodStrikeFarsi
+    </h1>
+    <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: red;">
+     بلاد استرایک فارسی
+    </h1>
+    <p class="text-lg md:text-2xl mb-6">
+     <b>  به ما بپیوندید، بزرگ‌ترین کامیونیتی بلاد استرایک در ایران</b>
+    </p>
+    <div class="flex flex-col gap-4 items-center w-full">
+     <a class="card-red-gold-border w-full md:w-64" href="https://t.me/BloodStrikeFarsi">
+      <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
+       <span class="ml-3 text-2xl"> <i class="fa-brands fa-telegram">
+        </i>
+       </span>
+       <h3 class="text-xl font-bold"> تلگرام
+       </h3>
       </div>
+     </a>
+     <a class="card-red-gold-border w-full md:w-64" href="https://rubika.ir/bloodstrikefarsi">
+      <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
+       <span class="ml-3 text-2xl">
+        <i class="fa-brands fa-rocketchat">
+        </i>
+       </span>
+       <h3 class="text-xl font-bold">
+        روبیکا
+       </h3>
+      </div>
+     </a>
+     <a class="card-red-gold-border w-full md:w-64" href="https://instagram.com/bloodstrikefarsi">
+      <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
+       <span class="ml-3 text-2xl">
+        <i class="fa-brands fa-instagram">
+        </i>
+       </span>
+       <h3 class="text-xl font-bold">
+        اینستاگرام
+       </h3>
+      </div>
+     </a>
     </div>
-      <div class="rgb-text">We Wish Our Website Is Helpful</div>
+   </div>
+  </section>
+  <section class="py-16 px-4 bg-black bg-opacity-10">
+   <div class="lava-glow-wrapper max-w-2xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">
+     درباره کامیونیتی ما
+    </h2>
+    <p dir="rtl" class="text-gray-300 leading-relaxed" style="text-align: center; color: #00ffcc; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+     <b>بلاد استرایک فارسی اولین و بزرگ‌ترین کامیونیتی بلاد استرایک در ایران است که فعالیت خودش رو از ۲ تیر ۱۴۰۲ آغاز کرده و تا کنون در شبکه‌های اجتماعی زیادی فعالیت داشته. همین حالا به ما بپیوندید تا از آخرین اخبار و جزئیات گیم، کاستوم روم‌ها و بیشتر باخبر بشید.</b>
+    </p>
+    <div id="lava-particles">
     </div>
-  </body>
+   </div>
+  </section>
+  <section class="py-16 px-6 bg-black bg-opacity-40 text-center">
+   <h2 class="text-3xl font-bold mb-8">
+    آموزش‌ها
+   </h2>
+   <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <a class="card-rgb-border" href="Gold-buy.html">
+     <div class="relative z-10 p-8 text-white"> <h3 class="text-2xl font-bold mb-2"> خرید گلد بازی
+      </h3>
+      <p class="text-gray-400 text-base"> آموزش خرید گلد داخل بازی به صورت کاملا معتبر
+      </p>
+     </div>
+    </a>
+    <a class="card-rgb-border" href="Attachments.html">
+     <div class="relative z-10 p-8 text-white">
+      <h3 class="text-2xl font-bold mb-2">
+       لیست اتچمنت ها
+      </h3>
+      <p class="text-gray-400 text-base">
+       لیستی از بهترین اتچمنت های تمامی گان های بازی
+      </p>
+     </div>
+    </a>
+    <a class="card-rgb-border" href="PingBoosters.html">
+     <div class="relative z-10 p-8 text-white">
+      <h3 class="text-2xl font-bold mb-2">
+       رفع تحریم ها
+      </h3>
+      <p class="text-gray-400 text-base">
+       مشکل پینگ دارید؟ تیر هاتون ریجستر نمیشه؟ این پست رو از دست ندید
+      </p>
+     </div>
+    </a>
+   </div>
+  </section>
+  <section class="py-16 px-6 bg-black bg-opacity-10 text-center">
+   <h2 class="text-3xl font-bold mb-8">
+    وضعیت کامیونیتی
+   </h2>
+   <div class="flex flex-col md:flex-row justify-center gap-10 text-white">
+    <div class="card-green-rgb">
+     <div class="relative z-10 p-8">
+      <h3 class="text-2xl font-bold mb-2">
+       دنبال کننده های تلگرام
+      </h3>
+      <p class="text-gray-400">
+       3500+ نفر
+      </p>
+     </div>
+    </div>
+    <div class="card-green-rgb">
+     <div class="relative z-10 p-8">
+      <h3 class="text-2xl font-bold mb-2">
+        دنبال کننده های روبیکا
+      </h3>
+      <p class="text-gray-400">
+       700+ نفر
+      </p>
+     </div>
+    </div>
+    <div class="card-green-rgb">
+     <div class="relative z-10 p-8">
+      <h3 class="text-2xl font-bold mb-2">
+       دنبال‌کننده های اینستاگرام
+      </h3>
+      <p class="text-gray-400">
+       2900+ نفر
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="py-6 text-center text-gray-600 bg-black bg-opacity-10">
+   © 2023 BloodStrikeFarsi. تمامی حقوق محفوظ است.
+  </footer>
+  <script>
+    // Menu Toggle Logic (Consolidated)
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        const toggle = document.getElementById('menuToggle');
+        menu.classList.toggle('open');
+        toggle.textContent = menu.classList.contains('open') ? '❌' : '☰';
+    }
+
+    document.addEventListener('click', function (e) {
+        const menu = document.getElementById('menu');
+        const toggle = document.getElementById('menuToggle');
+        // Close menu if click is outside menu and toggle button, only for mobile screens
+        if (window.innerWidth < 768 && !menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove('open');
+            toggle.textContent = '☰';
+        }
+    });
+
+    // Lava Particles Script (as is)
+    const container = document.getElementById("lava-particles");
+    if (container) { // Check if container exists before adding particles
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("lava-particle");
+            const side = Math.floor(Math.random() * 4);
+            let top, left;
+
+            switch (side) {
+                case 0: // top
+                    top = "-10px";
+                    left = Math.random() * 100 + "%";
+                    break;
+                case 1: // bottom
+                    top = "100%";
+                    left = Math.random() * 100 + "%";
+                    break;
+                case 2: // left
+                    top = Math.random() * 100 + "%";
+                    left = "-10px";
+                    break;
+                case 3: // right
+                    top = Math.random() * 100 + "%";
+                    left = "100%";
+                    break;
+            }
+            particle.style.top = top;
+            particle.style.left = left;
+            const deltaX = (Math.random() * 100 - 50) + "px";
+            const deltaY = (Math.random() * 100 - 50) + "px";
+            particle.style.setProperty("--x", deltaX);
+            particle.style.setProperty("--y", deltaY);
+            particle.style.animationDelay = Math.random() * 2 + "s";
+            particle.style.backgroundColor = ['#ff4500', '#ffaa33', '#ff6600'][Math.floor(Math.random() * 3)];
+            container.appendChild(particle);
+        }
+    }
+
+
+    // Fire Canvas Script (as is)
+    const canvas = document.getElementById("fireCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    let maxParticles = window.innerWidth < 768 ? 100 : 250;
+
+    class Particle {
+      constructor(fire = false) {
+        this.fire = fire;
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 2;
+        this.speedY = this.fire ? Math.random() * 2 + 1 : Math.random() * 1 + 0.5;
+        this.speedX = this.fire ? (Math.random() - 0.5) * 1 : (Math.random() - 0.5) * 0.3;
+        this.alpha = Math.random() * 0.5 + 0.5;
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.x > canvas.width || this.x < 0) this.x = Math.random() * canvas.width;
+      }
+      draw() {
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+        if (this.fire) {
+          gradient.addColorStop(0, `rgba(255, ${Math.floor(Math.random() * 100 + 50)}, 0, ${this.alpha})`);
+          gradient.addColorStop(1, `rgba(255, 0, 0, 0)`);
+        } else {
+          gradient.addColorStop(0, `rgba(255, 255, 255, ${this.alpha})`);
+          gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+        }
+
+        ctx.beginPath();
+        ctx.fillStyle = gradient;
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Adjust maxParticles based on screen size for performance/visuals
+      maxParticles = window.innerWidth < 768 ? 100 : 250; // Update maxParticles on each frame
+      while (particles.length < maxParticles) {
+        particles.push(new Particle(false)); // Snow
+        particles.push(new Particle(true));  // Firey flake
+      }
+      // Remove excess particles if screen size decreases
+      while (particles.length > maxParticles) {
+        particles.pop();
+      }
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // maxParticles will be updated in animate() loop
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+   AOS.init();
+  </script>
+ </body>
 </html>
