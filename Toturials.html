@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrollbar that might be caused by canvas */
+        }
+        /* Custom scrollbar for a more polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8; /* sky-500 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9; /* sky-600 */
+        }
+        /* Basic styling for the message box if needed later, hidden by default */
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .message-box-success {
+            background-color: #10B981; /* Emerald 500 */
+            color: white;
+        }
+        .message-box-error {
+            background-color: #EF4444; /* Red 500 */
+            color: white;
+        }
+        /* Canvas for particle background */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place canvas behind other content */
+            pointer-events: none; /* Make canvas non-interactive */
+        }
+        .glowing-border {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background: transparent;
+            border: 2px solid #17eb10;
+            color: #ffffff;
+            transition: color 0.2s, background 0.2s;
+        }
+        .glowing-border::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            padding: 0;
+            z-index: 2;
+            background: linear-gradient(90deg, transparent 0%, #d40fdbb4 40%, #a6e416 60%, transparent 100%);
+            background-size: 200% 200%;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            animation: border-move 2s linear infinite;
+        }
+        @keyframes border-move {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        .glowing-border:hover {
+            background: rgba(255,255,255,0.05);
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100 min-h-screen antialiased">
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container mx-auto px-4 py-8 md:py-16 relative z-10"> <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-sky-400">
+                به صفحه آموزشات خوش آمدید
+            </h1>
+            <p class="text-slate-300 mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+                تمام آموزش هایی کاربردی ای که نیاز دارید برای بازی در اینجا قرار داده شده است
+            </p>
+        </header>
+
+        <div class="space-y-8 md:space-y-12">
+
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-white-400">
+                <div class="flex flex-col md:flex-row-reverse md:items-stretch">
+                    <div class="md:w-2/5">
+                        <img src="images/BoostersIcon.webp"
+                             alt="Abstract representation of core concepts"
+                             class="w-full h-64 md:h-full"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Image+Not+Found&font=inter';">
+                    </div>
+                    <div class="p-6 md:p-8 lg:p-10 md:w-3/5 flex flex-col justify-center">
+                        <span class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">آموزش اول</span>
+                        <h2 style="color: rgb(123, 255, 0);" class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
+                            لیست رفع تحریم ها
+                        </h2>
+                        <p style="color: gold;" class="text-slate-300 leading-relaxed text-base md:text-lg">
+                            لیستی کامل از بهترین رفع تحریم های موجود برای کاهش پینگ
+                        </p>
+                        <a href="PingBoosters.html" class="mt-6 glowing-border text-center block py-2 px-5 font-semibold w-full">
+                            <p style="color: rgb(0, 255, 115);">دیدن اموزش</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-white-400">
+                <div class="flex flex-col md:flex-row-reverse md:items-stretch">
+                    <div class="md:w-2/5">
+                        <img src="images/Gold.webp"
+                             alt="Abstract representation of core concepts"
+                             class="w-full h-64 md:h-full"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Image+Not+Found&font=inter';">
+                    </div>
+                    <div class="p-6 md:p-8 lg:p-10 md:w-3/5 flex flex-col justify-center">
+                        <span class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">آموزش دوم</span>
+                        <h2 style="color: rgb(123, 255, 0);" class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
+                            آموزش خرید گلد
+                        </h2>
+                        <p style="color: gold;" class="text-slate-300 leading-relaxed text-base md:text-lg">
+                            توی این آموزش یاد میگیرید چطور از سایت قانونی G4A4 خرید کنید;<br>
+                            آموزش به صورت مرحله به مرحله میباشد و کد تخفیف چنل توی آموزش درج شده.
+                        </p>
+                        <a href="StrikersInfo.html" class="mt-6 glowing-border text-center block py-2 px-5 font-semibold w-full">
+                            <p style="color: rgb(0, 255, 115);">دیدن اموزش</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-white-400">
+                <div class="flex flex-col md:flex-row-reverse md:items-stretch">
+                    <div class="md:w-2/5">
+                        <img src="images/AttachmentBG.webp"
+                             alt="Abstract representation of core concepts"
+                             class="w-full h-64 md:h-full"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Image+Not+Found&font=inter';">
+                    </div>
+                    <div class="p-6 md:p-8 lg:p-10 md:w-3/5 flex flex-col justify-center">
+                        <span class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">آموزش سوم</span>
+                        <h2 style="color: rgb(123, 255, 0);" class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
+                            لیست اتچمنت ها
+                        </h2>
+                        <p style="color: gold;" class="text-slate-300 leading-relaxed text-base md:text-lg">
+                            توی این مطلب لیستی از بهترین اتچمنت های بازی رو مشاهده میکنید با اسم کامل هر اتچمنت
+                        </p>
+                        <a href="StrikersInfo.html" class="mt-6 glowing-border text-center block py-2 px-5 font-semibold w-full">
+                            <p style="color: rgb(0, 255, 115);">دیدن اموزش</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="space-y-8 md:space-y-12">
+
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-white-400">
+                <div class="flex flex-col md:flex-row-reverse md:items-stretch">
+                    <div class="md:w-2/5">
+                        <img src="images/StrikersBG.webp"
+                             alt="Abstract representation of core concepts"
+                             class="w-full h-64 md:h-full"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Image+Not+Found&font=inter';">
+                    </div>
+                    <div class="p-6 md:p-8 lg:p-10 md:w-3/5 flex flex-col justify-center">
+                        <span class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">آموزش چهارم</span>
+                        <h2 style="color: rgb(123, 255, 0);" class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
+                            توضیحات استرایکر ها
+                        </h2>
+                        <p style="color: gold;" class="text-slate-300 leading-relaxed text-base md:text-lg">
+                            توی این آموزش با تمامی جزعیات قابلیت های استرایکر های بازی اشنا خواهید شد.<br>
+                            توضیحات متنی و ویدعویی کامل در اختیار شما عزیزان قرار گرفته است
+                        </p>
+                        <a href="StrikersInfo.html" class="mt-6 glowing-border text-center block py-2 px-5 font-semibold w-full">
+                            <p style="color: rgb(0, 255, 115);">دیدن اموزش</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-white-400">
+                <div class="flex flex-col md:flex-row-reverse md:items-stretch">
+                     <div class="md:w-2/5">
+                        <img src="images/MultiplayAccount.webp"
+                             alt="Illustration of practical application"
+                             class="w-full h-64 md:h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/FFFFFF?text=Image+Not+Found&font=inter';">
+                    </div>
+                    <div class="p-6 md:p-8 lg:p-10 md:w-3/5 flex flex-col justify-center">
+                        <span class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">آموزش پنجم</span>
+                        <h2 style="color: rgb(123, 255, 0);" class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
+                            آموزش ساخت اکانت فیک
+                        </h2>
+                        <p style="color: gold;" class="text-slate-300 leading-relaxed text-base md:text-lg">
+                            توی این آموزش یاد میگیرید چطور به راحتی با فضای دوگانه اکانت فیک بزنید برای وقتایی که بازی جوایز میاره برای دعوت دوستان
+                        </p>
+                         <a href="FakeAccount.html" class="mt-6 glowing-border text-center block py-2 px-5 font-semibold w-full">
+                            <p style="color: rgb(0, 255, 115);">دیدن اموزش</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="text-center mt-16 py-8 border-t border-slate-700">
+            <p class="text-slate-400">&copy; 2025 Your Company. All rights reserved.</p>
+            <p class="text-slate-500 text-sm mt-1">Designed with passion for learning.</p>
+        </footer>
+
+    </div>
+    <div id="messageBox" class="message-box"></div>
+
+    <script>
+        // Function to show a message (example)
+        function showMessage(message, type = 'success') {
+            const messageBox = document.getElementById('messageBox');
+            if (!messageBox) return;
+
+            messageBox.textContent = message;
+            messageBox.className = 'message-box'; // Reset classes
+            if (type === 'success') {
+                messageBox.classList.add('message-box-success');
+            } else if (type === 'error') {
+                messageBox.classList.add('message-box-error');
+            }
+            messageBox.style.display = 'block';
+
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 3000);
+        }
+
+        // Particle Background Script
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray;
+
+        // Set canvas dimensions
+        function setCanvasDimensions() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        setCanvasDimensions();
+
+        // Mouse position (optional, for future interactivity)
+        let mouse = {
+            x: null,
+            y: null,
+            radius: (canvas.height/120) * (canvas.width/120) // Adjust radius based on screen size
+        };
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+        
+        // Particle class
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+
+            // Method to draw individual particle
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+
+            // Method to update particle position
+            update() {
+                // Check if particle is still within canvas
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                // Optional: Mouse interaction - push particles away
+                // let dx = mouse.x - this.x;
+                // let dy = mouse.y - this.y;
+                // let distance = Math.sqrt(dx*dx + dy*dy);
+                // if (distance < mouse.radius + this.size){
+                //     if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                //         this.x += 2;
+                //     }
+                //     if (mouse.x > this.x && this.x > this.size * 10) {
+                //         this.x -= 2;
+                //     }
+                //     if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                //         this.y += 2;
+                //     }
+                //     if (mouse.y > this.y && this.y > this.size * 10) {
+                //         this.y -= 2;
+                //     }
+                // }
+
+                // Move particle
+                this.x += this.directionX;
+                this.y += this.directionY;
+
+                // Draw particle
+                this.draw();
+            }
+        }
+
+        // Create particle array
+        function initParticles() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000; // Adjust density based on screen area
+            numberOfParticles = Math.min(numberOfParticles, 150); // Cap max particles
+            
+            const particleColors = [
+                'rgba(56, 189, 248, 0.3)',  // sky-500 with alpha
+                'rgba(14, 165, 233, 0.25)', // sky-600 with alpha
+                'rgba(125, 211, 252, 0.3)', // sky-300 with alpha
+                'rgba(224, 242, 254, 0.2)'  // sky-100 with alpha (faint white-blue)
+            ];
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2.5) + 0.5; // Particle size: 0.5 to 3
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.4) - 0.2; // Slow movement
+                let directionY = (Math.random() * 0.4) - 0.2; // Slow movement
+                let color = particleColors[Math.floor(Math.random() * particleColors.length)];
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        // Animation loop
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connectParticles();
+        }
+
+        // Function to connect particles with lines
+        function connectParticles() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    
+                    // Adjust connectDistance based on screen size for better visual consistency
+                    let connectDistance = (canvas.width/10) * (canvas.height/10) / 50; 
+                    connectDistance = Math.min(connectDistance, 120*120); // Cap max distance squared (120px)
+                    connectDistance = Math.max(connectDistance, 70*70);   // Min distance squared (70px)
+
+
+                    if (distance < connectDistance) {
+                        opacityValue = 1 - (distance / (connectDistance * 1.1)); // Opacity fades with distance
+                        let lineColor = particlesArray[a].color.replace(/[\d\.]+\)$/g, `${Math.max(0, opacityValue - 0.3)})`); // Use particle color for line, reduce opacity further
+                        
+                        ctx.strokeStyle = lineColor;
+                        ctx.lineWidth = 0.5; // Thin lines
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Event listener for window resize
+        window.addEventListener('resize', () => {
+            setCanvasDimensions();
+            mouse.radius = (canvas.height/120) * (canvas.width/120);
+            initParticles(); // Reinitialize particles on resize for responsiveness
+        });
+
+        // Initial setup
+        initParticles();
+        animateParticles();
+
+        // --- End of Particle Background Script ---
+
+
+        // Example usage for message box (can be triggered by button clicks etc.)
+        // document.querySelectorAll('a.bg-sky-500').forEach(button => {
+        //     button.addEventListener('click', (event) => {
+        //         // To show a message AND navigate, you might prevent default
+        //         // event.preventDefault(); 
+        //         // showMessage(`Navigating for '${button.textContent.trim()}'...`, 'success');
+        //         // setTimeout(() => window.location.href = button.href, 500); // then navigate manually after a short delay
+        //     });
+        // });
+    </script>
+
+</body>
+</html>
