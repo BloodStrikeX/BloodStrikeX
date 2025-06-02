@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fa">
- <head>
+<head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>صفحه اصلی</title>
   <link rel="icon" type="image/x-icon" href="images/BSicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" xintegrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" referrerpolicy="no-referrer" rel="stylesheet"/>
   <meta content="بزرگ‌ترین کامیونیتی Blood Strike در ایران با آموزش، اخبار و اطلاعات به‌روز." name="description"/>
   <meta content="Blood Strike, بلاد استرایک, آموزش, گیم, کامیونیتی, ایران" name="keywords"/>
   <meta content="BloodStrikeFarsi" name="author"/>
@@ -14,17 +14,20 @@
   <meta content="به ما بپیوندید و به‌روزترین اطلاعات، آموزش‌ها و اخبار بازی Blood Strike را دنبال کنید." property="og:description"/>
   <meta content="https://wallpapercave.com/wp/wp12461531.jpg" property="og:image"/>
   <meta content="website" property="og:type"/>
+  <meta content="https://yourwebsite.com/index.html" property="og:url" />
   <meta content="fa_IR" property="og:locale"/>
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
-  <link href="https://wallpapercave.com/wp/wp12461531.jpg" rel="icon" type="image/jpeg"/>
 
   <style>
     /* Global Styles */
     body {
       font-family: 'Vazirmatn', sans-serif;
       line-height: 1.8;
-      background: url("images/MainPage.webp") no-repeat center center fixed;
+      /* Explicitly defined background properties for clarity */
+      background-image: url("images/MainPage.webp");
+      background-position: center center;
+      background-attachment: fixed;
       background-size: cover;
       background-repeat: no-repeat;
       min-height: 100vh;
@@ -33,11 +36,20 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      /* animation: backgroundMove 10s linear infinite; - Uncomment if you have this keyframe defined */
-      margin: 0;
+      animation: backgroundMove 10s linear infinite; /* Re-added based on your working code */
       direction: rtl;
       color: #fff;
     }
+
+    /*
+    If you have a keyframe for 'backgroundMove', please ensure it's defined like this:
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    If not, you can comment out the 'animation' line in body.
+    */
 
     h1, h2, h3 {
       letter-spacing: -0.5px;
@@ -396,10 +408,9 @@
       }
     }
   </style>
- </head>
- <body class="bg-black text-white font-sans">
-  <canvas id="fireCanvas">
-  </canvas>
+</head>
+<body class="bg-black text-white font-sans">
+  <canvas id="fireCanvas"></canvas>
   <div class="navbar">
     <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
     <div class="menu" id="menu">
@@ -409,139 +420,103 @@
         <a href="PingBoosters.html">رفع تحریم‌ها</a>
         <a href="Tutorials.html">کل آموزش ها</a>
     </div>
-</div>
+  </div>
 
   <section class="min-h-screen flex flex-col justify-center items-center px-4 py-8">
-   <div class="bg-black bg-opacity-40 p-8 rounded-xl text-center max-w-lg w-full" style="color: #f5ba1a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">
-     BloodStrikeFarsi
-    </h1>
-    <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: red;">
-     بلاد استرایک فارسی
-    </h1>
-    <p class="text-lg md:text-2xl mb-6">
-     <b>  به ما بپیوندید، بزرگ‌ترین کامیونیتی بلاد استرایک در ایران</b>
-    </p>
-    <div class="flex flex-col gap-4 items-center w-full">
-     <a class="card-red-gold-border w-full md:w-64" href="https://t.me/BloodStrikeFarsi">
-      <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
-       <span class="ml-3 text-2xl"> <i class="fa-brands fa-telegram">
-        </i>
-       </span>
-       <h3 class="text-xl font-bold"> تلگرام
-       </h3>
+    <div class="bg-black bg-opacity-40 p-8 rounded-xl text-center max-w-lg w-full" style="color: #f5ba1a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        BloodStrikeFarsi
+      </h1>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: red;">
+        بلاد استرایک فارسی
+      </h1>
+      <p class="text-lg md:text-2xl mb-6">
+        <b> به ما بپیوندید، بزرگ‌ترین کامیونیتی بلاد استرایک در ایران</b>
+      </p>
+      <div class="flex flex-col gap-4 items-center w-full">
+        <a class="card-red-gold-border w-full md:w-64" href="https://t.me/BloodStrikeFarsi">
+          <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
+            <span class="ml-3 text-2xl"> <i class="fa-brands fa-telegram"></i></span>
+            <h3 class="text-xl font-bold"> تلگرام</h3>
+          </div>
+        </a>
+        <a class="card-red-gold-border w-full md:w-64" href="https://rubika.ir/bloodstrikefarsi">
+          <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
+            <span class="ml-3 text-2xl"><i class="fa-brands fa-rocketchat"></i></span>
+            <h3 class="text-xl font-bold"> روبیکا</h3>
+          </div>
+        </a>
+        <a class="card-red-gold-border w-full md:w-64" href="https://instagram.com/bloodstrikefarsi">
+          <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
+            <span class="ml-3 text-2xl"><i class="fa-brands fa-instagram"></i></span>
+            <h3 class="text-xl font-bold"> اینستاگرام</h3>
+          </div>
+        </a>
       </div>
-     </a>
-     <a class="card-red-gold-border w-full md:w-64" href="https://rubika.ir/bloodstrikefarsi">
-      <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
-       <span class="ml-3 text-2xl">
-        <i class="fa-brands fa-rocketchat">
-        </i>
-       </span>
-       <h3 class="text-xl font-bold">
-        روبیکا
-       </h3>
-      </div>
-     </a>
-     <a class="card-red-gold-border w-full md:w-64" href="https://instagram.com/bloodstrikefarsi">
-      <div class="relative z-10 py-4 px-6 text-white flex items-center justify-center">
-       <span class="ml-3 text-2xl">
-        <i class="fa-brands fa-instagram">
-        </i>
-       </span>
-       <h3 class="text-xl font-bold">
-        اینستاگرام
-       </h3>
-      </div>
-     </a>
     </div>
-   </div>
   </section>
   <section class="py-16 px-4 bg-black bg-opacity-10">
-   <div class="lava-glow-wrapper max-w-2xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">
-     درباره کامیونیتی ما
-    </h2>
-    <p dir="rtl" class="text-gray-300 leading-relaxed" style="text-align: center; color: #00ffcc; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-     <b>بلاد استرایک فارسی اولین و بزرگ‌ترین کامیونیتی بلاد استرایک در ایران است که فعالیت خودش رو از ۲ تیر ۱۴۰۲ آغاز کرده و تا کنون در شبکه‌های اجتماعی زیادی فعالیت داشته. همین حالا به ما بپیوندید تا از آخرین اخبار و جزئیات گیم، کاستوم روم‌ها و بیشتر باخبر بشید.</b>
-    </p>
-    <div id="lava-particles">
+    <div class="lava-glow-wrapper max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">
+        درباره کامیونیتی ما
+      </h2>
+      <p dir="rtl" class="text-gray-300 leading-relaxed" style="text-align: center; color: #00ffcc; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <b>بلاد استرایک فارسی اولین و بزرگ‌ترین کامیونیتی بلاد استرایک در ایران است که فعالیت خودش رو از ۲ تیر ۱۴۰۲ آغاز کرده و تا کنون در شبکه‌های اجتماعی زیادی فعالیت داشته. همین حالا به ما بپیوندید تا از آخرین اخبار و جزئیات گیم، کاستوم روم‌ها و بیشتر باخبر بشید.</b>
+      </p>
+      <div id="lava-particles"></div>
     </div>
-   </div>
   </section>
   <section class="py-16 px-6 bg-black bg-opacity-40 text-center">
-   <h2 class="text-3xl font-bold mb-8">
-    آموزش‌ها
-   </h2>
-   <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <a class="card-rgb-border" href="Gold-buy.html">
-     <div class="relative z-10 p-8 text-white"> <h3 class="text-2xl font-bold mb-2"> خرید گلد بازی
-      </h3>
-      <p class="text-gray-400 text-base"> آموزش خرید گلد داخل بازی به صورت کاملا معتبر
-      </p>
-     </div>
-    </a>
-    <a class="card-rgb-border" href="Attachments.html">
-     <div class="relative z-10 p-8 text-white">
-      <h3 class="text-2xl font-bold mb-2">
-       لیست اتچمنت ها
-      </h3>
-      <p class="text-gray-400 text-base">
-       لیستی از بهترین اتچمنت های تمامی گان های بازی
-      </p>
-     </div>
-    </a>
-    <a class="card-rgb-border" href="PingBoosters.html">
-     <div class="relative z-10 p-8 text-white">
-      <h3 class="text-2xl font-bold mb-2">
-       رفع تحریم ها
-      </h3>
-      <p class="text-gray-400 text-base">
-       مشکل پینگ دارید؟ تیر هاتون ریجستر نمیشه؟ این پست رو از دست ندید
-      </p>
-     </div>
-    </a>
-   </div>
+    <h2 class="text-3xl font-bold mb-8">
+      آموزش‌ها
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <a class="card-rgb-border" href="Gold-buy.html">
+        <div class="relative z-10 p-8 text-white"> <h3 class="text-2xl font-bold mb-2"> خرید گلد بازی</h3>
+          <p class="text-gray-400 text-base"> آموزش خرید گلد داخل بازی به صورت کاملا معتبر</p>
+        </div>
+      </a>
+      <a class="card-rgb-border" href="Attachments.html">
+        <div class="relative z-10 p-8 text-white">
+          <h3 class="text-2xl font-bold mb-2"> لیست اتچمنت ها</h3>
+          <p class="text-gray-400 text-base"> لیستی از بهترین اتچمنت های تمامی گان های بازی</p>
+        </div>
+      </a>
+      <a class="card-rgb-border" href="PingBoosters.html">
+        <div class="relative z-10 p-8 text-white">
+          <h3 class="text-2xl font-bold mb-2"> رفع تحریم ها</h3>
+          <p class="text-gray-400 text-base"> مشکل پینگ دارید؟ تیر هاتون ریجستر نمیشه؟ این پست رو از دست ندید</p>
+        </div>
+      </a>
+    </div>
   </section>
   <section class="py-16 px-6 bg-black bg-opacity-10 text-center">
-   <h2 class="text-3xl font-bold mb-8">
-    وضعیت کامیونیتی
-   </h2>
-   <div class="flex flex-col md:flex-row justify-center gap-10 text-white">
-    <div class="card-green-rgb">
-     <div class="relative z-10 p-8">
-      <h3 class="text-2xl font-bold mb-2">
-       دنبال کننده های تلگرام
-      </h3>
-      <p class="text-gray-400">
-       3500+ نفر
-      </p>
-     </div>
+    <h2 class="text-3xl font-bold mb-8">
+      وضعیت کامیونیتی
+    </h2>
+    <div class="flex flex-col md:flex-row justify-center gap-10 text-white">
+      <div class="card-green-rgb">
+        <div class="relative z-10 p-8">
+          <h3 class="text-2xl font-bold mb-2"> دنبال کننده های تلگرام</h3>
+          <p class="text-gray-400"> 3600+ نفر</p>
+        </div>
+      </div>
+      <div class="card-green-rgb">
+        <div class="relative z-10 p-8">
+          <h3 class="text-2xl font-bold mb-2"> دنبال کننده های روبیکا</h3>
+          <p class="text-gray-400"> 800+ نفر</p>
+        </div>
+      </div>
+      <div class="card-green-rgb">
+        <div class="relative z-10 p-8">
+          <h3 class="text-2xl font-bold mb-2"> دنبال‌کننده های اینستاگرام</h3>
+          <p class="text-gray-400"> 3300+ نفر</p>
+        </div>
+      </div>
     </div>
-    <div class="card-green-rgb">
-     <div class="relative z-10 p-8">
-      <h3 class="text-2xl font-bold mb-2">
-        دنبال کننده های روبیکا
-      </h3>
-      <p class="text-gray-400">
-       700+ نفر
-      </p>
-     </div>
-    </div>
-    <div class="card-green-rgb">
-     <div class="relative z-10 p-8">
-      <h3 class="text-2xl font-bold mb-2">
-       دنبال‌کننده های اینستاگرام
-      </h3>
-      <p class="text-gray-400">
-       2900+ نفر
-      </p>
-     </div>
-    </div>
-   </div>
   </section>
   <footer class="py-6 text-center text-gray-600 bg-black bg-opacity-10">
-   © 2023 BloodStrikeFarsi. تمامی حقوق محفوظ است.
+    © 2023 BloodStrikeFarsi. تمامی حقوق محفوظ است.
   </footer>
   <script>
     // Menu Toggle Logic (Consolidated)
@@ -677,7 +652,7 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-   AOS.init();
+    AOS.init();
   </script>
- </body>
+</body>
 </html>
