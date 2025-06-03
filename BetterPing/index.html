@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>رفع تحریم ها</title>
-    <link rel="stylesheet" href="../navbar.css">
     <style>
         @keyframes borderAnimation {
             0% {
@@ -36,17 +35,14 @@
             font-family: 'Vazir', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0d1b2a; /* پس‌زمینه تیره */
+            background-color: #0d1b2a;
             color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
         }
 
         .booster-container {
             width: 80%;
             max-width: 800px;
+            margin: 40px auto 0 auto; /* این خط اضافه شود تا کانتینر وسط باشد */
         }
 
         .booster-item {
@@ -135,7 +131,7 @@
 </head>
 <body>
     <div class="navbar">
-        <span class="menu-toggle" id="menuToggle">☰</span>
+        <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
         <div class="menu" id="menu">
             <a href="../index.html">خانه</a>
             <a href="../Attachments/index.html">اتچمنت‌ها</a>
@@ -183,28 +179,28 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            const menuToggle = document.getElementById('menuToggle');
-            if (menu && menuToggle) {
-                menu.classList.toggle('open');
-                menuToggle.classList.toggle('open');
+            const toggle = document.getElementById('menuToggle');
+            const isMenuOpen = menu.classList.contains('open');
+
+            if (isMenuOpen) {
+                menu.classList.remove('open');
+                toggle.textContent = '☰';
+                toggle.classList.remove('open');
+            } else {
+                menu.classList.add('open');
+                toggle.textContent = '❌';
+                toggle.classList.add('open');
             }
         }
 
-        const menuToggleElement = document.getElementById('menuToggle');
-        if (menuToggleElement) {
-            menuToggleElement.addEventListener('click', toggleMenu);
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll(".navbar .menu a");
-            const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
-
-            links.forEach(link => {
-                const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
-                if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
-                    link.classList.add("active");
-                }
-            });
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('menu');
+            const toggle = document.getElementById('menuToggle');
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                menu.classList.remove('open');
+                toggle.textContent = '☰';
+                toggle.classList.remove('open');
+            }
         });
     </script>
 </body>

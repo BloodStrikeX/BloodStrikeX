@@ -66,7 +66,7 @@
     <div id="particles-js"></div>
 
   <div class="navbar">
-    <span class="menu-toggle" id="menuToggle">☰</span>
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
     <div class="menu" id="menu">
       <a href="../index.html">خانه</a>
       <a href="../Attachments/index.html">اتچمنت‌ها</a>
@@ -227,18 +227,30 @@
         });
 
         function toggleMenu() {
-          const menu = document.getElementById('menu');
-          const menuToggle = document.getElementById('menuToggle');
-          if (menu && menuToggle) {
-            menu.classList.toggle('open');
-            menuToggle.classList.toggle('open');
-          }
+            const menu = document.getElementById('menu');
+            const toggle = document.getElementById('menuToggle');
+            const isMenuOpen = menu.classList.contains('open');
+
+            if (isMenuOpen) {
+                menu.classList.remove('open');
+                toggle.textContent = '☰';
+                toggle.classList.remove('open');
+            } else {
+                menu.classList.add('open');
+                toggle.textContent = '❌';
+                toggle.classList.add('open');
+            }
         }
 
-        const menuToggleElement = document.getElementById('menuToggle');
-        if (menuToggleElement) {
-          menuToggleElement.addEventListener('click', toggleMenu);
-        }
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('menu');
+            const toggle = document.getElementById('menuToggle');
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                menu.classList.remove('open');
+                toggle.textContent = '☰';
+                toggle.classList.remove('open');
+            }
+        });
 
         document.addEventListener("DOMContentLoaded", function() {
           const links = document.querySelectorAll(".navbar .menu a");

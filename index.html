@@ -33,10 +33,6 @@
       background-size: cover;
       background-repeat: no-repeat;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       position: relative;
       animation: backgroundMove 10s linear infinite; /* Re-added based on your working code */
       direction: rtl;
@@ -302,7 +298,7 @@
 <body class="bg-black text-white font-sans">
   <canvas id="fireCanvas"></canvas>
   <div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <span class="menu-toggle" id="menuToggle">☰</span>
     <div class="menu" id="menu">
       <a href="index.html">خانه</a>
       <a href="Attachments/index.html">اتچمنت‌ها</a>
@@ -411,28 +407,38 @@
     </div>
   </section>
   <footer class="text-center mt-16 py-8 border-t border-slate-700">
-            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
-            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
+    <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+    <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
   </footer>
+
   <script>
-    // Menu Toggle Logic (Consolidated)
     function toggleMenu() {
-        const menu = document.getElementById('menu');
-        const toggle = document.getElementById('menuToggle');
+      const menu = document.getElementById('menu');
+      const menuToggle = document.getElementById('menuToggle');
+      if (menu && menuToggle) {
         menu.classList.toggle('open');
-        toggle.textContent = menu.classList.contains('open') ? '❌' : '☰';
+        menuToggle.textContent = menu.classList.contains('open') ? '❌' : '☰';
+      }
     }
 
-    document.addEventListener('click', function (e) {
-        const menu = document.getElementById('menu');
-        const toggle = document.getElementById('menuToggle');
-        // Close menu if click is outside menu and toggle button, only for mobile screens
-        if (window.innerWidth < 768 && !menu.contains(e.target) && !toggle.contains(e.target)) {
-            menu.classList.remove('open');
-            toggle.textContent = '☰';
-        }
-    });
+    const menuToggleElement = document.getElementById('menuToggle');
+    if (menuToggleElement) {
+      menuToggleElement.addEventListener('click', toggleMenu);
+    }
 
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = document.querySelectorAll(".navbar .menu a");
+      const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+        if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+  <script>
     // Lava Particles Script (as is)
     const container = document.getElementById("lava-particles");
     if (container) { // Check if container exists before adding particles
