@@ -31,29 +31,29 @@ BloodStrikeWeb یک وب‌اپلیکیشن برای نمایش و بررسی ا
 BloodStrikeWeb/
 │
 ├── Attachments/
-    ├── index.html
+    ├── index.html - ایندکس صفحه اتچمنت ها
 ├── BetterPing/
-    ├── index.html
+    ├── index.html - ایندکس آموزش رفع تحریم
 ├── FakeAccount/
-    ├── index.html
+    ├── index.html - ایندکس آموزش زدن اکانت فیک
 ├── HowToBuyGold/
-    ├── index.html
+    ├── index.html - ایندکس آموزش خرید گلد
 ├── images/
-    ├── Images ...
+    ├── Images ... - تصاویر مربوطه
 ├── LagSlayer/
-    ├── index.html
+    ├── index.html - ایندکس آموزش رفع تحریم لگ اسلیر
 ├── QuickPing/
-    ├── index.html
+    ├── index.html - ایندکس آموزش رفع تحریم کوییک پینگ
 ├── Strikers/
-    ├── Images & HTML Files
+    ├── Images & HTML Files - تصاویر و فایل های مربوطه
 ├── StrikersInfo/
-    ├── index.html
+    ├── index.html - ایندکس صفحه اطلاعات استرایکر ها
 ├── Tutorials/
-    ├── index.html
-├── AttachmentStyles.css
-├── index.html - **ایندکس اصلی فایل**
-├── navbar.css - **استایل اصلی منوی صفحات**
-README.md #فایل فعلی
+    ├── index.html - ایندکس صفحه آموزش ها
+├── AttachmentStyles.css - استایل اتچمنت ها
+├── index.html - ایندکس اصلی فایل
+├── navbar.css - استایل اصلی منوی صفحات
+README.md - فایل فعلی
 ```
 
 ---
