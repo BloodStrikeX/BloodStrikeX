@@ -81,7 +81,7 @@ README.md - فایل فعلی
 
 1. وارد لینک زیر شوید
    ```bash
-   https://ialidev.github.io/BloodStrikeWeb/mainpage.html
+   https://ialidev.github.io/BloodStrikeFarsi
    ```
 2. از امکانات سایت و آموزش ها لذت ببرید
 
@@ -107,6 +107,6 @@ README.md - فایل فعلی
 ---
 
 <div align="center">
-  <b>BloodStrikeFarsi - همه چیز درباره بلاد استرایک یکجا!</b>
+  <b>BloodStrikeFarsi - همه چیز درباره بلاد استرایک در یکجا!</b>
 </div>
 
