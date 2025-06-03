@@ -52,8 +52,8 @@ BloodStrikeWeb/
 ├── Tutorials/
     ├── index.html
 ├── AttachmentStyles.css
-├── index.html #ایندکس اصلی فایل
-├── navbar.css #استایل اصلی منوی صفحات
+├── index.html ##ایندکس اصلی فایل
+├── navbar.css ##استایل اصلی منوی صفحات
 README.md #فایل فعلی
 ```
 
