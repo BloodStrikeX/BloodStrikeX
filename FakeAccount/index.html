@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>آموزش گیمینگ</title>
-        <link rel="icon" type="image/x-icon" href="../images/BSicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/BSicon.ico">
 
+    <link rel="stylesheet" href="../navbar.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
         body {
@@ -64,6 +65,17 @@
 
     <div id="particles-js"></div>
 
+  <div class="navbar">
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <div class="menu" id="menu">
+      <a href="../index.html">خانه</a>
+            <a href="..HowToBuyGold/index.html">آموزش خرید گلد</a>
+            <a href="../Attachments/index.html">اتچمنت‌ها</a>
+            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+            <a href="../Tutorials/index.html">کل آموزش ها</a>
+    </div>
+  </div>
+
     <header class="w-full container mx-auto p-6 mb-8 rounded-xl gaming-gradient shadow-lg flex flex-col items-center text-center">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 text-glow">
             به بلاد استرایک آموزش خوش آمدید!
@@ -102,8 +114,9 @@
 
     </main>
 
-    <footer class="w-full container mx-auto p-4 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 آموزش شما. تمام حقوق محفوظ است.</p>
+    <footer class="text-center mt-16 py-8 border-t border-slate-700">
+            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
     </footer>
 
     <script>

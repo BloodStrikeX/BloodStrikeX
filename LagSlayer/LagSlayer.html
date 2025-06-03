@@ -115,74 +115,7 @@
       background: linear-gradient(135deg, #1e1e1e, #282828);
       color: #fff;
     }
-
-    .navbar {
-      background: rgb(36,36,36);
-      background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(45,45,45,1) 50%, rgba(36,36,36,1) 100%);
-      color: #fff;
-      padding: 15px 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      position: relative;
-      z-index: 10;
-    }
-
-    .menu-toggle {
-      font-size: 26px;
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.3s ease, color 0.3s ease;
-      color: #f5ba1a;
-    }
-
-    .menu-toggle.open {
-      color: #ff4d4d; /* تغییر رنگ به قرمز */
-      transform: rotate(90deg); /* چرخش */
-    }
-
-    .menu {
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: rgba(50, 50, 50, 0.9);
-      backdrop-filter: blur(10px);
-      width: 230px;
-      display: none;
-      flex-direction: column;
-      border-radius: 10px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .menu a {
-      padding: 15px 20px;
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      font-weight: 500;
-      position: relative;
-    }
-
-    .menu a:hover {
-      color: #f5ba1a;
-      background: linear-gradient(90deg, rgba(255, 186, 26, 0.2), rgba(255, 186, 26, 0.1));
-    }
-
-    .menu .disabled {
-      color: #888;
-      cursor: not-allowed;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    
   </style>
 
   <script>
