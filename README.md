@@ -1,7 +1,7 @@
 # 🩸 BloodStrikeWeb --> @AliSlayer Telegram
 
 <div align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="120" alt="BloodStrike Icon" />
+  <img src="images/AliSlayer.webp" width="120" alt="BloodStrike Icon" />
 </div>
 
 ---
