@@ -1,87 +1,157 @@
+/* Import a cool gaming-style font (optional, ensure it's loaded in your HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 /* Navbar Styles */
 .navbar {
-  background: rgb(36, 36, 36);
-  background: linear-gradient(90deg, rgba(36, 36, 36, 1) 0%, rgba(45, 45, 45, 1) 50%, rgba(36, 36, 36, 1) 100%);
-  color: #fff;
+  background: #1a1a1a; /* Darker, solid base */
+  background: linear-gradient(90deg, #0f0f0f 0%, #1c1c1c 50%, #0f0f0f 100%); /* Subtle gradient */
+  color: #e0e0e0; /* Light grey text for contrast */
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1), 0 2px 5px rgba(0,0,0,0.5); /* Cyan glow + deeper shadow */
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000; /* Ensure it's on top */
+  border-bottom: 2px solid #00ffff; /* Cyan border accent */
+  font-family: 'Russo One', sans-serif; /* Gaming font */
 }
 
 /* Logo */
 .navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #f5ba1a;
+  font-family: 'Orbitron', sans-serif; /* More techy font for logo */
+  font-size: 28px; /* Slightly larger */
+  font-weight: 700;
+  color: #00ffff; /* Bright cyan */
   text-decoration: none;
-  transition: color 0.3s ease;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* Neon glow effect */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navbar .logo:hover {
-  color: #ff4d4d;
+  color: #ff00ff; /* Magenta on hover */
+  text-shadow: 0 0 7px #ff00ff, 0 0 12px #ff00ff;
 }
 
 /* Menu */
 .navbar .menu {
   display: flex;
-  gap: 20px;
+  gap: 25px; /* Slightly more spacing */
+  direction: rtl; /* اضافه کن */
 }
 
 .navbar .menu a {
-  color: #fff;
+  color: #e0e0e0;
   text-decoration: none;
   font-weight: 500;
-  padding: 10px 15px;
+  font-size: 16px;خن مخن
+  padding: 10px 18px;
   border-radius: 5px;
-  transition: background 0.3s ease, color 0.3s ease;
+  position: relative; /* For pseudo-elements */
+  overflow: hidden; /* For cool hover effect */
+  transition: color 0.4s ease, background-color 0.4s ease;
+  text-transform: uppercase; /* Common in gaming UIs */
+  letter-spacing: 1px;
+}
+
+.navbar .menu a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff); /* Cyan to Magenta gradient */
+  transition: left 0.4s ease;
 }
 
 .navbar .menu a:hover {
-  background: rgba(255, 186, 26, 0.2);
-  color: #f5ba1a;
+  color: #ffffff; /* Brighter white on hover */
+  background-color: rgba(0, 255, 255, 0.1); /* Subtle cyan background */
 }
+
+.navbar .menu a:hover::before {
+  left: 0;
+}
+
+/* Active link style (add a class 'active' to the current page's link) */
+.navbar .menu a.active {
+  color: #00ffff;
+  text-shadow: 0 0 3px #00ffff;
+}
+.navbar .menu a.active::before {
+  left: 0; /* Keep the underline for active link */
+}
+
 
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 30px; /* Larger icon */
   cursor: pointer;
-  color: #f5ba1a;
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: #00ffff; /* Cyan */
+  transition: transform 0.3s ease-in-out, color 0.3s ease;
+  padding: 5px;
+  border-radius: 50%; /* Make it circular for better tap target */
+  line-height: 1; /* Ensure icon is centered */
+}
+
+.menu-toggle:hover {
+    color: #ff00ff; /* Magenta on hover */
+    background-color: rgba(255, 0, 255, 0.1);
 }
 
 .menu-toggle.open {
-  color: #ff4d4d;
-  transform: rotate(90deg);
+  color: #ff00ff; /* Magenta when open */
+  transform: rotate(180deg); /* A full spin for open */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px; /* Adjust padding for smaller screens */
+  }
+
   .navbar .menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(50, 50, 50, 0.9);
-    backdrop-filter: blur(10px);
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    top: 70px; /* Adjusted based on navbar height + border */
+    right: 0; /* Align to the right edge */
+    left: 0; /* Full width */
+    background: rgba(20, 20, 20, 0.95); /* Darker, more opaque background */
+    backdrop-filter: blur(8px); /* Slightly less blur if performance is an issue */
+    width: 100%;
+    border-top: 1px solid #00ffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px) scaleY(0.95); /* Slide down and slight scale */
+    transform-origin: top center;
+    transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 10px 0; /* Add some padding */
   }
 
   .navbar .menu.open {
     display: flex;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scaleY(1);
+  }
+
+  .navbar .menu a {
+    padding: 15px 20px; /* Larger tap targets */
+    text-align: center; /* Center text */
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1); /* Separator lines */
+  }
+
+  .navbar .menu a:last-child {
+    border-bottom: none; /* No border for the last item */
+  }
+
+  .navbar .menu a::before { /* Adjust underline for mobile */
+    bottom: 5px; /* Bring it up a bit */
+    height: 2px;
   }
 
   .menu-toggle {

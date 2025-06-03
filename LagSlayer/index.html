@@ -97,106 +97,90 @@
   <!-- Fire Effect -->
   <canvas id="fireCanvas"></canvas>
 
-<div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+  <div class="navbar">
+    <span class="menu-toggle" id="menuToggle">☰</span>
     <div class="menu" id="menu">
       <a href="../index.html">خانه</a>
-            <a href="../Attachments/index.html">اتچمنت‌ها</a>
-            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
-            <a href="../Tutorials/index.html">کل آموزش ها</a>
+      <a href="../Attachments/index.html">اتچمنت‌ها</a>
+      <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+      <a href="../Tutorials/index.html">کل آموزش ها</a>
     </div>
   </div>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      direction: rtl;
-      background: linear-gradient(135deg, #1e1e1e, #282828);
-      color: #fff;
-    }
-
-  </style>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      
-      // تغییر حالت نمایش منو
-      const isMenuOpen = menu.style.display === 'flex';
-      menu.style.display = isMenuOpen ? 'none' : 'flex';
-      
-      // تغییر آیکون ☰ به X
-      if (isMenuOpen) {
-        toggle.textContent = '☰'; // بازگشت به آیکون ☰
-        toggle.classList.remove('open'); // حذف کلاس برای استایل
-      } else {
-        toggle.textContent = '❌'; // تغییر به ایکس قرمز
-        toggle.classList.add('open'); // اضافه کردن کلاس برای استایل
-      }
-    }
-
-    // بستن منو در کلیک بیرون از آن
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      
-      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.style.display = 'none';
-        toggle.textContent = '☰'; // بازگشت به آیکون ☰
-        toggle.classList.remove('open'); // حذف کلاس
-      }
-    });
-  </script>
-</div>
 
   <section class="py-16 px-6 text-center">
     <h1 class="text-4xl font-bold mb-8 text-aqua">آموزش رفع تحریم بازی بلاد استرایک</h1>
 
     <!-- گام 2 -->
-<div class="max-w-4xl mx-auto mb-12 p-6 gaming-card">
-  <a href="https://dl.lagslayer.com/app_dl/andriod/Lagslayer-V0.0.25.apk" target="_blank" class="rgb-border-button2" style="color: #9b6ef0f5; font-family: Arial, Helvetica, sans-serif;">
-    دانلود لگ اسلیر نسخه اندروید
-  </a>
-  <div class="h_iframe-aparat_embed_frame" style="margin-top: 1.5rem;">
-    <span style="display: block; padding-top: 57%"></span>
-    <iframe
-      src="https://www.aparat.com/video/video/embed/videohash/lygq6m7/vt/frame?titleShow=true&autoplay=true"
-      allow="autoplay"
-      allowFullScreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"
-    ></iframe>
-  </div>
-  <h3 class="text-xl font-bold mb-4">آموزش ویدئویی نسخه موبایل</h3>
-  <p class="text-green-400"><b>در این ویدیو نحوه نصب و ثبتنام در برنامه لگ اسلیر موبایل رو یاد میگیرید</b></p>
-</div>
+    <div class="max-w-4xl mx-auto mb-12 p-6 gaming-card">
+      <a href="https://dl.lagslayer.com/app_dl/andriod/Lagslayer-V0.0.25.apk" target="_blank" class="rgb-border-button2" style="color: #9b6ef0f5; font-family: Arial, Helvetica, sans-serif;">
+        دانلود لگ اسلیر نسخه اندروید
+      </a>
+      <div class="h_iframe-aparat_embed_frame" style="margin-top: 1.5rem;">
+        <span style="display: block; padding-top: 57%"></span>
+        <iframe
+          src="https://www.aparat.com/video/video/embed/videohash/lygq6m7/vt/frame?titleShow=true&autoplay=true"
+          allow="autoplay"
+          allowFullScreen="true"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"
+        ></iframe>
+      </div>
+      <h3 class="text-xl font-bold mb-4">آموزش ویدئویی نسخه موبایل</h3>
+      <p class="text-green-400"><b>در این ویدیو نحوه نصب و ثبتنام در برنامه لگ اسلیر موبایل رو یاد میگیرید</b></p>
+    </div>
 
-<div class="max-w-4xl mx-auto mb-12 p-6 gaming-card2">
-  <a href="https://dl.lagslayer.com/app_dl/windows/Lagslayer-V1.6.6.0.zip" target="_blank" class="rgb-border-button2" style="color: #fc1a1af5; font-family: Arial, Helvetica, sans-serif;">
-    دانلود لگ اسلیر نسخه ویندوز
-  </a>
-  <div class="h_iframe-aparat_embed_frame" style="margin-top: 1.5rem;">
-    <span style="display: block; padding-top: 57%"></span>
-    <iframe
-      src="https://www.aparat.com/video/video/embed/videohash/thfeh9r/vt/frame?titleShow=true&autoplay=true"
-      allow="autoplay"
-      allowFullScreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"
-    ></iframe>
-  </div>
-  <h3 class="text-xl font-bold mb-4">آموزش ویدئویی نسخه ویندوز</h3>
-  <p class="text-red"><b>در این ویدیو نحوه نصب و استقاده از برنامه لگ اسلیر ویندوز رو یاد میگیرید</b></p>
-</div>
+    <div class="max-w-4xl mx-auto mb-12 p-6 gaming-card2">
+      <a href="https://dl.lagslayer.com/app_dl/windows/Lagslayer-V1.6.6.0.zip" target="_blank" class="rgb-border-button2" style="color: #fc1a1af5; font-family: Arial, Helvetica, sans-serif;">
+        دانلود لگ اسلیر نسخه ویندوز
+      </a>
+      <div class="h_iframe-aparat_embed_frame" style="margin-top: 1.5rem;">
+        <span style="display: block; padding-top: 57%"></span>
+        <iframe
+          src="https://www.aparat.com/video/video/embed/videohash/thfeh9r/vt/frame?titleShow=true&autoplay=true"
+          allow="autoplay"
+          allowFullScreen="true"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"
+        ></iframe>
+      </div>
+      <h3 class="text-xl font-bold mb-4">آموزش ویدئویی نسخه ویندوز</h3>
+      <p class="text-red"><b>در این ویدیو نحوه نصب و استقاده از برنامه لگ اسلیر ویندوز رو یاد میگیرید</b></p>
+    </div>
   </section>
 
   <footer class="text-center mt-16 py-8 border-t border-slate-700">
-            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
-            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
+    <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+    <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const menuToggle = document.getElementById('menuToggle');
+      if (menu && menuToggle) {
+        menu.classList.toggle('open');
+        menuToggle.classList.toggle('open');
+      }
+    }
+
+    const menuToggleElement = document.getElementById('menuToggle');
+    if (menuToggleElement) {
+      menuToggleElement.addEventListener('click', toggleMenu);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = document.querySelectorAll(".navbar .menu a");
+      const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+        if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -66,12 +66,12 @@
     <div id="particles-js"></div>
 
   <div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <span class="menu-toggle" id="menuToggle">☰</span>
     <div class="menu" id="menu">
       <a href="../index.html">خانه</a>
-            <a href="../Attachments/index.html">اتچمنت‌ها</a>
-            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
-            <a href="../Tutorials/index.html">کل آموزش ها</a>
+      <a href="../Attachments/index.html">اتچمنت‌ها</a>
+      <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+      <a href="../Tutorials/index.html">کل آموزش ها</a>
     </div>
   </div>
 
@@ -224,6 +224,32 @@
                 }
             },
             "retina_detect": true
+        });
+
+        function toggleMenu() {
+          const menu = document.getElementById('menu');
+          const menuToggle = document.getElementById('menuToggle');
+          if (menu && menuToggle) {
+            menu.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+          }
+        }
+
+        const menuToggleElement = document.getElementById('menuToggle');
+        if (menuToggleElement) {
+          menuToggleElement.addEventListener('click', toggleMenu);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+          const links = document.querySelectorAll(".navbar .menu a");
+          const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+          links.forEach(link => {
+            const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+            if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+              link.classList.add("active");
+            }
+          });
         });
     </script>
 </body>

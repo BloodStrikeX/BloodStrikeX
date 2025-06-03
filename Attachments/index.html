@@ -32,7 +32,7 @@
       text-align: center;
       margin-bottom: 30px;
       color: #4CAF50;
-      background: linear-gradient(90deg, #ff0, #0f0, #ff0, #0f0);
+      background: linear-gradient(90deg, rgb(0, 255, 213), rgb(255, 0, 212), #ff0, rgb(255, 72, 0));
       background-size: 200% auto;
       background-clip: text;
       -webkit-background-clip: text;
@@ -85,6 +85,7 @@
       color: #4CAF50;
       background: linear-gradient(90deg, #ff0, #0f0, #ff0, #0f0);
       background-size: 200% auto;
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: rainbowText 2s linear infinite;
@@ -112,20 +113,20 @@
 </head>
 <body>
   <div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <span class="menu-toggle" id="menuToggle">☰</span>
     <div class="menu" id="menu">
       <a href="../index.html">خانه</a>
       <a href="../Attachments/index.html">اتچمنت‌ها</a>
       <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
       <a href="../Tutorials/index.html">کل آموزش ها</a>
     </div>
-  </div>
+  </div><br>
 
   <h2>اتچمنت گان های بازی</h2>
 
   <!-- دسته Rifle -->
   <div class="category">
-    <h2>Rifles</h2>
+    <h2>Rifles</h2><br>
     <div class="guns">
       <a class="card" href="M4A1.html"><img src="M4A1.webp" loading="lazy"><span style="font-size: 22.5px;"><b>M4A1</b></span></a>
       <a class="card" href="Ak47.html"><img src="Ak47.webp" loading="lazy"><span style="font-size: 22.5px;">Ak47</span></a>
@@ -140,11 +141,11 @@
       <a class="card" href="Mcx.html"><img src="Mcx.webp" loading="lazy"><span style="font-size: 22.5px;">Mcx</span></a>
       <a class="card" href="Galil.html"><img src="Galil.webp" loading="lazy"><span style="font-size: 22.5px;">Galil</span></a>
     </div>
-    </div>
+  </div>
 
-    <!-- دسته SMG -->
-    <div class="category">
-    <h2>Submachine Guns (SMG)</h2>
+  <!-- دسته SMG -->
+  <div class="category">
+    <h2>Submachine Guns (SMG)</h2><br>
     <div class="guns">
       <a class="card" href="Mp5.html"><img src="Mp5.webp" loading="lazy"><span style="font-size: 22.5px;">Mp5</span></a>
       <a class="card" href="Vector.html"><img src="Vector.webp" loading="lazy"><span style="font-size: 22.5px;">Vector</span></a>
@@ -153,30 +154,30 @@
       <a class="card" href="P90.html"><img src="P90.webp" loading="lazy"><span style="font-size: 22.5px;">P90</span></a>
       <a class="card" href="Uzi.html"><img src="Uzi.webp" loading="lazy"><span style="font-size: 22.5px;">Uzi</span></a>
     </div>
-    </div>
+  </div>
 
-    <!-- دسته Shotgun -->
-    <div class="category">
-    <h2>Shotguns</h2>
+  <!-- دسته Shotgun -->
+  <div class="category">
+    <h2>Shotguns</h2><br>
     <div class="guns">
       <a class="card" href="Origin-12.html"><img src="Origin-12.webp" loading="lazy"><span style="font-size: 22.5px;">Origin-12</span></a>
       <a class="card" href="Mp155.html"><img src="Mp155.webp" loading="lazy"><span style="font-size: 22.5px;">Mp155</span></a>
     </div>
-    </div>
+  </div>
 
-    <!-- دسته LMG -->
-    <div class="category">
-    <h2>Light Machine Guns (LMG)</h2>
+  <!-- دسته LMG -->
+  <div class="category">
+    <h2>Light Machine Guns (LMG)</h2><br>
     <div class="guns">
       <a class="card" href="Pkm.html"><img src="Pkm.webp" loading="lazy"><span style="font-size: 22.5px;">Pkm</span></a>
       <a class="card" href="Minigun.html"><img src="Minigun.webp" loading="lazy"><span style="font-size: 22.5px;">Minigun</span></a>
       <a class="card" href="Rpk.html"><img src="Rpk.webp" loading="lazy"><span style="font-size: 22.5px;">Rpk</span></a>
     </div>
-    </div>
+  </div>
 
-    <!-- دسته Sniper -->
-    <div class="category">
-    <h2>Snipers</h2>
+  <!-- دسته Sniper -->
+  <div class="category">
+    <h2>Snipers</h2><br>
     <div class="guns">
       <a class="card" href="Kala.html"><img src="Kala.webp" loading="lazy"><span style="font-size: 22.5px;">Kala</span></a>
       <a class="card" href="M700.html"><img src="M700.webp" loading="lazy"><span style="font-size: 22.5px;">M700</span></a>
@@ -184,54 +185,49 @@
       <a class="card" href="Svd.html"><img src="Svd.webp" loading="lazy"><span style="font-size: 22.5px;">Svd</span></a>
       <a class="card" href="Bow.html"><img src="Bow.webp" loading="lazy"><span style="font-size: 22.5px;">Bow</span></a>
     </div>
-    </div>
+  </div>
 
-    <!-- دسته Secondary -->
-    <div class="category">
-    <h2>Secondary</h2>
+  <!-- دسته Secondary -->
+  <div class="category">
+    <h2>Secondary</h2><br>
     <div class="guns">
       <a class="card" href="Glock.html"><img src="Glock.webp" loading="lazy"><span style="font-size: 22.5px;">Glock</span></a>
       <a class="card" href="Deagle.html"><img src="Deagle.webp" loading="lazy"><span style="font-size: 22.5px;">Deagle</span></a>
       <a class="card" href="Magnum.html"><img src="Magnum.webp" loading="lazy"><span style="font-size: 22.5px;">Magnum</span></a>
     </div>
-    </div>
-    </div>
-  </div>
-      <!-- بقیه گان‌های Sniper -->
-    </div>
   </div>
 
   <footer class="text-center mt-16 py-8 border-t border-slate-700">
-            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
-            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
+    <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+    <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
   </footer>
 
   <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    const toggle = document.getElementById('menuToggle');
-    const isMenuOpen = menu.classList.contains('open');
-
-    if (isMenuOpen) {
-      menu.classList.remove('open');
-      toggle.textContent = '☰';
-      toggle.classList.remove('open');
-    } else {
-      menu.classList.add('open');
-      toggle.textContent = '❌';
-      toggle.classList.add('open');
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const menuToggle = document.getElementById('menuToggle');
+      if (menu && menuToggle) {
+        menu.classList.toggle('open');
+        menuToggle.classList.toggle('open');
+      }
     }
-  }
 
-  document.addEventListener('click', function (e) {
-    const menu = document.getElementById('menu');
-    const toggle = document.getElementById('menuToggle');
-    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-      menu.classList.remove('open');
-      toggle.textContent = '☰';
-      toggle.classList.remove('open');
+    const menuToggleElement = document.getElementById('menuToggle');
+    if (menuToggleElement) {
+      menuToggleElement.addEventListener('click', toggleMenu);
     }
-  });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = document.querySelectorAll(".navbar .menu a");
+      const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+        if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+          link.classList.add("active");
+        }
+      });
+    });
   </script>
 </body>
 </html>

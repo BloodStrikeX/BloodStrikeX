@@ -64,12 +64,12 @@
 
   <!-- Navbar -->
   <div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <span class="menu-toggle" id="menuToggle">☰</span>
     <div class="menu" id="menu">
       <a href="../index.html">خانه</a>
-            <a href="../Attachments/index.html">اتچمنت‌ها</a>
-            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
-            <a href="../Tutorials/index.html">کل آموزش ها</a>
+      <a href="../Attachments/index.html">اتچمنت‌ها</a>
+      <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+      <a href="../Tutorials/index.html">کل آموزش ها</a>
     </div>
   </div>
 
@@ -112,102 +112,37 @@
 
   <!-- Footer -->
   <footer class="text-center mt-16 py-8 border-t border-slate-700">
-            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
-            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
+    <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+    <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
   </footer>
 
-  <!-- Particle Script -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      const isMenuOpen = menu.classList.contains('open');
-
-      if (isMenuOpen) {
-        menu.classList.remove('open');
-        toggle.textContent = '☰';
-        toggle.classList.remove('open');
-      } else {
-        menu.classList.add('open');
-        toggle.textContent = '❌';
-        toggle.classList.add('open');
+      const menuToggle = document.getElementById('menuToggle');
+      if (menu && menuToggle) {
+        menu.classList.toggle('open');
+        menuToggle.classList.toggle('open');
       }
     }
 
-    document.addEventListener('click', function (e) {
-      const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.classList.remove('open');
-        toggle.textContent = '☰';
-        toggle.classList.remove('open');
-      }
-    });
+    const menuToggleElement = document.getElementById('menuToggle');
+    if (menuToggleElement) {
+      menuToggleElement.addEventListener('click', toggleMenu);
+    }
 
-    const canvas = document.getElementById("fireCanvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = document.querySelectorAll(".navbar .menu a");
+      const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
 
-    const particles = [];
-    const maxParticles = window.innerWidth < 768 ? 100 : 250;
-
-    class Particle {
-      constructor(fire = false) {
-        this.fire = fire;
-        this.reset();
-      }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 2;
-        this.speedY = this.fire ? Math.random() * 2 + 1 : Math.random() * 1 + 0.5;
-        this.speedX = this.fire ? (Math.random() - 0.5) * 1 : (Math.random() - 0.5) * 0.3;
-        this.alpha = Math.random() * 0.5 + 0.5;
-      }
-      update() {
-        this.y += this.speedY;
-        this.x += this.speedX;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.x > canvas.width || this.x < 0) this.x = Math.random() * canvas.width;
-      }
-      draw() {
-        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
-        if (this.fire) {
-          gradient.addColorStop(0, `rgba(255, ${Math.floor(Math.random() * 100 + 50)}, 0, ${this.alpha})`);
-          gradient.addColorStop(1, `rgba(255, 0, 0, 0)`);
-        } else {
-          gradient.addColorStop(0, `rgba(255, 255, 255, ${this.alpha})`);
-          gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+      links.forEach(link => {
+        const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+        if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+          link.classList.add("active");
         }
-
-        ctx.beginPath();
-        ctx.fillStyle = gradient;
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      while (particles.length < maxParticles) {
-        particles.push(new Particle(false)); // Snow
-        particles.push(new Particle(true));  // Firey flake
-      }
-      particles.forEach(p => {
-        p.update();
-        p.draw();
       });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      particles.length = 0; // ریست ذرات برای هماهنگی با اندازه جدید
     });
   </script>
+  <!-- ...existing particle script... -->
 </body>
 </html>

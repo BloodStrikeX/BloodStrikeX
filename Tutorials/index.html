@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="../navbar.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Import (used by the gaming-navbar.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scrollbar that might be caused by canvas */
+            overflow-x: hidden;
         }
         /* Custom scrollbar for a more polished look */
         ::-webkit-scrollbar {
@@ -99,15 +103,17 @@
 
     <canvas id="particle-canvas"></canvas>
 
+    <!-- Navbar in fff.html style -->
     <div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
-    <div class="menu" id="menu">
-      <a href="../index.html">خانه</a>
+        <!-- Optional logo: <a href="../index.html" class="logo">BloodStrike</a> -->
+        <span class="menu-toggle" id="menuToggle">☰</span>
+        <div class="menu" id="menu">
+            <a href="../index.html">خانه</a>
             <a href="../Attachments/index.html">اتچمنت‌ها</a>
             <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
             <a href="../Tutorials/index.html">کل آموزش ها</a>
+        </div>
     </div>
-  </div>
 
     <div class="container mx-auto px-4 py-8 md:py-16 relative z-10"> <header class="text-center mb-12 md:mb-16">
             <h1 class="text-4xl md:text-5xl font-bold text-sky-400">
@@ -248,6 +254,39 @@
     </div>
     <div id="messageBox" class="message-box"></div>
 
+    <!-- Navbar JS from fff.html -->
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (menu && menuToggle) {
+                menu.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            }
+        }
+
+        // Attach event listener to the menu toggle button
+        const menuToggleElement = document.getElementById('menuToggle');
+        if (menuToggleElement) {
+            menuToggleElement.addEventListener('click', toggleMenu);
+        }
+
+        // Optional: Add 'active' class to current page link
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".navbar .menu a");
+            const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+            links.forEach(link => {
+                const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+                if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <!-- ...rest of your scripts (particle, message box, etc.)... -->
     <script>
         // Function to show a message (example)
         function showMessage(message, type = 'success') {
@@ -285,14 +324,14 @@
         let mouse = {
             x: null,
             y: null,
-            radius: (canvas.height/120) * (canvas.width/120) // Adjust radius based on screen size
+            radius: (canvas.height/120) * (canvas.width/120)
         };
 
         window.addEventListener('mousemove', (event) => {
             mouse.x = event.clientX;
             mouse.y = event.clientY;
         });
-        
+
         // Particle class
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
@@ -304,7 +343,6 @@
                 this.color = color;
             }
 
-            // Method to draw individual particle
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -312,69 +350,42 @@
                 ctx.fill();
             }
 
-            // Method to update particle position
             update() {
-                // Check if particle is still within canvas
                 if (this.x > canvas.width || this.x < 0) {
                     this.directionX = -this.directionX;
                 }
                 if (this.y > canvas.height || this.y < 0) {
                     this.directionY = -this.directionY;
                 }
-
-                // Optional: Mouse interaction - push particles away
-                // let dx = mouse.x - this.x;
-                // let dy = mouse.y - this.y;
-                // let distance = Math.sqrt(dx*dx + dy*dy);
-                // if (distance < mouse.radius + this.size){
-                //     if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
-                //         this.x += 2;
-                //     }
-                //     if (mouse.x > this.x && this.x > this.size * 10) {
-                //         this.x -= 2;
-                //     }
-                //     if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
-                //         this.y += 2;
-                //     }
-                //     if (mouse.y > this.y && this.y > this.size * 10) {
-                //         this.y -= 2;
-                //     }
-                // }
-
-                // Move particle
                 this.x += this.directionX;
                 this.y += this.directionY;
-
-                // Draw particle
                 this.draw();
             }
         }
 
-        // Create particle array
         function initParticles() {
             particlesArray = [];
-            let numberOfParticles = (canvas.height * canvas.width) / 9000; // Adjust density based on screen area
-            numberOfParticles = Math.min(numberOfParticles, 150); // Cap max particles
-            
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            numberOfParticles = Math.min(numberOfParticles, 150);
+
             const particleColors = [
-                'rgba(56, 189, 248, 0.3)',  // sky-500 with alpha
-                'rgba(14, 165, 233, 0.25)', // sky-600 with alpha
-                'rgba(125, 211, 252, 0.3)', // sky-300 with alpha
-                'rgba(224, 242, 254, 0.2)'  // sky-100 with alpha (faint white-blue)
+                'rgba(56, 189, 248, 0.3)',
+                'rgba(14, 165, 233, 0.25)',
+                'rgba(125, 211, 252, 0.3)',
+                'rgba(224, 242, 254, 0.2)'
             ];
 
             for (let i = 0; i < numberOfParticles; i++) {
-                let size = (Math.random() * 2.5) + 0.5; // Particle size: 0.5 to 3
+                let size = (Math.random() * 2.5) + 0.5;
                 let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                let directionX = (Math.random() * 0.4) - 0.2; // Slow movement
-                let directionY = (Math.random() * 0.4) - 0.2; // Slow movement
+                let directionX = (Math.random() * 0.4) - 0.2;
+                let directionY = (Math.random() * 0.4) - 0.2;
                 let color = particleColors[Math.floor(Math.random() * particleColors.length)];
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
 
-        // Animation loop
         function animateParticles() {
             requestAnimationFrame(animateParticles);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -385,26 +396,21 @@
             connectParticles();
         }
 
-        // Function to connect particles with lines
         function connectParticles() {
             let opacityValue = 1;
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
                     let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
                                  + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    
-                    // Adjust connectDistance based on screen size for better visual consistency
-                    let connectDistance = (canvas.width/10) * (canvas.height/10) / 50; 
-                    connectDistance = Math.min(connectDistance, 120*120); // Cap max distance squared (120px)
-                    connectDistance = Math.max(connectDistance, 70*70);   // Min distance squared (70px)
-
+                    let connectDistance = (canvas.width/10) * (canvas.height/10) / 50;
+                    connectDistance = Math.min(connectDistance, 120*120);
+                    connectDistance = Math.max(connectDistance, 70*70);
 
                     if (distance < connectDistance) {
-                        opacityValue = 1 - (distance / (connectDistance * 1.1)); // Opacity fades with distance
-                        let lineColor = particlesArray[a].color.replace(/[\d\.]+\)$/g, `${Math.max(0, opacityValue - 0.3)})`); // Use particle color for line, reduce opacity further
-                        
+                        opacityValue = 1 - (distance / (connectDistance * 1.1));
+                        let lineColor = particlesArray[a].color.replace(/[\d\.]+\)$/g, `${Math.max(0, opacityValue - 0.3)})`);
                         ctx.strokeStyle = lineColor;
-                        ctx.lineWidth = 0.5; // Thin lines
+                        ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                         ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -414,30 +420,14 @@
             }
         }
 
-        // Event listener for window resize
         window.addEventListener('resize', () => {
             setCanvasDimensions();
             mouse.radius = (canvas.height/120) * (canvas.width/120);
-            initParticles(); // Reinitialize particles on resize for responsiveness
+            initParticles();
         });
 
-        // Initial setup
         initParticles();
         animateParticles();
-
-        // --- End of Particle Background Script ---
-
-
-        // Example usage for message box (can be triggered by button clicks etc.)
-        // document.querySelectorAll('a.bg-sky-500').forEach(button => {
-        //     button.addEventListener('click', (event) => {
-        //         // To show a message AND navigate, you might prevent default
-        //         // event.preventDefault(); 
-        //         // showMessage(`Navigating for '${button.textContent.trim()}'...`, 'success');
-        //         // setTimeout(() => window.location.href = button.href, 500); // then navigate manually after a short delay
-        //     });
-        // });
     </script>
-
 </body>
 </html>
