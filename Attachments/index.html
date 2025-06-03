@@ -59,6 +59,17 @@
       justify-items: center;
     }
 
+    @media (max-width: 900px) {
+      .guns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .guns {
+        grid-template-columns: repeat(2, 1fr); /* Minimum 2 columns on small devices */
+      }
+    }
+
     .card {
       position: relative;
       border-radius: 15px;
