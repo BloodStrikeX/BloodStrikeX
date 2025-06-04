@@ -71,15 +71,17 @@
   <canvas id="fireCanvas"></canvas>
 
   <!-- Navbar -->
-  <div class="navbar">
-    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
-    <div class="menu" id="menu">
-      <a href="../index.html">خانه</a>
-      <a href="../Attachments/index.html">اتچمنت‌ها</a>
-      <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
-      <a href="../Tutorials/index.html">کل آموزش ها</a>
+  <!-- Navbar in fff.html style -->
+    <div class="navbar">
+        <!-- Optional logo: <a href="../index.html" class="logo">BloodStrike</a> -->
+        <span class="menu-toggle" id="menuToggle">☰</span>
+        <div class="menu" id="menu">
+            <a href="../index.html">خانه</a>
+            <a href="../Attachments/index.html">اتچمنت‌ها</a>
+            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+            <a href="../Tutorials/index.html">کل آموزش ها</a>
+        </div>
     </div>
-  </div>
 
   <!-- آموزش خرید گلد -->
   <section class="py-16 px-6 text-center">
@@ -126,21 +128,34 @@
 
   <!-- Particle Script -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const toggle = document.getElementById('menuToggle');
-      const isMenuOpen = menu.classList.contains('open');
+    // Function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (menu && menuToggle) {
+                menu.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            }
+        }
 
-      if (isMenuOpen) {
-        menu.classList.remove('open');
-        toggle.textContent = '☰';
-        toggle.classList.remove('open');
-      } else {
-        menu.classList.add('open');
-        toggle.textContent = '❌';
-        toggle.classList.add('open');
-      }
-    }
+        // Attach event listener to the menu toggle button
+        const menuToggleElement = document.getElementById('menuToggle');
+        if (menuToggleElement) {
+            menuToggleElement.addEventListener('click', toggleMenu);
+        }
+
+        // Optional: Add 'active' class to current page link
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".navbar .menu a");
+            const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+            links.forEach(link => {
+                const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+                if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+                    link.classList.add("active");
+                }
+            });
+        });
 
     document.addEventListener('click', function (e) {
       const menu = document.getElementById('menu');

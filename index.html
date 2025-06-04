@@ -20,6 +20,11 @@
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts Import (used by the gaming-navbar.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+
 
   <style>
     /* Global Styles */
@@ -305,15 +310,17 @@
 </head>
 <body class="bg-black text-white font-sans">
   <div id="particles-js"></div>
-  <div class="navbar">
-    <span class="menu-toggle" id="menuToggle">☰</span>
-    <div class="menu" id="menu">
-      <a href="index.html">خانه</a>
-      <a href="Attachments/index.html">اتچمنت‌ها</a>
-      <a href="BetterPing/index.html">رفع تحریم‌ها</a>
-      <a href="Tutorials/index.html">کل آموزش ها</a>
+  <!-- Navbar in fff.html style -->
+    <div class="navbar">
+        <!-- Optional logo: <a href="../index.html" class="logo">BloodStrike</a> -->
+        <span class="menu-toggle" id="menuToggle">☰</span>
+        <div class="menu" id="menu">
+            <a href="index.html">خانه</a>
+            <a href="Attachments/index.html">اتچمنت‌ها</a>
+            <a href="BetterPing/index.html">رفع تحریم‌ها</a>
+            <a href="Tutorials/index.html">کل آموزش ها</a>
+        </div>
     </div>
-  </div>
 
   <section class="min-h-screen flex flex-col justify-center items-center px-4 py-8">
     <div class="bg-black bg-opacity-40 p-8 rounded-xl text-center max-w-lg w-full" style="color: #f5ba1a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
@@ -531,31 +538,34 @@
         "retina_detect": true
     });
 
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const menuToggle = document.getElementById('menuToggle');
-      if (menu && menuToggle) {
-        menu.classList.toggle('open');
-        menuToggle.textContent = menu.classList.contains('open') ? '❌' : '☰';
-      }
-    }
-
-    const menuToggleElement = document.getElementById('menuToggle');
-    if (menuToggleElement) {
-      menuToggleElement.addEventListener('click', toggleMenu);
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      const links = document.querySelectorAll(".navbar .menu a");
-      const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
-
-      links.forEach(link => {
-        const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
-        if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
-          link.classList.add("active");
+    // Function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (menu && menuToggle) {
+                menu.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            }
         }
-      });
-    });
+
+        // Attach event listener to the menu toggle button
+        const menuToggleElement = document.getElementById('menuToggle');
+        if (menuToggleElement) {
+            menuToggleElement.addEventListener('click', toggleMenu);
+        }
+
+        // Optional: Add 'active' class to current page link
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".navbar .menu a");
+            const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+            links.forEach(link => {
+                const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+                if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+                    link.classList.add("active");
+                }
+            });
+        });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
