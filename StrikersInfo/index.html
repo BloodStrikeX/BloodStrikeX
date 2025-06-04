@@ -113,6 +113,17 @@
         box-shadow: 0 0 25px rgb(255, 0, 0);
       }
     }
+    
+    @media (max-width: 900px) {
+      .guns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .guns {
+        grid-template-columns: repeat(2, 1fr); /* Minimum 2 columns on small devices */
+      }
+    }
   </style>
 </head>
 <body>
