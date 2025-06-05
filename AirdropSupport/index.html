@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>آموزش‌های ایردراپ و ساپورت</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS for animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../navbar.css">
+    <style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+            min-height: 100vh;
+            /* Beautiful gradient background */
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Particle canvas style */
+        #particle-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* Card style for iframes */
+        .video-card {
+            background: rgba(30,41,59,0.85);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+            overflow: hidden;
+            border: 2px solid #38bdf8;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .video-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 16px 40px 0 rgba(56,189,248,0.25);
+            border-color: #a6e416;
+        }
+        .h_iframe-aparat_embed_frame {
+            position: relative;
+            width: 100%;
+        }
+        .h_iframe-aparat_embed_frame .ratio {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .h_iframe-aparat_embed_frame iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Responsive grid */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 640px) {
+            .videos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 1024px) {
+            .videos-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-bottom: 2px solid #38bdf8;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #38bdf8;
+            cursor: pointer;
+        }
+        .menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .menu a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #38bdf8;
+        }
+        @media (max-width: 640px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(30, 41, 59, 0.95);
+                padding: 1rem 0;
+                border-top: 2px solid #38bdf8;
+            }
+            .menu.open {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navbar style (مطابق Tutorials/index.html و با استایل از navbar.css) -->
+    <div class="navbar">
+        <span class="menu-toggle" id="menuToggle">☰</span>
+        <div class="menu" id="menu">
+            <a href="../index.html">خانه</a>
+            <a href="../Attachments/index.html">اتچمنت‌ها</a>
+            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+            <a href="../Tutorials/index.html">کل آموزش ها</a>
+        </div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4 py-8">
+        <header class="text-center mb-10">
+            <h1 style="margin-top: 50px;" class="text-3xl md:text-4xl font-bold text-sky-400 mb-2" data-aos="fade-down">
+                آموزش‌های ایردراپ و ساپورت
+            </h1>
+            <p class="text-yellow-400 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="200">
+                این قابلیت ها توی بازی از طریق بک پک قابل خرید هستن و هرکدوم قابلیت متفاوتی دارند<br>
+                هر ویدیو را به دلخواه انتخاب و تماشا کنید.
+            </p>
+        </header>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-red-600 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ صفحه را تا آخر به پایین بکشید ↓
+        </span>
+        </div><br>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-lime-500 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ LOADOUT ↓
+        </span>
+        </div>
+
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="h_iframe-aparat_embed_frame" style="padding-top: 57%;">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/gxd3wv3/vt/frame?titleShow=true"
+                        allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-lime-500 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ VEHICLE ↓
+        </span>
+        </div>
+
+            <!-- Video 2 -->
+            <div class="video-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="h_iframe-aparat_embed_frame" style="padding-top: 57%;">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/ocqo2qi/vt/frame?titleShow=true"
+                        allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-lime-500 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ UAV ↓
+        </span>
+        </div>
+
+            <!-- Video 3 -->
+            <div class="video-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="h_iframe-aparat_embed_frame" style="padding-top: 57%;">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/oxc68ph/vt/frame?titleShow=true"
+                        allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-lime-500 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ INTERFERENCE DRONE ↓
+        </span>
+        </div>
+
+            <!-- Video 4 -->
+            <div class="video-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="h_iframe-aparat_embed_frame" style="padding-top: 57%;">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/orndg91/vt/frame?titleShow=true"
+                        allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-lime-500 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ EXPRESS SHOP ↓
+        </span>
+        </div>
+
+            <!-- Video 5 -->
+            <div class="video-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="h_iframe-aparat_embed_frame" style="padding-top: 57%;">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/lmuopw9/vt/frame?titleShow=true"
+                        allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-lime-500 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ FULTON BALLON ↓
+        </span>
+        </div>
+
+            <!-- Video 6 -->
+            <div class="video-card" data-aos="zoom-in" data-aos-delay="600">
+                <div class="h_iframe-aparat_embed_frame" style="padding-top: 57%;">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/cmulg81/vt/frame?titleShow=true"
+                        allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+        <footer class="text-center mt-16 py-8 border-t border-slate-700">
+            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
+        </footer>
+    </div>
+    <!-- Particle background script (copied and simplified from your index.html) -->
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        function setCanvasDimensions() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        setCanvasDimensions();
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            numberOfParticles = Math.min(numberOfParticles, 120);
+            const particleColors = [
+                'rgba(56, 189, 248, 0.3)',
+                'rgba(14, 165, 233, 0.25)',
+                'rgba(125, 211, 252, 0.3)',
+                'rgba(224, 242, 254, 0.2)'
+            ];
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2.5) + 0.5;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.4) - 0.2;
+                let directionY = (Math.random() * 0.4) - 0.2;
+                let color = particleColors[Math.floor(Math.random() * particleColors.length)];
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connectParticles();
+        }
+
+        function connectParticles() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2)
+                                 + ((particlesArray[a].y - particlesArray[b].y) ** 2);
+                    let connectDistance = (canvas.width/10) * (canvas.height/10) / 50;
+                    connectDistance = Math.min(connectDistance, 120*120);
+                    connectDistance = Math.max(connectDistance, 70*70);
+                    if (distance < connectDistance) {
+                        opacityValue = 1 - (distance / (connectDistance * 1.1));
+                        let lineColor = particlesArray[a].color.replace(/[\d\.]+\)$/g, `${Math.max(0, opacityValue - 0.3)})`);
+                        ctx.strokeStyle = lineColor;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            setCanvasDimensions();
+            initParticles();
+        });
+
+        initParticles();
+        animateParticles();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (menu && menuToggle) {
+                menu.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            }
+        }
+
+        // Attach event listener to the menu toggle button
+        const menuToggleElement = document.getElementById('menuToggle');
+        if (menuToggleElement) {
+            menuToggleElement.addEventListener('click', toggleMenu);
+        }
+
+        // Optional: Add 'active' class to current page link
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".navbar .menu a");
+            const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+            links.forEach(link => {
+                const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+                if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
