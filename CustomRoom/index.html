@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش گیمینگ</title>
+    <link rel="icon" type="image/x-icon" href="../images/BSicon.ico">
+
+    <link rel="stylesheet" href="../navbar.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .container {
+            max-width: 1024px;
+        }
+        .gaming-gradient {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-bg {
+            background-color: rgba(45, 55, 72, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, z-index 0.3s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+        .card-bg:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(118, 75, 162, 0.6);
+            z-index: 10;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(102, 126, 234, 0.7);
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .h_iframe-aparat_embed_frame{position:relative;}
+        .h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}
+        .h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+    </style>
+        <section class="mb-8">
+
+    <div id="particles-js"></div>
+
+  <!-- Navbar in fff.html style -->
+    <div class="navbar">
+        <!-- Optional logo: <a href="../index.html" class="logo">BloodStrike</a> -->
+        <span class="menu-toggle" id="menuToggle">☰</span>
+        <div class="menu" id="menu">
+            <a href="../index.html">خانه</a>
+            <a href="../Attachments/index.html">اتچمنت‌ها</a>
+            <a href="../BetterPing/index.html">رفع تحریم‌ها</a>
+            <a href="../Tutorials/index.html">کل آموزش ها</a>
+        </div>
+    </div>
+
+    <header class="w-full container mx-auto p-6 mb-8 rounded-xl gaming-gradient shadow-lg flex flex-col items-center text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 text-glow">
+            به بلاد استرایک آموزش خوش آمدید!
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-200">
+            آموزش ورود به کاستوم روم های بلاد استرایک
+        </p>
+    </header>
+
+    <main class="w-full container mx-auto card-bg p-6 sm:p-10 rounded-xl shadow-lg mb-8">
+
+        <section>
+            <h2 class="text-3xl font-bold text-white mb-6 text-glow">ویدعو و توضیحات این آموزش</h2>
+            <div class="space-y-6 text-gray-300 leading-relaxed">
+                <div class="h_iframe-aparat_embed_frame">
+                    <span style="display: block;padding-top: 57%"></span>
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/srbn9j1/vt/frame?titleShow=true&autoplay=true" allow="autoplay" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+                <p class="text-2xl">
+                    آموزش ورود به کاستوم روم بلاد استرایک به صورت ویدئویی و ساده ارائه شده است.
+                </p>
+                <p class="text-5xl text-yellow-400 font-bold">
+                    ⚠️ توضیحات مهم:
+                </p>
+                <ul class="space-y-2">
+                    <li class="text-2xl text-lime-400 font-bold">1 کد و رمز هر کاستوم روم فرق میکنه و یکی نیست</li>
+                    <li class="text-2xl text-red-400 font-bold">2 برای اطلاع ار اخرین کاستوم روم ها به ما بپیوندید</li>
+                    <li class="text-2xl text-lime-400 font-bold"><br>
+                        <a href="https://t.me/BloodStrikeFarsi" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            به کانال تلگرام ما بپیوندید
+                        </a>
+                    </li>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-16 py-8 border-t border-slate-700">
+            <p style="direction: ltr;" class="text-slate-400">&copy; 2023 Blood Strike Farsi. All rights reserved.</p>
+            <p class="text-slate-500 text-sm mt-1">Designed with ♥ And HTML,CSS,JS , @AliSlayer Telegram</p>
+    </footer>
+
+    <script>
+        // particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (menu && menuToggle) {
+                menu.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            }
+        }
+
+        // Attach event listener to the menu toggle button
+        const menuToggleElement = document.getElementById('menuToggle');
+        if (menuToggleElement) {
+            menuToggleElement.addEventListener('click', toggleMenu);
+        }
+
+        // Optional: Add 'active' class to current page link
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".navbar .menu a");
+            const currentPath = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+            links.forEach(link => {
+                const linkPath = link.getAttribute("href").substring(link.getAttribute("href").lastIndexOf('/') + 1);
+                if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
