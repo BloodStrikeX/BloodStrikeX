@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -123,10 +124,15 @@
                 تمام آموزش هایی کاربردی ای که نیاز دارید برای بازی در اینجا قرار داده شده است
             </p>
         </header>
+        <div class="w-full flex justify-center my-2">
+        <span style="font-size: 30px;" class="animate-bounce text-red-600 text-lg font-bold" data-aos="fade-bottom" data-aos-delay="700">
+            ↓ صفحه را به پایین بکشید ↓
+        </span>
+        </div>
 
         <div class="space-y-8 md:space-y-12">
 
-            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400">
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400" data-aos="fade-down" data-aos-delay="300">
                 <div class="flex flex-col md:flex-row-reverse md:items-stretch">
                     <div class="md:w-2/5">
                         <img src="../images/BoostersIcon.webp"
@@ -149,7 +155,7 @@
                 </div>
             </section>
 
-            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400">
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400" data-aos="fade-down" data-aos-delay="300">
                 <div class="flex flex-col md:flex-row-reverse md:items-stretch">
                     <div class="md:w-2/5">
                         <img src="../images/Gold.webp"
@@ -173,7 +179,7 @@
                 </div>
             </section>
 
-            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400">
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400" data-aos="fade-down" data-aos-delay="300">
                 <div class="flex flex-col md:flex-row-reverse md:items-stretch">
                     <div class="md:w-2/5">
                         <img src="../images/AttachmentBG.webp"
@@ -198,7 +204,7 @@
 
             <div class="space-y-8 md:space-y-12">
 
-            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400">
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400" data-aos="fade-down" data-aos-delay="300">
                 <div class="flex flex-col md:flex-row-reverse md:items-stretch">
                      <div class="md:w-2/5">
                         <img src="../images/CustomRoom.webp"
@@ -221,7 +227,7 @@
                 </div>
             </section>
 
-            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400">
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400" data-aos="fade-down" data-aos-delay="300">
                 <div class="flex flex-col md:flex-row-reverse md:items-stretch">
                     <div class="md:w-2/5">
                         <img src="../images/StrikersBG.webp"
@@ -245,7 +251,7 @@
                 </div>
             </section>
 
-            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400">
+            <section class="bg-slate-800 bg-opacity-70 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sky-500/30 border-4 border-sky-400" data-aos="fade-down" data-aos-delay="300">
                 <div class="flex flex-col md:flex-row-reverse md:items-stretch">
                      <div class="md:w-2/5">
                         <img src="../images/MultiplayAccount.webp"
@@ -452,5 +458,9 @@
         initParticles();
         animateParticles();
     </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
