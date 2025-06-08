@@ -24,20 +24,28 @@
   <style>
     /* Global Styles */
     body {
-      font-family: 'Vazirmatn', sans-serif;
-      line-height: 1.8;
-      /* Explicitly defined background properties for clarity */
-      background-image: url("images/MainPage.webp");
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      position: relative;
-      direction: rtl;
-      color: #fff;
-      font-size: 1rem; /* Default font size */
-    }
+  font-family: 'Vazirmatn', sans-serif;
+  line-height: 1.8;
+  direction: rtl;
+  color: #fff;
+  font-size: 1rem;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1; /* برای اطمینان از این که روی ویدیو قرار می‌گیره */
+  }
+
+  #bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* تا محتوای صفحه روی ویدیو باشه */
+    object-fit: cover;
+    opacity: 0.9; /* اختیاری، برای کم‌کردن شدت ویدیو */
+  }
 
     @media (max-width: 600px) {
       body {
@@ -323,6 +331,12 @@
             <a href="Tutorials/index.html">کل آموزش ها</a>
         </div>
     </div>
+
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="images/MainPage.mp4" type="video/webm">
+    مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+  </video>
+
 
   <!-- بخش بالایی: فقط py-8 و بدون min-h-screen -->
 <section class="flex flex-col justify-center items-center px-2 sm:px-4 py-6 sm:py-8" data-aos="fade-down" data-aos-delay="300">
