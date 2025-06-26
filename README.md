@@ -1,4 +1,4 @@
-# 🩸 BloodStrikeWebsite --> @AliSlayer Telegram
+# 🩸 BloodStrikeXsite --> @AliSlayer Telegram
 
 <div align="center">
   <img src="images/AliSlayer.webp" width="120" alt="BloodStrike Icon" />
@@ -25,37 +25,6 @@
 - **Made With ♥ , HTML,CSS,JS**
 ---
 
-## 🧩 ساختار پروژه
-
-```
-BloodStrikeWeb/
-│
-├── Attachments/
-    ├── index.html - ایندکس صفحه اتچمنت ها
-├── BetterPing/
-    ├── index.html - ایندکس آموزش رفع تحریم
-├── FakeAccount/
-    ├── index.html - ایندکس آموزش زدن اکانت فیک
-├── HowToBuyGold/
-    ├── index.html - ایندکس آموزش خرید گلد
-├── images/
-    ├── Images ... - تصاویر مربوطه
-├── LagSlayer/
-    ├── index.html - ایندکس آموزش رفع تحریم لگ اسلیر
-├── QuickPing/
-    ├── index.html - ایندکس آموزش رفع تحریم کوییک پینگ
-├── Strikers/
-    ├── Images & HTML Files - تصاویر و فایل های مربوطه
-├── StrikersInfo/
-    ├── index.html - ایندکس صفحه اطلاعات استرایکر ها
-├── Tutorials/
-    ├── index.html - ایندکس صفحه آموزش ها
-├── AttachmentStyles.css - استایل اتچمنت ها
-├── index.html - ایندکس اصلی فایل
-├── navbar.css - استایل اصلی منوی صفحات
-README.md - فایل فعلی
-```
-
 ## ✨ کاملا مجزا بدون نیاز به بک اند
 
 <div align="center">
@@ -68,7 +37,7 @@ README.md - فایل فعلی
 
 1. وارد لینک زیر شوید
    ```bash
-   https://ialidev.github.io/BloodStrike
+   https://BloodStrikeX.github.io/BloodStrike
    ```
 2. از امکانات سایت و آموزش ها لذت ببرید
 
@@ -76,7 +45,7 @@ README.md - فایل فعلی
 
 ## 🛠 توسعه‌دهنده
 
-- **ساخته شده توسط:** [iAliDev](https://github.com/iAliDev)
+- **ساخته شده توسط:** [BloodStrikeX](https://github.com/BloodStrikeX)
 - **ایده و محتوا:** توسط چنل Raven_Shop_BloodStrike@ در تلگرام
 
 ---
