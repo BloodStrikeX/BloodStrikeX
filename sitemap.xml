@@ -1,357 +1,417 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/</loc>
     <priority>1.00</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+  
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/BetterPing/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/BetterPing/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/CustomRoom/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/CustomRoom/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/FakeAccount/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/FakeAccount/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/HowToBuyGold/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/HowToBuyGold/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/LagSlayer/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/LagSlayer/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/QuickPing/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/QuickPing/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+  
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/StrikersInfo/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/StrikersInfo/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Tutorials/</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Tutorials/</loc>
     <priority>0.80</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Ak47.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Ak47.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Ar97.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Ar97.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Bow.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Bow.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Deagle.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Deagle.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Fal.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Fal.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Fn2000.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Fn2000.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Galil.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Galil.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Glock.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Glock.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Inp9.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Inp9.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Kag-6.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Kag-6.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Kala.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Kala.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Kar98k.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Kar98k.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/M4A1.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/M4A1.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/M700.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/M700.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Magnum.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Magnum.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Mcx.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Mcx.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Minigun.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Minigun.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Mp5.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Mp5.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Mp155.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Mp155.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/M1887.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/M1887.html</loc>
     <priority>0.70</priority>
-    <lastmod>2025-07-4</lastmod>
+    <lastmod>2025-07-04</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/origin.html</loc>
-    <priority>0.70</priority>
-    <lastmod>2025-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/P90.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/origin.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Pkm.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/P90.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Qbz95.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Pkm.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Rpk.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Qbz95.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Scar.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Rpk.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Svd.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Scar.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Urb.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Svd.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Uzi.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Urb.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Vector.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Uzi.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-    <loc>https://BloodStrikeX.github.io/BloodStrikeX/Attachments/Vss.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Vector.html</loc>
     <priority>0.70</priority>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Blast.html</loc>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Attachments/Vss.html</loc>
+    <priority>0.70</priority>
+    <lastmod>2025-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Blast.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Emma.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Emma.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/EMT.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/EMT.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Ethan.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Ethan.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Hank.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Hank.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Jack.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Jack.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Jet.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Jet.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Kainda.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Kainda.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Kraken.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Kraken.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Lucian.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Lucian.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Nacho.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Nacho.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Nova.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Nova.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Ran.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Ran.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Spike.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Spike.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Val.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Val.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
+
 <url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Volt.html</loc>
+  <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Volt.html</loc>
   <priority>0.70</priority>
   <lastmod>2025-06-23</lastmod>
   <changefreq>weekly</changefreq>
 </url>
-<url>
-  <loc>https://BloodStrikeX.github.io/BloodStrikeX/Strikers/Zero.html</loc>
-  <priority>0.70</priority>
-  <lastmod>2025-06-23</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
+
+  <url>
+    <loc>https://bloodstrikex.github.io/BloodStrikeX/Strikers/Zero.html</loc>
+    <priority>0.70</priority>
+    <lastmod>2025-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+
 </urlset>
